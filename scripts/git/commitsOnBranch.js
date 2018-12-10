@@ -1,10 +1,10 @@
-const { execGitCmd } = require('./execGitCmd');
+const { execGitCmd } = require("./execGitCmd");
 function commitsOnBranch() {
   const output = execGitCmd([
-    'rev-list',
-    '--count',
-    '--no-merges',
-    'origin/main'
+    "rev-list",
+    "--count",
+    "--no-merges",
+    "origin/master"
   ]);
   return output;
 }

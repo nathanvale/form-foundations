@@ -1,8 +1,8 @@
 import {
   RadioGroupFieldProps as RadioGroupFieldAtomProps,
   SelectFieldNativeProps as SelectFieldNativeAtomProps,
-  TextFieldProps as TextFieldAtomProps,
-} from '@origin-digital/form-foundations-atoms';
+  TextFieldProps as TextFieldAtomProps
+} from "@origin-digital/form-foundations-atoms";
 import {
   FieldConfig as FormikFieldConfig,
   FieldProps,
@@ -14,11 +14,14 @@ import {
   FormikHandlers,
   FormikComputedProps,
   FormikRegistration,
-  FormikErrors,
-} from 'formik';
-import * as React from 'react';
+  FormikErrors
+} from "formik";
+import * as React from "react";
 
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
+export type FieldPropsInjected<Props = {}, Values = {}> = FieldProps<Values> &
+  Props;
 
 /**
  * Note: These typings could be more restrictive, but then it would limit the
@@ -97,12 +100,12 @@ export type FieldAttributes<T> = GenericFieldHTMLAttributes & FieldConfig & T;
 export type RadioGroupFieldProps =
   | Omit<
       Partial<RadioGroupFieldAtomProps>,
-      'error' | 'onChange' | 'value' | 'onBlur'
+      "error" | "onChange" | "value" | "onBlur"
     >
   | any;
 
 export type TextFieldProps =
-  | Omit<Partial<TextFieldAtomProps>, 'error' | 'onChange' | 'value' | 'onBlur'>
+  | Omit<Partial<TextFieldAtomProps>, "error" | "onChange" | "value" | "onBlur">
   | any;
 
 export type TextFieldNormalizeProps = {
@@ -112,7 +115,7 @@ export type TextFieldNormalizeProps = {
 export type SelectFieldNativeProps =
   | Omit<
       Partial<SelectFieldNativeAtomProps>,
-      'error' | 'onChange' | 'value' | 'onBlur'
+      "error" | "onChange" | "value" | "onBlur"
     >
   | any;
 
@@ -146,7 +149,7 @@ export type FFProps<Values> = FFSharedConfig &
   FFRegistration;
 
 export declare type FFContext<Values> = FFProps<Values> &
-  Pick<FFConfig<Values>, 'validate' | 'validationSchema'>;
+  Pick<FFConfig<Values>, "validate" | "validationSchema">;
 export interface SharedRenderProps<T> {
   component?: string | React.ComponentType<T | void>;
   render?: ((props: T) => React.ReactNode);

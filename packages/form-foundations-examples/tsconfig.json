@@ -2,7 +2,10 @@
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
     "rootDir": "src",
-    "baseUrl": ".",
     "declarationDir": "dist/typings"
-  }
+  },
+  "references": [
+    { "path": "../form-foundations-core" },
+    { "path": "../form-foundations-widgets" }
+  ]
 }

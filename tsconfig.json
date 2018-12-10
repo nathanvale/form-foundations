@@ -1,0 +1,4 @@
+{
+  "files": [],
+  "references": [{ "path": "./packages/form-foundations-core/tsconfig.json" }]
+}
