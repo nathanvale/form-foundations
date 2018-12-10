@@ -1,4 +1,3 @@
-const { defaults } = require('jest-config');
 const base = require('./jest.config.js');
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
       branches: 52.33,
       functions: 53.5,
       lines: 59.2,
-      statements: 57.63
-    }
-  }
+      statements: 57.63,
+    },
+  },
 };

@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/34</span>
+        <span class='fraction'>0/41</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/36</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/34</span>
+        <span class='fraction'>0/41</span>
       </div>
     </div>
   </div>
@@ -111,8 +111,7 @@
 66
 67
 68
-69
-70</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+69</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -124,33 +123,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -160,93 +147,103 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const runBabel = <span class="cstat-no" title="statement not covered" >require('../babel/').runBabel;</span>
-const getBuildPath = <span class="cstat-no" title="statement not covered" >require('../shared/getBuildPath').getBuildPath;</span>
-const getPackagePaths = <span class="cstat-no" title="statement not covered" >require('../shared/getPackagePaths').getPackagePaths;</span>
-const reportingUtils = <span class="cstat-no" title="statement not covered" >require('../shared/reportingUtils');</span>
-const runClean = <span class="cstat-no" title="statement not covered" >require('../clean/').runClean;</span>
-const runGarbageMan = <span class="cstat-no" title="statement not covered" >require('../garbage-man/').runGarbageMan;</span>
-const runTSC = <span class="cstat-no" title="statement not covered" >require('../tsc/').runTSC;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const runBabel = <span class="cstat-no" title="statement not covered" >require("../babel/").runBabel;</span>
+const getBuildPath = <span class="cstat-no" title="statement not covered" >require("../shared/getBuildPath").getBuildPath;</span>
+const getPackagePaths = <span class="cstat-no" title="statement not covered" >require("../shared/getPackagePaths").getPackagePaths;</span>
+const reportingUtils = <span class="cstat-no" title="statement not covered" >require("../shared/reportingUtils");</span>
+const runClean = <span class="cstat-no" title="statement not covered" >require("../clean/").runClean;</span>
+const runGarbageMan = <span class="cstat-no" title="statement not covered" >require("../garbage-man/").runGarbageMan;</span>
+const runTSC = <span class="cstat-no" title="statement not covered" >require("../tsc/").runTSC;</span>
 const {
-  adjustToTerminalWidth,
+  printToTerminalWidth,
   printInverseMessage,
   MESSAGE_TYPE_OK,
   MESSAGE_TYPE_FAIL
-} = reportingUtils;
-const glob = <span class="cstat-no" title="statement not covered" >require('glob');</span>
-const path = <span class="cstat-no" title="statement not covered" >require('path');</span>
-const SRC_DIR = <span class="cstat-no" title="statement not covered" >'src';</span>
-const BUILD_DIR = <span class="cstat-no" title="statement not covered" >'dist';</span>
+} = <span class="cstat-no" title="statement not covered" >reportingUtils;</span>
+const glob = <span class="cstat-no" title="statement not covered" >require("glob");</span>
+const path = <span class="cstat-no" title="statement not covered" >require("path");</span>
+const SRC_DIR = <span class="cstat-no" title="statement not covered" >"src";</span>
+const BUILD_DIR = <span class="cstat-no" title="statement not covered" >"dist";</span>
+const ES_BUILD_DIR = <span class="cstat-no" title="statement not covered" >"es";</span>
+const CJS_BUILD_DIR = <span class="cstat-no" title="statement not covered" >"cjs";</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async function buildPackage(packagePath) {</span></span>
-  const <span class="cstat-no" title="statement not covered" >srcDir = path.resolve(packagePath, SRC_DIR);</span>
-  const <span class="cstat-no" title="statement not covered" >pattern = path.resolve(srcDir, '**/*');</span>
-  const <span class="cstat-no" title="statement not covered" >files = glob.sync(pattern, {</span>
+async function <span class="fstat-no" title="function not covered" >buildPackage(packagePath) {</span>
+  const srcDir = <span class="cstat-no" title="statement not covered" >path.resolve(packagePath, SRC_DIR);</span>
+  const pattern = <span class="cstat-no" title="statement not covered" >path.resolve(srcDir, "**/*");</span>
+  const files = <span class="cstat-no" title="statement not covered" >glob.sync(pattern, {</span>
     nodir: true
   });
-<span class="cstat-no" title="statement not covered" >  process.stdout.write(</span>
-    adjustToTerminalWidth(`${path.basename(packagePath)}\n`)
-  );
-  let <span class="cstat-no" title="statement not covered" >output = '';</span>
-  for (const <span class="cstat-no" title="statement not covered" >file of files) {</span>
-    const <span class="cstat-no" title="statement not covered" >destPath = getBuildPath(file, BUILD_DIR, SRC_DIR);</span>
-<span class="cstat-no" title="statement not covered" >    output += await runBabel({ file, destPath });</span>
+<span class="cstat-no" title="statement not covered" >  printToTerminalWidth(`${path.basename(packagePath)}`);</span>
+  let output = <span class="cstat-no" title="statement not covered" >"";</span>
+<span class="cstat-no" title="statement not covered" >  for (const file of files) {</span>
+    const esPath = <span class="cstat-no" title="statement not covered" >getBuildPath(file, BUILD_DIR, ES_BUILD_DIR, SRC_DIR);</span>
+    const cjsPath = <span class="cstat-no" title="statement not covered" >getBuildPath(file, BUILD_DIR, CJS_BUILD_DIR, SRC_DIR);</span>
+<span class="cstat-no" title="statement not covered" >    output += await runBabel({ file, esPath, cjsPath });</span>
   }
-  return output;
+<span class="cstat-no" title="statement not covered" >  return output;</span>
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async function runBuild({ verbose = false }) {</span></span>
+async function <span class="fstat-no" title="function not covered" >runBuild({ verbose = <span class="branch-0 cbranch-no" title="branch not covered" >false } = <span class="branch-0 cbranch-no" title="branch not covered" >{}) {</span></span></span>
   // BABEL
   // Transpiling
-  await runClean();
-<span class="cstat-no" title="statement not covered" >  process.stdout.write(`\n${printInverseMessage('Babel')}\n\n`);</span>
-  const <span class="cstat-no" title="statement not covered" >packagePaths = getPackagePaths();</span>
-  let <span class="cstat-no" title="statement not covered" >output = '';</span>
-  for (const <span class="cstat-no" title="statement not covered" >packagePath of packagePaths) {</span>
+<span class="cstat-no" title="statement not covered" >  await runClean();</span>
+<span class="cstat-no" title="statement not covered" >  console.log("\r");</span>
+<span class="cstat-no" title="statement not covered" >  printInverseMessage("Babel");</span>
+<span class="cstat-no" title="statement not covered" >  console.log("\r");</span>
+  const packagePaths = <span class="cstat-no" title="statement not covered" >getPackagePaths();</span>
+  let output = <span class="cstat-no" title="statement not covered" >"";</span>
+<span class="cstat-no" title="statement not covered" >  for (const packagePath of packagePaths) {</span>
 <span class="cstat-no" title="statement not covered" >    output += await buildPackage(packagePath)</span>
-      .then(<span class="fstat-no" title="function not covered" >response =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        process.stdout.write(</span>
-          `${printInverseMessage('DONE', MESSAGE_TYPE_OK)}\n`
-        );
+      .then(<span class="fstat-no" title="function not covered" >response =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >        printInverseMessage("DONE", MESSAGE_TYPE_OK);</span>
 <span class="cstat-no" title="statement not covered" >        if (verbose) {</span>
 <span class="cstat-no" title="statement not covered" >          process.stdout.write(`\n${response}\n`);</span>
         }
       })
-      .catch(<span class="fstat-no" title="function not covered" >e =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        process.stdout.write(</span>
-          `${printInverseMessage('FAIL', MESSAGE_TYPE_FAIL)}\n`
-        );
+      .catch(<span class="fstat-no" title="function not covered" >e =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >        printInverseMessage("FAIL", MESSAGE_TYPE_FAIL);</span>
 <span class="cstat-no" title="statement not covered" >        throw e;</span>
       });
   }
+<span class="cstat-no" title="statement not covered" >  console.log("\r");</span>
   // TYPESCRIPT
   // Remove any unresolved typescript after babel transpile
-<span class="cstat-no" title="statement not covered" >  process.stdout.write('\n');</span>
-  await runGarbageMan({ verbose });
+  // await runGarbageMan({ verbose });
+<span class="cstat-no" title="statement not covered" >  console.log("\r");</span>
   // Generate typescript declaration files
-<span class="cstat-no" title="statement not covered" >  process.stdout.write('\n');</span>
-  // await runTSC({ verbose });
+<span class="cstat-no" title="statement not covered" >  await runTSC({ verbose });</span>
 }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >exports.runBuild = runBuild;</span>
@@ -256,7 +253,7 @@ const BUILD_DIR = <span class="cstat-no" title="statement not covered" >'dist';<
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Oct 01 2018 10:03:13 GMT+1000 (Australian Eastern Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 10 2018 14:41:55 GMT+1100 (Australian Eastern Daylight Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

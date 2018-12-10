@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/10</span>
+        <span class='fraction'>0/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/3</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/10</span>
+        <span class='fraction'>0/12</span>
       </div>
     </div>
   </div>
@@ -68,8 +68,7 @@
 23
 24
 25
-26
-27</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+26</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -77,19 +76,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -99,24 +97,23 @@
 const exec = <span class="cstat-no" title="statement not covered" >util.promisify(require('child_process').exec);</span>
 const reportingUtils = <span class="cstat-no" title="statement not covered" >require('../shared/reportingUtils');</span>
 const {
-  adjustToTerminalWidth,
+  printToTerminalWidth,
   printInverseMessage,
   MESSAGE_TYPE_OK,
   MESSAGE_TYPE_FAIL
-} = reportingUtils;
+} = <span class="cstat-no" title="statement not covered" >reportingUtils;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async function runTSC() {</span></span>
-<span class="cstat-no" title="statement not covered" >  process.stdout.write(`${printInverseMessage('TSC')}\n\n`);</span>
-<span class="cstat-no" title="statement not covered" >  process.stdout.write(adjustToTerminalWidth('generating type declarations\n'));</span>
-  return exec(`tsc --build`)
-    .then(<span class="fstat-no" title="function not covered" >response =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      process.stdout.write(`${printInverseMessage('DONE', MESSAGE_TYPE_OK)}\n`);</span>
+async function <span class="fstat-no" title="function not covered" >runTSC() {</span>
+<span class="cstat-no" title="statement not covered" >  printInverseMessage('TSC');</span>
+<span class="cstat-no" title="statement not covered" >  console.log('\r');</span>
+<span class="cstat-no" title="statement not covered" >  printToTerminalWidth('generating type declarations');</span>
+<span class="cstat-no" title="statement not covered" >  return exec(`tsc --build`)</span>
+    .then(<span class="fstat-no" title="function not covered" >response =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >      printInverseMessage('DONE', MESSAGE_TYPE_OK);</span>
     })
-    .catch(<span class="fstat-no" title="function not covered" >e =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      process.stdout.write(</span>
-        `${printInverseMessage('FAIL', MESSAGE_TYPE_FAIL)}\n`
-      );
-<span class="cstat-no" title="statement not covered" >      throw e;</span>
+    .catch(<span class="fstat-no" title="function not covered" >e =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >      printInverseMessage('FAIL', MESSAGE_TYPE_FAIL);</span>
+<span class="cstat-no" title="statement not covered" >      throw e.stdout;</span>
     });
 }
 &nbsp;
@@ -127,7 +124,7 @@ const {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Oct 01 2018 10:03:13 GMT+1000 (Australian Eastern Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 10 2018 14:41:55 GMT+1100 (Australian Eastern Daylight Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

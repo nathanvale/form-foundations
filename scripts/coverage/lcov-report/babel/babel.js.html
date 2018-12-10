@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/37</span>
+        <span class='fraction'>0/44</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>0/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/37</span>
+        <span class='fraction'>0/44</span>
       </div>
     </div>
   </div>
@@ -106,7 +106,27 @@
 61
 62
 63
-64</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -124,7 +144,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -137,27 +157,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,68 +173,120 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const micromatch = <span class="cstat-no" title="statement not covered" >require('micromatch');</span>
-const path = <span class="cstat-no" title="statement not covered" >require('path');</span>
-const mkdirp = <span class="cstat-no" title="statement not covered" >require('mkdirp');</span>
-const babel = <span class="cstat-no" title="statement not covered" >require('babel-core');</span>
-const chalk = <span class="cstat-no" title="statement not covered" >require('chalk');</span>
-const fs = <span class="cstat-no" title="statement not covered" >require('fs');</span>
-const replaceExt = <span class="cstat-no" title="statement not covered" >require('replace-ext');</span>
-const PACKAGES_DIR = <span class="cstat-no" title="statement not covered" >require('../shared/packagesDir').PACKAGES_DIR;</span>
-const getPackageName = <span class="cstat-no" title="statement not covered" >require('../shared/getPackageName').getPackageName;</span>
-const getPackageCWD = <span class="cstat-no" title="statement not covered" >require('../shared/getPackageCWD').getPackageCWD;</span>
-const JS_FILES_PATTERN = <span class="cstat-no" title="statement not covered" >'**/*.{ts,tsx,js,jsx}';</span>
-const IGNORE_PATTERNS = <span class="cstat-no" title="statement not covered" >['**/*.spec.{ts,tsx,js,jsx}', '**/*.snap', '**/*.map'];</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const micromatch = <span class="cstat-no" title="statement not covered" >require("micromatch");</span>
+const path = <span class="cstat-no" title="statement not covered" >require("path");</span>
+const mkdirp = <span class="cstat-no" title="statement not covered" >require("mkdirp");</span>
+const babel = <span class="cstat-no" title="statement not covered" >require("@babel/core");</span>
+const chalk = <span class="cstat-no" title="statement not covered" >require("chalk");</span>
+const fs = <span class="cstat-no" title="statement not covered" >require("fs");</span>
+const replaceExt = <span class="cstat-no" title="statement not covered" >require("replace-ext");</span>
+const PACKAGES_DIR = <span class="cstat-no" title="statement not covered" >require("../shared/packagesDir").PACKAGES_DIR;</span>
+const getPackageName = <span class="cstat-no" title="statement not covered" >require("../shared/getPackageName").getPackageName;</span>
+const getPackageCWD = <span class="cstat-no" title="statement not covered" >require("../shared/getPackageCWD").getPackageCWD;</span>
+const JS_FILES_PATTERN = <span class="cstat-no" title="statement not covered" >"**/*.{ts,tsx,js,jsx}";</span>
+const IGNORE_PATTERNS = <span class="cstat-no" title="statement not covered" >["**/*.spec.{ts,tsx,js,jsx}", "**/*.snap", "**/*.map"];</span>
 &nbsp;
 function <span class="fstat-no" title="function not covered" >getBabelConfig(file) {</span>
   const pkgName = <span class="cstat-no" title="statement not covered" >getPackageName(file);</span>
-<span class="cstat-no" title="statement not covered" >  return path.resolve(PACKAGES_DIR, pkgName, 'babel.config.js');</span>
+<span class="cstat-no" title="statement not covered" >  return path.resolve(PACKAGES_DIR, pkgName, "babel.config.js");</span>
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >runBabel({ file, destPath }) <span class="cstat-no" title="statement not covered" >{</span></span>
+function <span class="fstat-no" title="function not covered" >runBabel({ file, esPath, cjsPath }) {</span>
 <span class="cstat-no" title="statement not covered" >  return new Promise(<span class="fstat-no" title="function not covered" >function(</span>resolve) {</span>
-    let output = <span class="cstat-no" title="statement not covered" >'';</span>
+    let output = <span class="cstat-no" title="statement not covered" >"";</span>
     const babelConfig = <span class="cstat-no" title="statement not covered" >getBabelConfig(file);</span>
     const transformOptions = <span class="cstat-no" title="statement not covered" >require(babelConfig);</span>
 <span class="cstat-no" title="statement not covered" >    transformOptions.plugins = transformOptions.plugins</span>
       ? transformOptions.plugins
       : [];
 <span class="cstat-no" title="statement not covered" >    transformOptions.babelrc = false;</span>
-<span class="cstat-no" title="statement not covered" >    mkdirp.sync(path.dirname(destPath));</span>
+<span class="cstat-no" title="statement not covered" >    mkdirp.sync(path.dirname(esPath));</span>
+<span class="cstat-no" title="statement not covered" >    mkdirp.sync(path.dirname(cjsPath));</span>
 <span class="cstat-no" title="statement not covered" >    if (micromatch([file], IGNORE_PATTERNS).length &gt; 0) {</span>
+      // ignore files such as *.spec.js
 <span class="cstat-no" title="statement not covered" >      output =</span>
-        chalk.dim('\u2022 ') +
+        chalk.dim("\u2022 ") +
         path.relative(PACKAGES_DIR, file) +
-        ' (ignore)\n';
+        " (ignore)\n";
     } else <span class="cstat-no" title="statement not covered" >if (!micromatch.isMatch(file, JS_FILES_PATTERN)) {</span>
-<span class="cstat-no" title="statement not covered" >      fs.createReadStream(file).pipe(fs.createWriteStream(destPath));</span>
+      // copy files that don't need to be transpiled (eg .json)
+<span class="cstat-no" title="statement not covered" >      fs.createReadStream(file).pipe(fs.createWriteStream(esPath));</span>
 <span class="cstat-no" title="statement not covered" >      output =</span>
-        chalk.red('\u2022 ') +
+        chalk.red("\u2022 ") +
         path.relative(PACKAGES_DIR, file) +
-        chalk.red(' \u21D2 ') +
-        path.relative(PACKAGES_DIR, destPath) +
-        ' (copy)' +
-        '\n';
+        chalk.red(" \u21D2 ") +
+        path.relative(PACKAGES_DIR, esPath) +
+        " (copy)" +
+        "\n";
     } else {
       const options = <span class="cstat-no" title="statement not covered" >Object.assign({}, transformOptions);</span>
 <span class="cstat-no" title="statement not covered" >      options.plugins = options.plugins.slice();</span>
 <span class="cstat-no" title="statement not covered" >      options.cwd = getPackageCWD(file);</span>
-      const transformed = <span class="cstat-no" title="statement not covered" >babel.transformFileSync(file, options).code;</span>
-<span class="cstat-no" title="statement not covered" >      if (transformed !== '') {</span>
-<span class="cstat-no" title="statement not covered" >        destPath = replaceExt(destPath, '.js');</span>
-<span class="cstat-no" title="statement not covered" >        fs.writeFileSync(destPath, transformed);</span>
+      //es transpile
+<span class="cstat-no" title="statement not covered" >      process.env.BABEL_ENV = undefined;</span>
+      let transformed = <span class="cstat-no" title="statement not covered" >babel.transformFileSync(file, options).code;</span>
+<span class="cstat-no" title="statement not covered" >      if (transformed !== "") {</span>
+<span class="cstat-no" title="statement not covered" >        esPath = replaceExt(esPath, ".js");</span>
+<span class="cstat-no" title="statement not covered" >        fs.writeFileSync(esPath, transformed);</span>
       }
 <span class="cstat-no" title="statement not covered" >      output =</span>
-        chalk.green('\u2022 ') +
+        chalk.green("\u2022 ") +
         path.relative(PACKAGES_DIR, file) +
-        chalk.green(' \u21D2 ') +
-        path.relative(PACKAGES_DIR, destPath) +
-        '\n';
+        chalk.green(" \u21D2 ") +
+        path.relative(PACKAGES_DIR, esPath) +
+        "\n";
+&nbsp;
+      //cjs transpile
+<span class="cstat-no" title="statement not covered" >      process.env.BABEL_ENV = "cjs";</span>
+<span class="cstat-no" title="statement not covered" >      transformed = babel.transformFileSync(file, options).code;</span>
+<span class="cstat-no" title="statement not covered" >      if (transformed !== "") {</span>
+<span class="cstat-no" title="statement not covered" >        cjsPath = replaceExt(cjsPath, ".js");</span>
+<span class="cstat-no" title="statement not covered" >        fs.writeFileSync(cjsPath, transformed);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      output +=</span>
+        chalk.green("\u2022 ") +
+        path.relative(PACKAGES_DIR, file) +
+        chalk.green(" \u21D2 ") +
+        path.relative(PACKAGES_DIR, cjsPath) +
+        "\n";
     }
+&nbsp;
 <span class="cstat-no" title="statement not covered" >    resolve(output);</span>
   });
 }
@@ -238,7 +298,7 @@ function <span class="fstat-no" title="function not covered" >runBabel({ file, d
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Oct 01 2018 10:03:13 GMT+1000 (Australian Eastern Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 10 2018 14:41:55 GMT+1100 (Australian Eastern Daylight Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

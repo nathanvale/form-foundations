@@ -1,0 +1,11 @@
+0 silly argv { _: [ 'bootstrap' ],
+0 silly argv   lernaVersion: '3.6.0',
+0 silly argv   '$0': '/Users/nathanvale/lerna-repo/node_modules/.bin/lerna' }
+1 notice cli v3.6.0
+2 verbose rootPath /Users/nathanvale/lerna-repo
+3 error Error: Invalid package name "form-foundations/core": name can only contain URL-friendly characters
+3 error     at invalidPackageName (/Users/nathanvale/lerna-repo/node_modules/npm-package-arg/npa.js:82:15)
+3 error     at Result.setName (/Users/nathanvale/lerna-repo/node_modules/npm-package-arg/npa.js:118:11)
+3 error     at new Result (/Users/nathanvale/lerna-repo/node_modules/npm-package-arg/npa.js:107:23)
+3 error     at Function.resolve (/Users/nathanvale/lerna-repo/node_modules/npm-package-arg/npa.js:54:15)
+3 error     at new Package (/Users/nathanvale/lerna-repo/node_modules/@lerna/package/index.js:32:26)
