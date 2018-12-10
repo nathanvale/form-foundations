@@ -1,0 +1,48 @@
+'use strict';
+
+jest.mock('../git/getLeaderBoard');
+jest.mock('../git/commitsOnBranch');
+const { execGitCmd } = require('../git/execGitCmd');
+const { runPrecommit } = require('./precommit');
+const { getLeaderBoard } = require('../git/getLeaderBoard');
+const { commitsOnBranch } = require('../git/commitsOnBranch');
+
+beforeEach(() => {
+  commitsOnBranch.mockReset();
+});
+
+describe('runPrecommit', () => {
+  it('should throw an error is the number of commits on the branch are greater than 0 ', () => {
+    commitsOnBranch.mockImplementationOnce(() => 0);
+    return runPrecommit().then(data => {
+      expect(data).toEqual(true);
+    });
+  });
+  it('should throw an error is the number of commits on the branch are greater than 0 ', () => {
+    const leaderBoardResult = [
+      {
+        commits: '146',
+        email: ['<nathan.vale@originenergy.com.au>'],
+        name: 'Nathan Vale'
+      },
+      {
+        commits: '42',
+        email: ['<mirsajjad.mehdi@originenergy.com.au>'],
+        name: 'Mir Mehdi'
+      },
+      {
+        commits: '5',
+        email: ['<mahesh.jadav@originenergy.com.au>'],
+        name: 'Mahesh Jadav'
+      }
+    ];
+    commitsOnBranch.mockImplementationOnce(() => 1);
+    return runPrecommit().catch(e => {
+      expect(e).toEqual(
+        new Error(
+          'Only one commit is allowed on your branch. Please squash and revert all your commits.'
+        )
+      );
+    });
+  });
+});

@@ -1,0 +1,32 @@
+{
+  "name": "@origin-digital/form-foundations-core",
+  "sideEffects": false,
+  "description": " ",
+  "version": "0.0.0",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "license": "UNLICENSED",
+  "module": "dist/es/index.js",
+  "main": "dist/cjs/index.js",
+  "typings": "dist/typings/index.d.ts",
+  "dependencies": {
+    "@babel/runtime-corejs2": "^7.0.0",
+    "formik": "^1.4.0",
+    "yup": "^0.26.6",
+    "lodash": "^4.0.0"
+  },
+  "devDependencies": {
+    "react-testing-library": "^5.3.1",
+    "typescript": "^3.2.2"
+  },
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "styled-components": "3.4.5"
+  },
+  "publishConfig": {
+    "registry": "https://artifactory.origindigital-dac.com.au/artifactory/api/npm/npm-internal/"
+  }
+}

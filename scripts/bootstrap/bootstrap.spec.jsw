@@ -1,0 +1,39 @@
+'use strict';
+
+jest.mock('../shared/execLernaCmd');
+jest.mock('../build/build');
+
+const { runBootstrap } = require('./bootstrap');
+const { runBuild } = require('../build/build');
+const { execLernaCmd } = require('../shared/execLernaCmd');
+
+beforeEach(() => {
+  execLernaCmd.mockReset();
+  runBuild.mockReset();
+});
+
+describe('runBootstrap', () => {
+  it('should bootstrap successfully', () => {
+    execLernaCmd.mockResolvedValue(true);
+    runBuild.mockResolvedValue(true);
+    return runBootstrap().then(data => {
+      expect(execLernaCmd).toBeCalledWith(['bootstrap']);
+      expect(runBuild).toBeCalled();
+      expect(data).toBeTruthy();
+    });
+  });
+  it('should catch errors from execLernaCmd', () => {
+    execLernaCmd.mockRejectedValue('execLernaCmd error');
+    runBuild.mockResolvedValue(true);
+    return runBootstrap().catch(error => {
+      expect(error).toBe('execLernaCmd error');
+    });
+  });
+  it('should catch errors from runBuild', () => {
+    execLernaCmd.mockResolvedValue(true);
+    runBuild.mockRejectedValue('runBuild error');
+    return runBootstrap().catch(error => {
+      expect(error).toBe('runBuild error');
+    });
+  });
+});

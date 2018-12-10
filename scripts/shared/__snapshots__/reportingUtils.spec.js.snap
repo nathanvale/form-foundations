@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAIL should... 1`] = `undefined`;
+
+exports[`OK should... 1`] = `undefined`;

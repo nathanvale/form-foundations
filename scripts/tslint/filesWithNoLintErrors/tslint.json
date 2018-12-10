@@ -1,0 +1,9 @@
+{
+  "extends": ["tslint-react"],
+  "rules": {
+    "no-inferrable-types": true,
+    "no-any": true,
+    "ban-types": [true, ["Object", "Use {} instead."]],
+    "jsx-no-multiline-js": false
+  }
+}

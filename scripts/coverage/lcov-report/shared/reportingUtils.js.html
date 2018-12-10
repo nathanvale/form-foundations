@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for shared/reportingUtils.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">shared</a> reportingUtils.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.96% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.96% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const chalk = require('chalk');
+const stringLength = require('string-length');
+const OK = chalk.reset.inverse.bold.green(` DONE `);
+&nbsp;
+const MESSAGE_TYPE_OK = 'MESSAGE_TYPE_OK';
+const MESSAGE_TYPE_FAIL = 'MESSAGE_TYPE_FAIL';
+const MESSAGE_TYPE_INFO = 'MESSAGE_TYPE_INFO';
+&nbsp;
+function adjustToTerminalWidth(str) {
+  const columns = process.stdout.columns || <span class="branch-1 cbranch-no" title="branch not covered" >80;</span>
+  const WIDTH = columns - stringLength(OK) + 1;
+  const strs = str.match(new RegExp(`(.{1,${WIDTH}})`, 'g'));
+  let lastString = strs[strs.length - 1];
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (lastString.length &lt; WIDTH) {
+    lastString += Array(WIDTH - lastString.length).join(chalk.dim('.'));
+  }
+  return strs
+    .slice(0, -1)
+    .concat(lastString)
+    .join('\n');
+}
+&nbsp;
+function printInverseMessage(message, errorType = MESSAGE_TYPE_INFO) {
+  message = ` ${message.toUpperCase()} `;
+  switch (errorType) {
+<span class="branch-0 cbranch-no" title="branch not covered" >    case MESSAGE_TYPE_OK:</span>
+<span class="cstat-no" title="statement not covered" >      return chalk.reset.inverse.bold.green(message);</span>
+<span class="branch-1 cbranch-no" title="branch not covered" >    case MESSAGE_TYPE_FAIL:</span>
+<span class="cstat-no" title="statement not covered" >      return chalk.reset.inverse.bold.red(message);</span>
+    case MESSAGE_TYPE_INFO:
+      return chalk.reset.inverse.bold.yellow(message);
+<span class="branch-3 cbranch-no" title="branch not covered" >    default:</span>
+<span class="cstat-no" title="statement not covered" >      return message;</span>
+  }
+}
+&nbsp;
+exports.adjustToTerminalWidth = adjustToTerminalWidth;
+exports.printInverseMessage = printInverseMessage;
+exports.MESSAGE_TYPE_OK = MESSAGE_TYPE_OK;
+exports.MESSAGE_TYPE_FAIL = MESSAGE_TYPE_FAIL;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Oct 01 2018 10:03:13 GMT+1000 (Australian Eastern Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

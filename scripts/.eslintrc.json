@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["import"],
+  "rules": {
+    "import/no-unresolved": 2,
+    "import/named": 2,
+    "no-undef": "error"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true
+  }
+}

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cleanUpFile should not transform if no matching rule errors found 1`] = `
+"
+undefined
+
+"
+`;

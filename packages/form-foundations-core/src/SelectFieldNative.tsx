@@ -1,0 +1,14 @@
+import { SelectFieldNative as SelectFieldNativeAtom } from '@origin-digital/form-foundations-atoms';
+import { Field } from './Field';
+import * as React from 'react';
+import { mapProps } from 'recompose';
+import { materialUIMapper } from './helpers';
+import { SelectFieldNativeProps } from './types';
+
+export const EnhancedSelectFieldNative = mapProps(materialUIMapper)(
+  SelectFieldNativeAtom,
+);
+
+export const SelectFieldNative: React.ComponentType<
+  SelectFieldNativeProps
+> = props => <Field component={EnhancedSelectFieldNative} {...props} />;
