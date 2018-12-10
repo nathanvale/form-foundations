@@ -7,7 +7,7 @@
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
     "test": "jest --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
-    "test:all": "jest -c ./jest.all.config.js --notify --silent",
+    "test:all": "jest --notify --silent",
     "test:watch": "yarn test --watch --silent=false --collectCoverage=false",
     "tsc": "tsc --build",
     "tsc:watch": "yarn tsc --watch"
