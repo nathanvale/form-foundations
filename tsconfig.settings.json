@@ -33,5 +33,6 @@
       }
     ]
   },
-  "exclude": ["node_modules", "**/*.spec.ts", "**/dist/**"]
+  "include": ["src", "./typings.d.ts", "types", "test"],
+  "exclude": ["node_modules", "dist"]
 }
