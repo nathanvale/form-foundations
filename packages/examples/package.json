@@ -1,15 +1,14 @@
 {
   "name": "@form-foundations/examples",
-  "sideEffects": false,
+  "version": "0.1.0",
   "description": " ",
-  "version": "0.0.0",
+  "license": "UNLICENSED",
   "files": [
     "dist",
     "src"
   ],
-  "license": "UNLICENSED",
-  "module": "dist/es/index.js",
   "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
   "typings": "dist/typings/index.d.ts",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
@@ -20,7 +19,5 @@
     "react-dom": "^16.3.0",
     "styled-components": "^4.1.2"
   },
-  "publishConfig": {
-    "registry": "https://artifactory.origindigital-dac.com.au/artifactory/api/npm/npm-internal/"
-  }
+  "sideEffects": false
 }
