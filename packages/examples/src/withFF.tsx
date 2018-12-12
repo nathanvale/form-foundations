@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import * as Yup from 'yup';
 import { withFF } from '@form-foundations/core';
 import Debug from './Debug';

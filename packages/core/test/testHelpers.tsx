@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { render, RenderResult } from 'react-testing-library';
 import { withFF, Form, Field } from '../';
 import { FFProps } from '../types';

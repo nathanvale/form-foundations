@@ -1,21 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import Debug from './Debug';
-
-const Schema = Yup.object().shape({
-  email: Yup.string().required('This field is required'),
-});
-
-// Async Validation
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-const validate = values =>
-  sleep(300).then(() => {
-    throw {
-      zip: 'This field is required',
-    };
-  });
 
 const isRequired = message => value => (!!value ? undefined : message);
 
@@ -23,17 +8,9 @@ const FieldLevelValidation = () => (
   <div>
     <h1>Pick a username</h1>
     <Formik
-      validationSchema={Schema}
-      validate={validate}
-      initialValues={{
-        username: '',
-        email: '',
-        zip: '',
-      }}
+      initialValues={{ username: '', email: '' }}
       onSubmit={values => {
-        sleep(500).then(() => {
-          alert(JSON.stringify(values, null, 2));
-        });
+        alert(JSON.stringify(values, null, 2));
       }}
       render={({
         errors,
@@ -50,7 +27,7 @@ const FieldLevelValidation = () => (
               name="username"
               validate={isRequired('This field is required')}
               type="text"
-              placeholder="username"
+              placeholder="Username"
             />
             <ErrorMessage name="username" />
           </div>
@@ -60,22 +37,47 @@ const FieldLevelValidation = () => (
               name="email"
               validate={isRequired('This field is required')}
               type="text"
-              placeholder="email"
+              placeholder="Email"
             />
             <ErrorMessage name="email" />
           </div>
-          <br />
+
           <div>
-            <Field
-              name="zip"
-              validate={isRequired('This field is required')}
-              type="text"
-              placeholder="zip"
-            />
-            <ErrorMessage name="zip" />
+            <div>username field actions</div>
+            <button
+              type="button"
+              onClick={() => {
+                setFieldTouched('username', true, true);
+              }}
+            >
+              setFieldTouched
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setFieldValue('username', '', true);
+              }}
+            >
+              setFieldValue
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                validateField('username');
+              }}
+            >
+              validateField
+            </button>
+            <br />
           </div>
           <br />
-          <button type="submit">Submit</button>
+          <div>
+            <div>Form actions</div>
+            <button type="button" onClick={validateForm}>
+              validate form
+            </button>
+            <button type="submit">Submit</button>
+          </div>
           <Debug />
         </Form>
       )}

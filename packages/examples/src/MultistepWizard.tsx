@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
 import Debug from './Debug';
 
