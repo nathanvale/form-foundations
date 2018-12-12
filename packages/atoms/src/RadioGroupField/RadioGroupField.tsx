@@ -9,7 +9,7 @@ import {
   withHandlers,
   withState,
   mapProps,
-  withProps
+  withProps,
 } from 'recompose';
 import styled from 'styled-components';
 import { Radio } from '../Radio';
@@ -81,14 +81,14 @@ export const RadioGroupFieldInner = styled<RadioGroupFieldInnerProps>(
         </FormHelperText>
       )}
     </FormControl>
-  )
+  ),
 )`
   && {
   }
 `;
 
 export const handlers = {
-  handleChange
+  handleChange,
 };
 
 // TODO: move to @origin-digital/recompose
@@ -99,7 +99,7 @@ export const enhance = compose<RadioGroupFieldInnerProps, RadioGroupFieldProps>(
   withState(state.name, state.updaterName, state.initialState),
   withHandlers(handlers),
   omitProps('setState'),
-  withProps(console.log)
+  withProps(console.log),
 );
 
 export const RadioGroupField = enhance(RadioGroupFieldInner);

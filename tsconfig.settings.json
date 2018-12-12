@@ -6,7 +6,7 @@
     "declarationDir": "dist/typings",
     "sourceMap": true,
     "typeRoots": ["node_modules/@types"],
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "jsx": "react",
@@ -33,6 +33,6 @@
       }
     ]
   },
-  "include": ["src", "./typings.d.ts", "types", "test"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

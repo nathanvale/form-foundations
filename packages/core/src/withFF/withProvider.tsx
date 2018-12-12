@@ -1,6 +1,6 @@
 // AuthUser.jsx
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import React from 'react';
+import * as React from 'react';
 import { FFProvider } from '../connect';
 
 export const withProvider = Comp => {

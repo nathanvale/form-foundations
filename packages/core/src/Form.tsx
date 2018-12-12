@@ -16,7 +16,7 @@ export const Form = connect<FormikFormProps>(
       {children}
       {debug ? <Debug /> : null}
     </form>
-  )
+  ),
 );
 
 Form.displayName = 'Form';
