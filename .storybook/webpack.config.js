@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = (baseConfig, env, config) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    exclude: /(node_modules)/,
+    exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
       options: {
@@ -35,6 +35,8 @@ module.exports = (baseConfig, env, config) => {
       formatter: require('react-dev-utils/typescriptFormatter'),
     }),
   );
+
+  console.log(JSON.stringify(config));
 
   return config;
 };
