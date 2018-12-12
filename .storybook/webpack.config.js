@@ -1,18 +1,9 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
 
-module.exports = (baseConfig, env, config) => {
-  config.module.rules.push({
-    test: /\.(ts|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@nathanvale/babel-preset'],
-      },
-    },
-  });
-
+module.exports = (baseConfig, configType, config) => {
+  config.resolve.extensions.push('.ts', '.tsx');
+  config.module.rules[0].test = /\.(mjs|jsx?|tsx?)$/;
   config.resolve.extensions.push('.ts', '.tsx');
 
   config.resolve.alias = {
@@ -35,8 +26,6 @@ module.exports = (baseConfig, env, config) => {
       formatter: require('react-dev-utils/typescriptFormatter'),
     }),
   );
-
-  console.log(JSON.stringify(config));
 
   return config;
 };

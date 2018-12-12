@@ -1,8 +1,15 @@
 module.exports = {
-  presets: [['@nathanvale/babel-preset']],
-  env: {
-    cjs: {
-      presets: [['@nathanvale/babel-preset', { modules: 'cjs' }]],
-    },
-  },
+  presets: [
+    [
+      '@babel/env',
+      {
+        targets: {
+          browsers: ['last 2 versions'],
+        },
+      },
+    ],
+    '@babel/stage-3',
+    '@babel/react',
+    '@babel/typescript',
+  ],
 };
