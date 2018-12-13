@@ -51,7 +51,7 @@ export const RadioGroupFieldInner = styled<RadioGroupFieldInnerProps>(
       {...other}
     >
       {label && (
-        <FormLabel component="legend" htmlFor={id} {...FormLabelProps}>
+        <FormLabel htmlFor={id} {...FormLabelProps}>
           {label}
         </FormLabel>
       )}
