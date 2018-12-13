@@ -5,6 +5,7 @@
     "baseUrl": ".",
     "declarationDir": "dist/typings"
   },
+  "references": [{ "path": "../atoms" }],
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }
