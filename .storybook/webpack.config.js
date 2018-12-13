@@ -22,7 +22,7 @@ module.exports = (baseConfig, configType, config) => {
   config.plugins.push(
     new ForkTsCheckerWebpackPlugin({
       async: false,
-      checkSyntacticErrors: true,
+      checkSyntacticErrors: false,
       formatter: require('react-dev-utils/typescriptFormatter'),
     }),
   );
