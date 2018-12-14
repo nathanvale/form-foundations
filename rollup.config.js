@@ -1,49 +1,43 @@
-import commonjs from 'rollup-plugin-commonjs';
-import replace from 'rollup-plugin-replace';
-import resolve from 'rollup-plugin-node-resolve';
-import sourceMaps from 'rollup-plugin-sourcemaps';
-import babel from 'rollup-plugin-babel';
-import uglify from 'rollup-plugin-uglify-es';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
-import pkg from './package.json';
+import fs from 'fs';
 import path from 'path';
+import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve';
+import replace from 'rollup-plugin-replace';
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import sourceMaps from 'rollup-plugin-sourcemaps';
+import uglify from 'rollup-plugin-uglify-es';
 import { minify } from 'uglify-es';
+import mkdirp from 'mkdirp';
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const inputFile = path.join(__dirname, 'src/index.js');
+
+function ensureDirectoryExistence(dirname) {
+  console.log('dirname', dirname);
+  if (fs.existsSync(dirname)) {
+    return true;
+  }
+  fs.mkdirSync(dirname);
+}
 
 async function config() {
   try {
     const { stdout } = await exec(`lerna ls --json`);
     const packages = JSON.parse(stdout);
-    console.log(packages);
+    const template = ({ name }) => `'use strict'
 
-    const d = [
-      {
-        name: '@form-foundations/atoms',
-        version: '0.1.0',
-        private: false,
-        location: '/Users/nathanvale/lerna-repo/packages/atoms',
-      },
-      {
-        name: '@form-foundations/core',
-        version: '0.1.0',
-        private: false,
-        location: '/Users/nathanvale/lerna-repo/packages/core',
-      },
-      {
-        name: '@form-foundations/examples',
-        version: '0.1.0',
-        private: false,
-        location: '/Users/nathanvale/lerna-repo/packages/examples',
-      },
-      {
-        name: '@form-foundations/widgets',
-        version: '0.1.0',
-        private: false,
-        location: '/Users/nathanvale/lerna-repo/packages/widgets',
-      },
-    ];
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./${name.match(/[ \w-]+$/g)}.cjs.production.js');
+} else {
+  module.exports = require('./${name.match(/[ \w-]+$/g)}.cjs.development.js');
+}`;
+
+    packages.forEach(({ name, location }) => {
+      ensureDirectoryExistence(`${location}/dist/`);
+      fs.writeFileSync(`${location}/dist/index.js`, template({ name }));
+    });
+
     const input = './compiled/index.js';
     const external = id => !id.startsWith('.') && !id.startsWith('/');
     const replacements = [{ original: 'lodash', replacement: 'lodash-es' }];
@@ -79,10 +73,6 @@ async function config() {
 
       plugins: [
         resolve({
-          customResolveOptions: {
-            main: false,
-            module: true,
-          },
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }),
         replace({
@@ -130,26 +120,37 @@ async function config() {
         sourcemap: true,
       },
       plugins: [
-        resolve(),
+        resolve({
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        }),
         replace({
           'process.env.NODE_ENV': JSON.stringify(env),
         }),
+        babel(babelOptions),
         sourceMaps(),
         sizeSnapshot(),
       ],
     });
 
-    const buildES = () => ({
-      input,
+    const buildES = ({ location, name }) => ({
+      input: `${location}/src/index.ts`,
       external,
       output: [
         {
-          file: pkg.module,
+          file: `${location}/dist/${name.match(/[ \w-]+$/g)}.esm.js`,
           format: 'es',
           sourcemap: true,
         },
       ],
-      plugins: [resolve(), babel(babelOptions), sizeSnapshot(), sourceMaps()],
+      plugins: [
+        resolve({
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        }),
+        ,
+        babel(babelOptions),
+        sizeSnapshot(),
+        sourceMaps(),
+      ],
     });
     return []
       .concat(
@@ -171,6 +172,9 @@ async function config() {
         packages.map(({ location, name }) =>
           buildCjs({ env: 'development', location, name }),
         ),
+      )
+      .concat(
+        packages.map(({ location, name }) => buildES({ location, name })),
       );
     /*return [
       buildUmd({ env: 'production' }),

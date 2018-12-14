@@ -54,6 +54,7 @@
     "jscodeshift": "^0.6.2",
     "lerna": "^3.6.0",
     "lerna-get-packages": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "raw-loader": "^1.0.0",
     "react": "^16.3.0",
     "react-dev-utils": "^6.1.1",
