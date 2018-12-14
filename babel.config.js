@@ -16,5 +16,14 @@ module.exports = {
     '@babel/plugin-syntax-import-meta',
     ['@babel/plugin-proposal-class-properties', { loose: false }],
     '@babel/plugin-proposal-json-strings',
+    [
+      '@babel/plugin-transform-runtime',
+      {
+        corejs: 2,
+        helpers: true,
+        regenerator: true,
+        useESModules: true,
+      },
+    ],
   ],
 };

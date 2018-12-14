@@ -1,0 +1,122 @@
+{
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/formik.umd.production.js": {
+    "bundled": 1223567,
+    "minified": 416808,
+    "gzipped": 119146
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/formik.umd.production.js": {
+    "bundled": 194731,
+    "minified": 56609,
+    "gzipped": 18653
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/formik.umd.production.js": {
+    "bundled": 440653,
+    "minified": 146467,
+    "gzipped": 43498
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/formik.umd.production.js": {
+    "bundled": 229,
+    "minified": 141,
+    "gzipped": 119
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/formik.umd.development.js": {
+    "bundled": 1974512,
+    "minified": 552634,
+    "gzipped": 157573
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/formik.umd.development.js": {
+    "bundled": 227314,
+    "minified": 67276,
+    "gzipped": 21755
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/formik.umd.development.js": {
+    "bundled": 471052,
+    "minified": 157584,
+    "gzipped": 46724
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/formik.umd.development.js": {
+    "bundled": 229,
+    "minified": 141,
+    "gzipped": 119
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/@form-foundations/atoms.umd.production.js": {
+    "bundled": 1223567,
+    "minified": 416808,
+    "gzipped": 119146
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/@form-foundations/core.umd.production.js": {
+    "bundled": 194731,
+    "minified": 56609,
+    "gzipped": 18653
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/@form-foundations/examples.umd.production.js": {
+    "bundled": 440653,
+    "minified": 146467,
+    "gzipped": 43498
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/@form-foundations/widgets.umd.production.js": {
+    "bundled": 229,
+    "minified": 141,
+    "gzipped": 119
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/@form-foundations/atoms.umd.development.js": {
+    "bundled": 1974512,
+    "minified": 552634,
+    "gzipped": 157573
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/@form-foundations/core.umd.development.js": {
+    "bundled": 227314,
+    "minified": 67276,
+    "gzipped": 21755
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/@form-foundations/examples.umd.development.js": {
+    "bundled": 471052,
+    "minified": 157584,
+    "gzipped": 46724
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/@form-foundations/widgets.umd.development.js": {
+    "bundled": 229,
+    "minified": 141,
+    "gzipped": 119
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/atoms.umd.production.js": {
+    "bundled": 1223535,
+    "minified": 416793,
+    "gzipped": 119137
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/core.umd.production.js": {
+    "bundled": 194731,
+    "minified": 56609,
+    "gzipped": 18653
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/examples.umd.production.js": {
+    "bundled": 440653,
+    "minified": 146467,
+    "gzipped": 43498
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/widgets.umd.production.js": {
+    "bundled": 229,
+    "minified": 141,
+    "gzipped": 119
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/atoms.umd.development.js": {
+    "bundled": 1974480,
+    "minified": 552619,
+    "gzipped": 157564
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/core.umd.development.js": {
+    "bundled": 227314,
+    "minified": 67276,
+    "gzipped": 21755
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/examples.umd.development.js": {
+    "bundled": 471052,
+    "minified": 157584,
+    "gzipped": 46724
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/widgets.umd.development.js": {
+    "bundled": 229,
+    "minified": 141,
+    "gzipped": 119
+  }
+}
