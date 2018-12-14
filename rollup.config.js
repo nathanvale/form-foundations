@@ -6,109 +6,148 @@ import babel from 'rollup-plugin-babel';
 import { uglify } from 'rollup-plugin-uglify';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import pkg from './package.json';
-import lernaGetPackages from 'lerna-get-packages';
-console.log(lernaGetPackages);
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 
-const input = './compiled/index.js';
-const external = id => !id.startsWith('.') && !id.startsWith('/');
-const replacements = [{ original: 'lodash', replacement: 'lodash-es' }];
-const babelOptions = {
-  exclude: /node_modules/,
-  plugins: [
-    'annotate-pure-calls',
-    'dev-expression',
-    ['transform-rename-import', { replacements }],
-  ],
-};
+async function config() {
+  try {
+    const { stdout } = await exec(`lerna ls --json`);
+    const packagesJSON = JSON.parse(stdout);
+    console.log(packagesJSON);
 
-const buildUmd = ({ env }) => ({
-  input,
-  external: ['react', 'react-native'],
-  output: {
-    name: 'Formik',
-    format: 'umd',
-    sourcemap: true,
-    file:
-      env === 'production'
-        ? `./dist/formik.umd.${env}.js`
-        : `./dist/formik.umd.${env}.js`,
-    exports: 'named',
-    globals: {
-      react: 'React',
-      'react-native': 'ReactNative',
-    },
-  },
-
-  plugins: [
-    resolve(),
-    babel(babelOptions),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify(env),
-    }),
-    commonjs({
-      include: /node_modules/,
-      namedExports: {
-        'node_modules/prop-types/index.js': [
-          'object',
-          'oneOfType',
-          'string',
-          'node',
-          'func',
-          'bool',
-          'element',
-        ],
+    const d = [
+      {
+        name: '@form-foundations/atoms',
+        version: '0.1.0',
+        private: false,
+        location: '/Users/nathanvale/lerna-repo/packages/atoms',
       },
-    }),
-    sourceMaps(),
-    sizeSnapshot(),
-    env === 'production' &&
-      uglify({
-        output: { comments: false },
-        compress: {
-          keep_infinity: true,
-          pure_getters: true,
+      {
+        name: '@form-foundations/core',
+        version: '0.1.0',
+        private: false,
+        location: '/Users/nathanvale/lerna-repo/packages/core',
+      },
+      {
+        name: '@form-foundations/examples',
+        version: '0.1.0',
+        private: false,
+        location: '/Users/nathanvale/lerna-repo/packages/examples',
+      },
+      {
+        name: '@form-foundations/widgets',
+        version: '0.1.0',
+        private: false,
+        location: '/Users/nathanvale/lerna-repo/packages/widgets',
+      },
+    ];
+    const input = './compiled/index.js';
+    const external = id => !id.startsWith('.') && !id.startsWith('/');
+    const replacements = [{ original: 'lodash', replacement: 'lodash-es' }];
+    const babelOptions = {
+      exclude: /node_modules/,
+      plugins: [
+        'annotate-pure-calls',
+        'dev-expression',
+        ['transform-rename-import', { replacements }],
+      ],
+    };
+
+    const buildUmd = ({ env, location, name }) => ({
+      input,
+      external: ['react', 'react-native'],
+      output: {
+        name: name,
+        format: 'umd',
+        sourcemap: true,
+        file:
+          env === 'production'
+            ? `${location}/dist/formik.umd.${env}.js`
+            : `${location}/dist/formik.umd.${env}.js`,
+        exports: 'named',
+        globals: {
+          react: 'React',
+          'react-native': 'ReactNative',
         },
-        warnings: true,
-        toplevel: false,
-      }),
-  ],
-});
+      },
 
-const buildCjs = ({ env }) => ({
-  input,
-  external,
-  output: {
-    file: `./dist/${pkg.name}.cjs.${env}.js`,
-    format: 'cjs',
-    sourcemap: true,
-  },
-  plugins: [
-    resolve(),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify(env),
-    }),
-    sourceMaps(),
-    sizeSnapshot(),
-  ],
-});
+      plugins: [
+        resolve(),
+        babel(babelOptions),
+        replace({
+          'process.env.NODE_ENV': JSON.stringify(env),
+        }),
+        commonjs({
+          include: /node_modules/,
+          namedExports: {
+            'node_modules/prop-types/index.js': [
+              'object',
+              'oneOfType',
+              'string',
+              'node',
+              'func',
+              'bool',
+              'element',
+            ],
+          },
+        }),
+        sourceMaps(),
+        sizeSnapshot(),
+        env === 'production' &&
+          uglify({
+            output: { comments: false },
+            compress: {
+              keep_infinity: true,
+              pure_getters: true,
+            },
+            warnings: true,
+            toplevel: false,
+          }),
+      ],
+    });
 
-const buildES = () => ({
-  input,
-  external,
-  output: [
-    {
-      file: pkg.module,
-      format: 'es',
-      sourcemap: true,
-    },
-  ],
-  plugins: [resolve(), babel(babelOptions), sizeSnapshot(), sourceMaps()],
-});
+    const buildCjs = ({ env }) => ({
+      input,
+      external,
+      output: {
+        file: `./dist/${pkg.name}.cjs.${env}.js`,
+        format: 'cjs',
+        sourcemap: true,
+      },
+      plugins: [
+        resolve(),
+        replace({
+          'process.env.NODE_ENV': JSON.stringify(env),
+        }),
+        sourceMaps(),
+        sizeSnapshot(),
+      ],
+    });
 
-export default [
-  buildUmd({ env: 'production' }),
-  buildUmd({ env: 'development' }),
-  buildCjs({ env: 'production' }),
-  buildCjs({ env: 'development' }),
-  buildES(),
-];
+    const buildES = () => ({
+      input,
+      external,
+      output: [
+        {
+          file: pkg.module,
+          format: 'es',
+          sourcemap: true,
+        },
+      ],
+      plugins: [resolve(), babel(babelOptions), sizeSnapshot(), sourceMaps()],
+    });
+
+    return [
+      buildUmd({ env: 'production' }),
+      buildUmd({ env: 'development' }),
+      buildCjs({ env: 'production' }),
+      buildCjs({ env: 'development' }),
+      buildES(),
+    ];
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
+}
+
+export default config;

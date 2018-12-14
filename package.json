@@ -7,7 +7,7 @@
   "scripts": {
     "prebuild": "rm -rf packages/*/dist",
     "bootstrap": "node ./scripts/bootstrap.js",
-    "build": "cross-env NODE_ENV=production tsc --build && rollup -c",
+    "build": "cross-env NODE_ENV=production rollup -c && yarn tsc",
     "storybook": "start-storybook -p 9001",
     "test": "jest --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
     "test:all": "jest --notify --silent --coverage",
@@ -24,6 +24,9 @@
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
+    "@lerna/list": "^3.6.0",
+    "@lerna/package-graph": "^3.6.0",
+    "@lerna/project": "^3.6.0",
     "@nathanvale/babel-preset": "^0.1.1",
     "@storybook/addon-options": "^4.0.12",
     "@storybook/react": "^4.0.12",
