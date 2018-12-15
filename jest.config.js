@@ -51,5 +51,11 @@ module.exports = {
       lines: 90,
       statements: 90,
     },
+    './packages/normalize/src': {
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
+    },
   },
 };
