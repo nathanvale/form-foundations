@@ -33,9 +33,9 @@ function onwarn(warning, warn) {
     warning.code === 'NON_EXISTENT_EXPORT' ||
     warning.code === 'UNUSED_EXTERNAL_IMPORT'
   ) {
-    const { loc, frame, message } = warning;
+    /*    const { loc, frame, message } = warning;
     title(message);
-    info('https://ffjs.org/guide/en#warning-non-existent-or-unused-externals');
+    info('https://ffjs.org/guide/en#warning-non-existent-or-unused-externals'); */
     // TODO: print this to an output file
     /*   info(`${loc.file} (${loc.line}:${loc.column})`);
     if (frame) {

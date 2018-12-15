@@ -1,0 +1,20 @@
+{
+  "parser": "typescript-eslint-parser",
+  "plugins": ["typescript"],
+  "rules": {
+    "typescript/array-type": [0, "array"],
+    "camelcase": 0,
+    "typescript/class-name-casing": 0,
+    "typescript/explicit-function-return-type": 0,
+    "typescript/generic-type-naming": [0, "^T[A-Z][a-zA-Z]+$"],
+    "typescript/interface-name-prefix": [0, "never"],
+    "typescript/member-delimiter-style": 0,
+    "typescript/member-naming": 0,
+    "typescript/member-ordering": 0,
+    "typescript/no-angle-bracket-type-assertion": 0,
+    "typescript/no-array-constructor": 0,
+    "typescript/no-empty-interface": 0,
+    "typescript/no-explicit-any": 0,
+    "typescript/no-inferrable-types": 2
+  }
+}

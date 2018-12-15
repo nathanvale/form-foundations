@@ -296,14 +296,14 @@
     "gzipped": 204
   },
   "/Users/nathanvale/lerna-repo/packages/atoms/dist/ff-atoms.umd.development.js": {
-    "bundled": 2036093,
-    "minified": 556278,
-    "gzipped": 156972
+    "bundled": 2040630,
+    "minified": 557735,
+    "gzipped": 157578
   },
   "/Users/nathanvale/lerna-repo/packages/core/dist/ff-core.umd.development.js": {
-    "bundled": 192175,
-    "minified": 54164,
-    "gzipped": 16624
+    "bundled": 192397,
+    "minified": 54229,
+    "gzipped": 16623
   },
   "/Users/nathanvale/lerna-repo/packages/examples/dist/ff-examples.umd.development.js": {
     "bundled": 450949,
@@ -316,14 +316,14 @@
     "gzipped": 195
   },
   "/Users/nathanvale/lerna-repo/packages/atoms/dist/ff-atoms.umd.production.js": {
-    "bundled": 1264356,
-    "minified": 420416,
-    "gzipped": 118474
+    "bundled": 1262926,
+    "minified": 419857,
+    "gzipped": 118414
   },
   "/Users/nathanvale/lerna-repo/packages/core/dist/ff-core.umd.production.js": {
-    "bundled": 158472,
-    "minified": 43047,
-    "gzipped": 13480
+    "bundled": 158694,
+    "minified": 43112,
+    "gzipped": 13481
   },
   "/Users/nathanvale/lerna-repo/packages/examples/dist/ff-examples.umd.production.js": {
     "bundled": 418396,
@@ -341,7 +341,7 @@
     "gzipped": 6287
   },
   "/Users/nathanvale/lerna-repo/packages/core/dist/ff-core.cjs.production.js": {
-    "bundled": 14797,
+    "bundled": 14927,
     "minified": 8448,
     "gzipped": 2596
   },
@@ -361,7 +361,7 @@
     "gzipped": 6287
   },
   "/Users/nathanvale/lerna-repo/packages/core/dist/ff-core.cjs.development.js": {
-    "bundled": 15396,
+    "bundled": 15526,
     "minified": 9091,
     "gzipped": 2752
   },
@@ -390,7 +390,7 @@
     }
   },
   "/Users/nathanvale/lerna-repo/packages/core/dist/ff-core.esm.js": {
-    "bundled": 14513,
+    "bundled": 14643,
     "minified": 8219,
     "gzipped": 2638,
     "treeshaked": {

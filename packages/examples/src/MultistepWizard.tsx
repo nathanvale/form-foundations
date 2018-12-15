@@ -7,8 +7,6 @@ const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms));
 const required = (value: any) => (value ? undefined : 'Required');
 
 class Wizard extends React.Component<any, any> {
-  static Page = ({ children }: any) => children;
-
   constructor(props) {
     super(props);
     this.state = {
@@ -16,6 +14,8 @@ class Wizard extends React.Component<any, any> {
       values: props.initialValues,
     };
   }
+
+  static Page = ({ children }: any) => children;
 
   next = (values: any) =>
     this.setState((state: any) => ({

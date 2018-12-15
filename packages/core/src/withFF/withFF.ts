@@ -43,7 +43,7 @@ export function withFF<
 >(
   options: WithFFConfig<OuterProps, Values, Payload>,
 ): ComponentDecorator<OuterProps, OuterProps & FormikProps<Values>> {
-  return compose(
+  return compose<any, any>(
     // leverage the awesome withFormik HOC so we can get access to
     // it's form state props and handlers.
     withFormik(options),
@@ -61,5 +61,6 @@ export function withFF<
   );
 }
 
+// eslint-disable-next-line typescript/no-empty-interface
 export interface WithFFConfig<OuterProps, Values, Payload>
   extends WithFormikConfig<OuterProps, Values, Payload> {}

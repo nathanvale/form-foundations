@@ -7,7 +7,8 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "prebuild": "rm -rf packages/*/dist",
-    "build": "cross-env NODE_ENV=production rollup -c && yarn tsc",
+    "build": "cross-env NODE_ENV=production yarn bootstrap && yarn tsc && yarn lint && rollup -c",
+    "lint": "eslint --cache --ignore-path .gitignore --ext .tsx,.ts ./packages/*/src",
     "storybook": "start-storybook -p 9001",
     "test": "jest --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
     "test:all": "jest --notify --silent --coverage",
@@ -46,6 +47,8 @@
     "console.table": "^0.10.0",
     "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
+    "eslint": "^5.10.0",
+    "eslint-plugin-typescript": "^0.14.0",
     "fork-ts-checker-webpack-plugin": "^0.5.1",
     "install": "^0.12.2",
     "jest": "^23.6.0",
@@ -77,7 +80,8 @@
     "tslint-config-standard": "^8.0.1",
     "tslint-react": "^3.6.0",
     "turbocolor": "^2.6.1",
-    "typescript": "^3.2.2",
+    "typescript": "3.1.1",
+    "typescript-eslint-parser": "^21.0.2",
     "uglify-es": "^3.3.9"
   }
 }
