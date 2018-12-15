@@ -4,17 +4,16 @@ import {
   TextFieldProps as TextFieldAtomProps,
 } from '@form-foundations/atoms';
 import {
-  FieldConfig as FormikFieldConfig,
   FieldProps,
-  GenericFieldHTMLAttributes,
+  FormikActions,
+  FormikComputedProps,
+  FormikErrors,
+  FormikHandlers,
   FormikProps,
+  FormikRegistration,
   FormikSharedConfig,
   FormikState,
-  FormikActions,
-  FormikHandlers,
-  FormikComputedProps,
-  FormikRegistration,
-  FormikErrors,
+  GenericFieldHTMLAttributes,
 } from 'formik';
 import * as React from 'react';
 

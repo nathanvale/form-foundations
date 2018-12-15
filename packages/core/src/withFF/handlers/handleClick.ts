@@ -1,9 +1,4 @@
-import {
-  warnAboutMissingIdentifier,
-  isString,
-  isFunction,
-  setIn,
-} from '../../utils';
+import { isFunction, isString, warnAboutMissingIdentifier } from '../../utils';
 
 export function handleClick({ setState }) {
   const hbCache: {

@@ -376,9 +376,9 @@
     "gzipped": 71
   },
   "/Users/nathanvale/lerna-repo/packages/atoms/dist/ff-atoms.esm.js": {
-    "bundled": 11180,
-    "minified": 8620,
-    "gzipped": 2390,
+    "bundled": 11171,
+    "minified": 8619,
+    "gzipped": 2388,
     "treeshaked": {
       "rollup": {
         "code": 1707,
@@ -406,7 +406,7 @@
   "/Users/nathanvale/lerna-repo/packages/examples/dist/ff-examples.esm.js": {
     "bundled": 30430,
     "minified": 19506,
-    "gzipped": 3532,
+    "gzipped": 3531,
     "treeshaked": {
       "rollup": {
         "code": 2752,

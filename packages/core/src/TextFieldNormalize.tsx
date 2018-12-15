@@ -1,10 +1,7 @@
-import {
-  TextField as TextFieldAtom,
-  TextFieldProps,
-} from '@form-foundations/atoms';
-import { Field } from './Field';
+import { TextField as TextFieldAtom } from '@form-foundations/atoms';
 import * as React from 'react';
 import { branch, compose, mapProps } from 'recompose';
+import { Field } from './Field';
 import { materialUIMapper, normalizeMapper } from './helpers';
 import { TextFieldNormalizeProps } from './types';
 

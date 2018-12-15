@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { connect, getIn, FormikContext } from 'formik';
 import { Button } from '@form-foundations/atoms';
+import { connect, FormikContext } from 'formik';
+import * as React from 'react';
 
 const ButtonSubmitInner = (props: { formik: FormikContext<any> }) => {
   return (
