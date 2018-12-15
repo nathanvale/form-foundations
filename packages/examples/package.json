@@ -12,7 +12,8 @@
   "typings": "dist/typings/index.d.ts",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@form-foundations/core": "*"
+    "@form-foundations/core": "*",
+    "prop-types": "^15.6.2"
   },
   "peerDependencies": {
     "react": "^16.3.0",

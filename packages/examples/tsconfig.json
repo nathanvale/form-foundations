@@ -3,7 +3,7 @@
   "compilerOptions": {
     "rootDir": "src",
     "baseUrl": ".",
-    "declarationDir": "dist/typings"
+    "declarationDir": "dist"
   },
   "references": [{ "path": "../core" }, { "path": "../widgets" }]
 }

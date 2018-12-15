@@ -12,9 +12,13 @@
   "typings": "dist/typings/index.d.ts",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@form-foundations/atoms":"*",
+    "@form-foundations/atoms": "*",
     "formik": "^1.4.0",
-    "lodash": "^4.0.0",
+    "lodash": "^4.17.11",
+    "lodash-es": "^4.17.11",
+    "prop-types": "^15.6.1",
+    "recompose": "^0.30.0",
+    "warning": "^4.0.2",
     "yup": "^0.26.6"
   },
   "peerDependencies": {

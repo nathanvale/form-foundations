@@ -1,6 +1,0 @@
-0 silly argv [ 'all' ]
-1 notice cli vundefined
-2 verbose rootPath /Users/nathanvale/lerna-repo
-3 error TypeError: Cannot read property '0' of undefined
-3 error     at parseViewOptions (/Users/nathanvale/lerna-repo/node_modules/@lerna/listable/lib/listable-format.js:29:26)
-3 error     at Object.listableFormat [as format] (/Users/nathanvale/lerna-repo/node_modules/@lerna/listable/lib/listable-format.js:11:23)

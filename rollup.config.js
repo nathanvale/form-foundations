@@ -212,8 +212,9 @@ if (process.env.NODE_ENV === 'production') {
         sourceMaps(),
       ],
     });
-    return []
-      .concat(
+    return (
+      []
+        /*  .concat(
         packages.map(({ location, name }) =>
           buildUmd({ env: 'production', location, name }),
         ),
@@ -232,10 +233,11 @@ if (process.env.NODE_ENV === 'production') {
         packages.map(({ location, name }) =>
           buildCjs({ env: 'development', location, name }),
         ),
-      )
-      .concat(
-        packages.map(({ location, name }) => buildES({ location, name })),
-      );
+      ) */
+        .concat(
+          packages.map(({ location, name }) => buildES({ location, name })),
+        )
+    );
   } catch (e) {
     console.log(e);
     process.exit(1);
