@@ -1588,6 +1588,10 @@
     csstype "^2.0.0"
     indefinite-observable "^1.0.1"
 
+"@types/lodash@^4.14.119":
+  version "4.14.119"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.119.tgz#be847e5f4bc3e35e46d041c394ead8b603ad8b39"
+
 "@types/node@*":
   version "10.12.14"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.14.tgz#c03b6380c5c301be0499ecd143b99b76ebe45678"
@@ -1613,12 +1617,22 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/recompose@^0.30.2":
+  version "0.30.2"
+  resolved "https://registry.yarnpkg.com/@types/recompose/-/recompose-0.30.2.tgz#3bdb7fd37460242ef82f6d6a7428e3c96d3a1b9a"
+  dependencies:
+    "@types/react" "*"
+
 "@types/storybook__react@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/storybook__react/-/storybook__react-4.0.0.tgz#52cc452fbab599568d595075a90142ef4a1233f6"
   dependencies:
     "@types/react" "*"
     "@types/webpack-env" "*"
+
+"@types/warning@^3.0.0":
+  version "3.0.0"
+  resolved "http://registry.npmjs.org/@types/warning/-/warning-3.0.0.tgz#0d2501268ad8f9962b740d387c4654f5f8e23e52"
 
 "@types/webpack-env@*":
   version "1.13.6"

@@ -2,10 +2,10 @@
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
     "rootDir": "src",
-    "baseUrl": ".",
+    "baseUrl": "../../",
     "declarationDir": "dist"
   },
   "references": [{ "path": "../atoms/tsconfig.json" }],
-  "include": ["src"],
+  "include": ["src", "../../types"],
   "exclude": ["node_modules", "dist"]
 }

@@ -406,7 +406,7 @@
   "/Users/nathanvale/lerna-repo/packages/examples/dist/ff-examples.esm.js": {
     "bundled": 30430,
     "minified": 19506,
-    "gzipped": 3531,
+    "gzipped": 3532,
     "treeshaked": {
       "rollup": {
         "code": 2752,
