@@ -37,7 +37,7 @@ const SignUp = () => (
           alert(JSON.stringify(values, null, 2));
         }, 500);
       }}
-      render={({ errors, touched }) => (
+      render={() => (
         <Form>
           <label htmlFor="firstName">First Name</label>
           <Field name="firstName" placeholder="Jane" type="text" />

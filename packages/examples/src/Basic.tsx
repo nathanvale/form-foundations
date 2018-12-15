@@ -6,7 +6,6 @@ const Basic = () => (
   <div>
     <h1>Sign Up</h1>
     <Formik
-      hmm
       initialValues={{
         firstName: '',
         lastName: '',

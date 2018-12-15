@@ -5,11 +5,7 @@
     "baseUrl": "../../",
     "declarationDir": "dist"
   },
-  "references": [
-    { "path": "../core" },
-    { "path": "../widgets" },
-    { "path": "../normalize", "path": "../atoms" }
-  ],
+  "references": [],
   "include": ["src", "../../types"],
   "exclude": ["node_modules", "dist"]
 }

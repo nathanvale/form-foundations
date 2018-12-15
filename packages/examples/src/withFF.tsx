@@ -1,19 +1,15 @@
 import {
-  Field,
-  Form,
-  FormikProps,
-  withFF,
   ButtonSubmit,
-  TextFieldNormalize,
-  TextField,
-  SelectFieldNative,
+  Form,
   RadioGroupField,
+  SelectFieldNative,
+  TextField,
+  TextFieldNormalize,
+  withFF,
 } from '@form-foundations/core';
-
-import { onlyLetters } from '@origin-digital/normalize';
-
-import MenuItem from '@material-ui/core/MenuItem';
-import { Box, Button } from '@origin-digital/style-guide';
+import { FormikProps } from 'formik';
+import { onlyLetters } from '@form-foundations/normalize';
+import { Box, Button } from '@form-foundations/atoms';
 import * as React from 'react';
 import * as Yup from 'yup';
 
@@ -51,7 +47,11 @@ export interface Field {
 }
 
 type FormProps = {
-  user: { email: string };
+  salutation: string;
+  email: string;
+  firstName: string;
+  surname: string;
+  sex: string;
 };
 interface FormValues {
   email: string;
@@ -60,7 +60,7 @@ interface FormValues {
 const formEnhancer = withFF<FormProps, FormValues>({
   // GOTCHA Even if your form is not receiving any props from its parent, you
   // *MUST* use mapPropsToValues to initialize your forms empty state.
-  mapPropsToValues: props => ({
+  mapPropsToValues: () => ({
     salutation: '',
     email: '',
     firstName: '',
@@ -216,8 +216,9 @@ const InnerForm: React.SFC<FormProps & FormikProps<FormValues>> = ({
           type="button"
           onClick={handleReset}
           disabled={(!dirty || isSubmitting) && isEmpty(errors)}
-          text="Reset"
-        />
+        >
+          Reset
+        </Button>
         <Box width={10} />
         <ButtonSubmit />
       </Box>

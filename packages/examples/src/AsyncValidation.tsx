@@ -3,11 +3,11 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import Debug from './Debug';
 
 // Async Validation
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms));
 
-const validate = values => {
+const validate = (values: any) => {
   return sleep(300).then(() => {
-    let errors = {};
+    let errors: any = {};
 
     if (['admin', 'null', 'god'].includes(values.username)) {
       errors.username = 'Nice try';
@@ -36,7 +36,7 @@ const Username = () => (
           alert(JSON.stringify(values, null, 2));
         });
       }}
-      render={({ errors, touched }) => (
+      render={() => (
         <Form>
           <label htmlFor="username">Username</label>
           <Field name="username" type="text" />

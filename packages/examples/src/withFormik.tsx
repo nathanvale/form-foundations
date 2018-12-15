@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as Yup from 'yup';
-import { withFF } from '@form-foundations/core';
+import { withFF, Form, Field, ErrorMessage } from '@form-foundations/core';
 import Debug from './Debug';
 
-const formikEnhancer = withFF({
+const formikEnhancer = withFF<{ user: any }, {}>({
   mapPropsToValues: props => ({ email: props.user.email }),
   validationSchema: Yup.object().shape({
     email: Yup.string()
@@ -20,17 +20,7 @@ const formikEnhancer = withFF({
 });
 
 const withFFInner = props => {
-  const {
-    values,
-    touched,
-    errors,
-    dirty,
-    isSubmitting,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    handleReset,
-  } = props;
+  const { dirty, isSubmitting, handleReset } = props;
   return (
     <Form>
       <label htmlFor="email">Email</label>

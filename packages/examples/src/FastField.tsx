@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Formik, FastField, Form } from 'formik';
 import Debug from './Debug';
 
-class Input extends React.Component {
+class Input extends React.Component<any, any> {
   renders = 0;
   render() {
     const { field, form, ...rest } = this.props;
@@ -19,7 +19,6 @@ const Basic = () => (
   <div>
     <h1>Sign Up</h1>
     <Formik
-      fuck
       initialValues={{
         firstName: '',
         lastName: '',

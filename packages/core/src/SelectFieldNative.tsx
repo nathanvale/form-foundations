@@ -5,7 +5,7 @@ import { mapProps } from 'recompose';
 import { materialUIMapper } from './helpers';
 import { SelectFieldNativeProps } from './types';
 
-export const EnhancedSelectFieldNative = mapProps(materialUIMapper)(
+export const EnhancedSelectFieldNative: any = mapProps(materialUIMapper)(
   SelectFieldNativeAtom,
 );
 

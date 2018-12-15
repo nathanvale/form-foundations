@@ -8,7 +8,7 @@
     "src"
   ],
   "main": "dist/index.js",
-  "module": "dist/widgets.esm.js",
+  "module": "dist/ff-widgets.esm.js",
   "typings": "dist/index.d.ts",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",

@@ -3,7 +3,6 @@
     "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "declarationDir": "dist/typings",
     "sourceMap": true,
     "typeRoots": ["node_modules/@types"],
     "allowSyntheticDefaultImports": true,
@@ -31,7 +30,5 @@
         "tags": ["styled", "css"]
       }
     ]
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  }
 }

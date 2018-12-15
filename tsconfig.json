@@ -4,6 +4,7 @@
     { "path": "./packages/atoms/tsconfig.json" },
     { "path": "./packages/core/tsconfig.json" },
     { "path": "./packages/examples/tsconfig.json" },
-    { "path": "./packages/widgets/tsconfig.json" }
+    { "path": "./packages/widgets/tsconfig.json" },
+    { "path": "./packages/normalize/tsconfig.json" }
   ]
 }

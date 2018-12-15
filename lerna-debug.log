@@ -1,0 +1,9 @@
+0 silly argv { _: [ 'ls' ],
+0 silly argv   json: true,
+0 silly argv   lernaVersion: '3.6.0',
+0 silly argv   '$0': '/Users/nathanvale/lerna-repo/node_modules/.bin/lerna' }
+1 notice cli v3.6.0
+2 verbose rootPath /Users/nathanvale/lerna-repo
+3 error JSONError: Unexpected token } in JSON at position 312 while parsing near '...rejs2": "^7.0.0",  },  "peerDependenci...' in packages/normalize/package.json
+3 error     at module.exports (/Users/nathanvale/lerna-repo/node_modules/parse-json/index.js:26:19)
+3 error     at parse (/Users/nathanvale/lerna-repo/node_modules/load-json-file/index.js:8:29)

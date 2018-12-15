@@ -13,8 +13,6 @@ const FieldLevelValidation = () => (
         alert(JSON.stringify(values, null, 2));
       }}
       render={({
-        errors,
-        touched,
         setFieldValue,
         setFieldTouched,
         validateField,

@@ -1,0 +1,17 @@
+{
+  "name": "@form-foundations/normalize",
+  "version": "0.1.0",
+  "description": " ",
+  "license": "UNLICENSED",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/ff-normalize.esm.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "@babel/runtime-corejs2": "^7.0.0"
+  },
+  "sideEffects": false
+}

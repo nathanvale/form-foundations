@@ -2,12 +2,12 @@ import * as React from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
 import Debug from './Debug';
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms));
 
-const required = value => (value ? undefined : 'Required');
+const required = (value: any) => (value ? undefined : 'Required');
 
-class Wizard extends React.Component {
-  static Page = ({ children }) => children;
+class Wizard extends React.Component<any, any> {
+  static Page = ({ children }: any) => children;
 
   constructor(props) {
     super(props);
@@ -17,9 +17,9 @@ class Wizard extends React.Component {
     };
   }
 
-  next = values =>
-    this.setState(state => ({
-      page: Math.min(state.page + 1, this.props.children.length - 1),
+  next = (values: any) =>
+    this.setState((state: any) => ({
+      page: Math.min(state.page + 1, Array(this.props.children).length - 1),
       values,
     }));
 
@@ -29,7 +29,7 @@ class Wizard extends React.Component {
     }));
 
   validate = values => {
-    const activePage = React.Children.toArray(this.props.children)[
+    const activePage: any = React.Children.toArray(this.props.children)[
       this.state.page
     ];
     return activePage.props.validate ? activePage.props.validate(values) : {};
@@ -59,7 +59,7 @@ class Wizard extends React.Component {
         enableReinitialize={false}
         validate={this.validate}
         onSubmit={this.handleSubmit}
-        render={({ values, handleSubmit, isSubmitting, handleReset }) => (
+        render={({ handleSubmit, isSubmitting }) => (
           <form onSubmit={handleSubmit}>
             {activePage}
             <div className="buttons">
@@ -140,7 +140,7 @@ const App = () => (
       </Wizard.Page>
       <Wizard.Page
         validate={values => {
-          const errors = {};
+          const errors: any = {};
           if (!values.email) {
             errors.email = 'Required';
           }

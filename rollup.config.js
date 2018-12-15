@@ -105,6 +105,7 @@ if (process.env.NODE_ENV === 'production') {
         '@form-foundations/core',
         '@form-foundations/examples',
         '@form-foundations/widgets',
+        '@form-foundations/normalize',
       ],
       output: {
         name: 'FF' + toTitleCase(name.match(/[ \w-]+$/g)),
@@ -125,6 +126,7 @@ if (process.env.NODE_ENV === 'production') {
           '@form-foundations/core': 'FFCore',
           '@form-foundations/examples': 'FFExamples',
           '@form-foundations/widgets': 'FFWidgets',
+          '@form-foundations/normalize': 'FFNormalize',
         },
       },
 

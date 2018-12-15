@@ -24,11 +24,11 @@ const SignIn = () => (
         <Form>
           <FieldArray
             name="friends"
-            render={({ insert, remove, push }) => (
+            render={({ remove, push }) => (
               <div>
                 {values.friends.length > 0 &&
-                  values.friends.map((friend, index) => (
-                    <div className="row" key={index}>
+                  values.friends.map(index => (
+                    <div className="row" key={String(index)}>
                       <div className="col">
                         <label htmlFor={`friends.${index}.name`}>Name</label>
                         <Field
@@ -59,7 +59,7 @@ const SignIn = () => (
                         <button
                           type="button"
                           className="secondary"
-                          onClick={() => remove(index)}
+                          onClick={() => remove(Number(index))}
                         >
                           X
                         </button>

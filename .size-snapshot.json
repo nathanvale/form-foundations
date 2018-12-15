@@ -376,16 +376,16 @@
     "gzipped": 71
   },
   "/Users/nathanvale/lerna-repo/packages/atoms/dist/ff-atoms.esm.js": {
-    "bundled": 11171,
-    "minified": 8619,
-    "gzipped": 2388,
+    "bundled": 47809,
+    "minified": 31180,
+    "gzipped": 6137,
     "treeshaked": {
       "rollup": {
-        "code": 1707,
-        "import_statements": 767
+        "code": 1716,
+        "import_statements": 776
       },
       "webpack": {
-        "code": 2994
+        "code": 3000
       }
     }
   },
@@ -404,16 +404,16 @@
     }
   },
   "/Users/nathanvale/lerna-repo/packages/examples/dist/ff-examples.esm.js": {
-    "bundled": 30430,
-    "minified": 19506,
-    "gzipped": 3531,
+    "bundled": 29648,
+    "minified": 19282,
+    "gzipped": 3475,
     "treeshaked": {
       "rollup": {
-        "code": 2752,
+        "code": 2714,
         "import_statements": 915
       },
       "webpack": {
-        "code": 4496
+        "code": 4458
       }
     }
   },
@@ -421,6 +421,20 @@
     "bundled": 45,
     "minified": 41,
     "gzipped": 57,
+    "treeshaked": {
+      "rollup": {
+        "code": 0,
+        "import_statements": 0
+      },
+      "webpack": {
+        "code": 951
+      }
+    }
+  },
+  "/Users/nathanvale/lerna-repo/packages/normalize/dist/ff-normalize.esm.js": {
+    "bundled": 675,
+    "minified": 323,
+    "gzipped": 198,
     "treeshaked": {
       "rollup": {
         "code": 0,

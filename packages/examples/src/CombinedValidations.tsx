@@ -10,14 +10,15 @@ const Schema = Yup.object().shape({
 // Async Validation
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-const validate = values =>
+const validate = () =>
   sleep(300).then(() => {
     throw {
       zip: 'This field is required',
     };
   });
 
-const isRequired = message => value => (!!value ? undefined : message);
+const isRequired = (message: any) => (value: any) =>
+  Boolean(value) ? undefined : message;
 
 const FieldLevelValidation = () => (
   <div>
@@ -35,14 +36,7 @@ const FieldLevelValidation = () => (
           alert(JSON.stringify(values, null, 2));
         });
       }}
-      render={({
-        errors,
-        touched,
-        setFieldValue,
-        setFieldTouched,
-        validateField,
-        validateForm,
-      }) => (
+      render={() => (
         <Form>
           <label htmlFor="username">Username</label>
           <div>
