@@ -1,4 +1,4 @@
-import { onlyLetters } from './onlyLetters.js';
+import { onlyLetters } from './onlyLetters';
 
 describe('(Normalize) phone', () => {
   it('should return empty string if value is undefined', () => {

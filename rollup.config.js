@@ -74,25 +74,27 @@ if (process.env.NODE_ENV === 'production') {
     const babelOptions = ({
       transformRuntime = false,
       useESModules = false,
-    } = {}) => ({
-      exclude: /node_modules/,
-      runtimeHelpers: transformRuntime,
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      plugins: [
-        'annotate-pure-calls',
-        'dev-expression',
-        ['transform-rename-import', { replacements }],
-        transformRuntime && [
-          '@babel/transform-runtime',
-          {
-            corejs: 2,
-            helpers: true,
-            regenerator: true,
-            useESModules,
-          },
-        ],
-      ].filter(Boolean),
-    });
+    } = {}) => {
+      return {
+        exclude: /node_modules/,
+        runtimeHelpers: transformRuntime,
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        plugins: [
+          useESModules && 'annotate-pure-calls',
+          'dev-expression',
+          ['transform-rename-import', { replacements }],
+          transformRuntime && [
+            '@babel/transform-runtime',
+            {
+              corejs: 2,
+              helpers: true,
+              regenerator: true,
+              useESModules,
+            },
+          ],
+        ].filter(Boolean),
+      };
+    };
 
     const buildUmd = ({ env, location, name }) => ({
       onwarn,
@@ -214,9 +216,8 @@ if (process.env.NODE_ENV === 'production') {
         sourceMaps(),
       ],
     });
-    return (
-      []
-        /*  .concat(
+    return []
+      .concat(
         packages.map(({ location, name }) =>
           buildUmd({ env: 'production', location, name }),
         ),
@@ -235,11 +236,10 @@ if (process.env.NODE_ENV === 'production') {
         packages.map(({ location, name }) =>
           buildCjs({ env: 'development', location, name }),
         ),
-      ) */
-        .concat(
-          packages.map(({ location, name }) => buildES({ location, name })),
-        )
-    );
+      )
+      .concat(
+        packages.map(({ location, name }) => buildES({ location, name })),
+      );
   } catch (e) {
     console.log(e);
     process.exit(1);

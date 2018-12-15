@@ -1,7 +1,7 @@
-import React from "react";
-import { cleanup, render, RenderResult } from "react-testing-library";
-import { connect, Field, Form, withFF } from "../";
-import { noop } from "./testHelpers";
+import React from 'react';
+import { cleanup, render, RenderResult } from 'react-testing-library';
+import { connect, Field, withFF } from '.';
+import { noop } from './__integration-tests__/helpers';
 
 interface Values {
   email: string;
@@ -10,17 +10,17 @@ interface Values {
 afterEach(cleanup);
 
 export function renderConnect<Values = {}>(
-  Component: React.ComponentType<any>
+  Component: React.ComponentType<any>,
 ): RenderResult & { getProps: () => any } {
   let injected: any;
 
   const C = props => (injected = props) && <Component {...props} />;
-  C.displayName = "C";
+  C.displayName = 'C';
 
   const ConnectedComponent = connect<any, Values>(C);
 
   const FFForm = withFF<{}, Values>({
-    handleSubmit: noop
+    handleSubmit: noop,
   })(props => (
     <React.Fragment>
       <form onSubmit={props.handleSubmit}>
@@ -42,12 +42,12 @@ export function renderConnect<Values = {}>(
     getProps() {
       return injected;
     },
-    ...render(<FFForm />)
+    ...render(<FFForm />),
   };
 }
 
-describe("connect()", () => {
-  it("should connect the FF context", () => {
+describe('connect()', () => {
+  it('should connect the FF context', () => {
     const Component = props => <div {...props} />;
     const { getProps } = renderConnect<Values>(Component);
     const props = getProps();

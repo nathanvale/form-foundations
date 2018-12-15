@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { cleanup, fireEvent, wait } from 'react-testing-library';
-import { FFProps } from '../../types';
 import * as Yup from 'yup';
-import { renderWithFF, noop } from '../testHelpers';
+import { FFProps } from '../types';
+import { renderWithFF } from '../__integration-tests__/helpers';
 
 interface Values {
   firstName: string;
@@ -78,7 +78,7 @@ describe('withFF()', () => {
   });
 
   it('should call render child element', () => {
-    const { container, debug } = renderWithFF<Values>(Form, initialValues);
+    const { container } = renderWithFF<Values>(Form, initialValues);
     expect(container.firstChild).toBeDefined();
   });
 

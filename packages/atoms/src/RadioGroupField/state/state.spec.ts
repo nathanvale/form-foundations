@@ -15,7 +15,7 @@ describe('state', () => {
 
   describe('initialState', () => {
     it('should be configured correctly', () => {
-      expect(initialState()).toEqual({});
+      expect(initialState()).toEqual({ value: '' });
     });
   });
 });

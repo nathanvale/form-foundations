@@ -4,11 +4,7 @@ const base = require('./jest.settings.js');
 module.exports = {
   ...base,
   setupTestFrameworkScriptFile: './jest.setup.js',
-  projects: [
-    '<rootDir>',
-    '<rootDir>/packages/*/jest.config.js',
-    '<rootDir>/scripts/jest.config.js',
-  ],
+  projects: ['<rootDir>', '<rootDir>/packages/*/jest.config.js'],
   coverageReporters: ['lcov', 'text-summary'],
   coverageDirectory: '<rootDir>/coverage/',
   collectCoverageFrom: [
