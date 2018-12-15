@@ -1,7 +1,7 @@
 import { StandardProps } from '@material-ui/core';
 import {
   FormControlClassKey,
-  FormControlProps
+  FormControlProps,
 } from '@material-ui/core/FormControl';
 import { FormHelperTextProps } from '@material-ui/core/FormHelperText';
 import { FormLabelProps } from '@material-ui/core/FormLabel';

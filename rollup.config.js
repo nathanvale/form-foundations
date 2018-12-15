@@ -8,17 +8,43 @@ import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import uglify from 'rollup-plugin-uglify-es';
 import { minify } from 'uglify-es';
-import mkdirp from 'mkdirp';
+import tc from 'turbocolor';
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const inputFile = path.join(__dirname, 'src/index.js');
 
-function ensureDirectoryExistence(dirname) {
-  console.log('dirname', dirname);
-  if (fs.existsSync(dirname)) {
-    return true;
+// export const stderr = console.error.bind(console);
+
+function toTitleCase(str) {
+  return String(str).replace(/\w\S*/g, function(txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
+function title(str) {
+  console.error(`${tc.bold.yellow('(!)')} ${tc.bold.yellow(str)}`);
+}
+
+function info(url) {
+  console.error(tc.gray(url));
+}
+
+function onwarn(warning, warn) {
+  if (
+    warning.code === 'NON_EXISTENT_EXPORT' ||
+    warning.code === 'UNUSED_EXTERNAL_IMPORT'
+  ) {
+    const { loc, frame, message } = warning;
+    title(message);
+    info('https://ffjs.org/guide/en#warning-non-existent-or-unused-externals');
+    // TODO: print this to an output file
+    /*   info(`${loc.file} (${loc.line}:${loc.column})`);
+    if (frame) {
+      info(frame);
+    } */
+    return;
   }
-  fs.mkdirSync(dirname);
+  // Use default for everything else
+  warn(warning);
 }
 
 async function config() {
@@ -28,46 +54,77 @@ async function config() {
     const template = ({ name }) => `'use strict'
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./${name.match(/[ \w-]+$/g)}.cjs.production.js');
+  module.exports = require('./${'ff-' +
+    name.match(/[ \w-]+$/g)}.cjs.production.js');
 } else {
-  module.exports = require('./${name.match(/[ \w-]+$/g)}.cjs.development.js');
+  module.exports = require('./${'ff-' +
+    name.match(/[ \w-]+$/g)}.cjs.development.js');
 }`;
 
     packages.forEach(({ name, location }) => {
-      ensureDirectoryExistence(`${location}/dist/`);
+      const path = `${location}/dist/`;
+      if (!fs.existsSync(path)) {
+        fs.mkdirSync(path);
+      }
       fs.writeFileSync(`${location}/dist/index.js`, template({ name }));
     });
 
-    const input = './compiled/index.js';
     const external = id => !id.startsWith('.') && !id.startsWith('/');
     const replacements = [{ original: 'lodash', replacement: 'lodash-es' }];
-    const babelOptions = {
+    const babelOptions = ({
+      transformRuntime = false,
+      useESModules = false,
+    } = {}) => ({
       exclude: /node_modules/,
-      runtimeHelpers: true,
+      runtimeHelpers: transformRuntime,
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
       plugins: [
         'annotate-pure-calls',
         'dev-expression',
         ['transform-rename-import', { replacements }],
-      ],
-    };
+        transformRuntime && [
+          '@babel/transform-runtime',
+          {
+            corejs: 2,
+            helpers: true,
+            regenerator: true,
+            useESModules,
+          },
+        ],
+      ].filter(Boolean),
+    });
 
     const buildUmd = ({ env, location, name }) => ({
+      onwarn,
       input: `${location}/src/index.ts`,
-      external: ['react', 'react-native', 'styled-components'],
+      external: [
+        'react',
+        'react-native',
+        'styled-components',
+        '@form-foundations/atoms',
+        '@form-foundations/core',
+        '@form-foundations/examples',
+        '@form-foundations/widgets',
+      ],
       output: {
-        name: name,
+        name: 'FF' + toTitleCase(name.match(/[ \w-]+$/g)),
         format: 'umd',
         sourcemap: true,
         file:
           env === 'production'
-            ? `${location}/dist/${name.match(/[ \w-]+$/g)}.umd.${env}.js`
-            : `${location}/dist/${name.match(/[ \w-]+$/g)}.umd.${env}.js`,
+            ? `${location}/dist/${'ff-' +
+                name.match(/[ \w-]+$/g)}.umd.${env}.js`
+            : `${location}/dist/${'ff-' +
+                name.match(/[ \w-]+$/g)}.umd.${env}.js`,
         exports: 'named',
         globals: {
           react: 'React',
           'react-native': 'ReactNative',
           'styled-components': 'styled',
+          '@form-foundations/atoms': 'FFAtoms',
+          '@form-foundations/core': 'FFCore',
+          '@form-foundations/examples': 'FFExamples',
+          '@form-foundations/widgets': 'FFWidgets',
         },
       },
 
@@ -78,7 +135,7 @@ if (process.env.NODE_ENV === 'production') {
         replace({
           'process.env.NODE_ENV': JSON.stringify(env),
         }),
-        babel(babelOptions),
+        babel(babelOptions()),
         commonjs({
           include: /node_modules/,
           namedExports: {
@@ -112,10 +169,12 @@ if (process.env.NODE_ENV === 'production') {
     });
 
     const buildCjs = ({ env, location, name }) => ({
+      onwarn,
       input: `${location}/src/index.ts`,
       external,
       output: {
-        file: `${location}/dist/${name.match(/[ \w-]+$/g)}.cjs.${env}.js`,
+        file: `${location}/dist/${'ff-' +
+          name.match(/[ \w-]+$/g)}.cjs.${env}.js`,
         format: 'cjs',
         sourcemap: true,
       },
@@ -123,21 +182,22 @@ if (process.env.NODE_ENV === 'production') {
         resolve({
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }),
+        babel(babelOptions({ transformRuntime: true })),
         replace({
           'process.env.NODE_ENV': JSON.stringify(env),
         }),
-        babel(babelOptions),
         sourceMaps(),
         sizeSnapshot(),
       ],
     });
 
     const buildES = ({ location, name }) => ({
+      onwarn,
       input: `${location}/src/index.ts`,
       external,
       output: [
         {
-          file: `${location}/dist/${name.match(/[ \w-]+$/g)}.esm.js`,
+          file: `${location}/dist/${'ff-' + name.match(/[ \w-]+$/g)}.esm.js`,
           format: 'es',
           sourcemap: true,
         },
@@ -147,7 +207,7 @@ if (process.env.NODE_ENV === 'production') {
           extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }),
         ,
-        babel(babelOptions),
+        babel(babelOptions({ transformRuntime: true, useESModules: true })),
         sizeSnapshot(),
         sourceMaps(),
       ],
@@ -176,13 +236,6 @@ if (process.env.NODE_ENV === 'production') {
       .concat(
         packages.map(({ location, name }) => buildES({ location, name })),
       );
-    /*return [
-      buildUmd({ env: 'production' }),
-        buildUmd({ env: 'development' }),
-           buildCjs({ env: 'production' }),
-      buildCjs({ env: 'development' }),
-      buildES(), 
-    ];*/
   } catch (e) {
     console.log(e);
     process.exit(1);
