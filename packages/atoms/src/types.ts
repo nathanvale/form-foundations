@@ -13,7 +13,9 @@ export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 export type SelectFieldNativeProps = { options: any } & TextFieldProps;
 
-export type TextFieldProps = { helperText?: string } & MUITextFieldProps;
+export type TextFieldProps = {
+  helperText?: string | undefined;
+} & MUITextFieldProps;
 
 export type RadioProps = {
   error?: boolean;
@@ -35,9 +37,7 @@ export interface RadioGroupFieldProps
   label?: React.ReactNode;
   FormLabelProps?: Partial<FormLabelProps>;
   id?: string;
-  onChange?: React.ChangeEventHandler<
-    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-  >;
+  onChange?: (event: React.ChangeEvent<{}>, value: string) => void;
   value?: string;
   name?: string;
   placeholder?: string;

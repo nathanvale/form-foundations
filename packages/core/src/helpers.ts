@@ -85,8 +85,8 @@ export function getFieldHelperText({
   errors: FormikErrors<{}>;
   name: string;
   touched: FormikTouched<{}>;
-  helperText: string;
-}): string {
+  helperText: string | undefined;
+}): string | undefined {
   return isFieldShowingError({ errors, name, touched })
     ? fieldError({ errors, name })
     : helperText;

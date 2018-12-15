@@ -102,4 +102,4 @@ export const enhance = compose<RadioGroupFieldInnerProps, RadioGroupFieldProps>(
   withProps(console.log),
 );
 
-export const RadioGroupField = enhance(RadioGroupFieldInner);
+export const RadioGroupField = enhance(RadioGroupFieldInner as any);
