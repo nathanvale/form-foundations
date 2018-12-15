@@ -8,10 +8,9 @@ module.exports = {
   coverageReporters: ['lcov', 'text-summary'],
   coverageDirectory: '<rootDir>/coverage/',
   collectCoverageFrom: [
-    '**/*.{ts,tsx,js}',
-    '!**/dist/**',
-    '!**/coverage/**',
-    '!**/index.{ts,tsx,js}',
+    'src/**/*.{ts,tsx,js}',
+    '!dist/**',
+    '!src/**/index.{ts,tsx,js}',
     '!babel.config.js',
     '!jest.config.js',
   ],

@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap": "node ./scripts/bootstrap.js",
+    "bootstrap": "lerna bootstrap",
     "prebuild": "rm -rf packages/*/dist",
     "build": "cross-env NODE_ENV=production rollup -c && yarn tsc",
     "storybook": "start-storybook -p 9001",
