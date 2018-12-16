@@ -8,14 +8,15 @@
     "bootstrap": "lerna bootstrap",
     "prebuild": "rm -rf packages/*/dist",
     "build": "cross-env NODE_ENV=production yarn bootstrap && yarn tsc && yarn lint && rollup -c",
-    "lint": "eslint --cache --ignore-path .gitignore --ext .tsx,.ts ./packages/*/src",
+    "precommit": "lint-staged",
+    "format": "prettier --write  \"**/*.{ts,tsx,json,md}\" ",
+    "lint": "eslint --fix --cache --ignore-path .gitignore --ext .tsx,.ts,.js ./packages/*/src *.js",
     "storybook": "start-storybook -p 9001",
     "test": "jest --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
     "test:all": "jest --notify --silent --coverage",
     "test:watch": "yarn test --watch --silent=false --collectCoverage=false",
     "tsc": "tsc --build",
-    "tsc:watch": "yarn tsc --watch",
-    "format": "prettier --write \"packages/**/*.{ts,tsx,json,md,css}\" \"*.{js,json,md}\" "
+    "tsc:watch": "yarn tsc --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -55,6 +56,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-typescript": "^0.14.0",
     "fork-ts-checker-webpack-plugin": "^0.5.1",
+    "husky": "^1.2.1",
     "install": "^0.12.2",
     "jest": "^23.6.0",
     "jest-diff": "^23.6.0",
@@ -62,6 +64,7 @@
     "jscodeshift": "^0.6.2",
     "lerna": "^3.6.0",
     "lerna-get-packages": "^1.0.0",
+    "lint-staged": "^8.1.0",
     "mkdirp": "^0.5.1",
     "prettier": "^1.15.3",
     "raw-loader": "^1.0.0",
@@ -89,5 +92,12 @@
     "typescript": "3.1.1",
     "typescript-eslint-parser": "^21.0.2",
     "uglify-es": "^3.3.9"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js}": [
+      "yarn lint",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

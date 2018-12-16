@@ -12,7 +12,7 @@ import tc from 'turbocolor';
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
-// export const stderr = console.error.bind(console);
+// export const stderr = console.error.bind(console)
 
 function toTitleCase(str) {
   return String(str).replace(/\w\S*/g, function(txt) {
@@ -161,7 +161,9 @@ if (process.env.NODE_ENV === 'production') {
             {
               output: { comments: false },
               compress: {
+                // eslint-disable-next-line camelcase
                 keep_infinity: true,
+                // eslint-disable-next-line camelcase
                 pure_getters: true,
               },
               warnings: true,

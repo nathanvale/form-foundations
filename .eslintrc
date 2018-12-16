@@ -5,7 +5,7 @@
   "rules": {
     "prettier/prettier": "error",
     "typescript/array-type": [0, "array"],
-    "camelcase": 0,
+    "camelcase": 2,
     "typescript/class-name-casing": 0,
     "typescript/explicit-function-return-type": 0,
     "typescript/generic-type-naming": [0, "^T[A-Z][a-zA-Z]+$"],
