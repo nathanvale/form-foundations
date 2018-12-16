@@ -20,14 +20,6 @@ function toTitleCase(str) {
   });
 }
 
-function title(str) {
-  console.error(`${tc.bold.yellow('(!)')} ${tc.bold.yellow(str)}`);
-}
-
-function info(url) {
-  console.error(tc.gray(url));
-}
-
 function onwarn(warning, warn) {
   if (
     warning.code === 'NON_EXISTENT_EXPORT' ||
