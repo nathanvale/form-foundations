@@ -15,7 +15,7 @@
     "test:watch": "yarn test --watch --silent=false --collectCoverage=false",
     "tsc": "tsc --build",
     "tsc:watch": "yarn tsc --watch",
-    "format": "prettier --write \"packages/*/src/**/*.{ts,tsx}\""
+    "format": "prettier --write \"packages/**/*.{ts,tsx,json,md,css}\" \"*.{js,json,md}\" "
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

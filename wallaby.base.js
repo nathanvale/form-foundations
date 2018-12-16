@@ -13,7 +13,7 @@ module.exports = (src = [], tests = []) => wallaby => ({
   debug: true,
   env: {
     type: 'node',
-    runner: 'node'
+    runner: 'node',
   },
   testFramework: 'jest',
   files: [
@@ -31,18 +31,18 @@ module.exports = (src = [], tests = []) => wallaby => ({
     '!**/*.d.ts',
     '!**/*.{snap}',
     '!packages/**/coverage/**',
-    '!packages/**/node_modules/**'
+    '!packages/**/node_modules/**',
   ],
   compilers: {
     '*.js': wallaby.compilers.babel({
-      babel: require('@babel/core')
+      babel: require('@babel/core'),
     }),
     'scripts/**/*.{js,jsx}': wallaby.compilers.babel({
-      babel: require('@babel/core')
+      babel: require('@babel/core'),
     }),
     'packages/**/*.{js,jsx,ts,tsx}': wallaby.compilers.babel({
-      babel: require('@babel/core')
-    })
+      babel: require('@babel/core'),
+    }),
   },
   tests: [...tests, '!packages/**/node_modules/**'],
   setup: function(wallaby) {
@@ -58,12 +58,12 @@ module.exports = (src = [], tests = []) => wallaby => ({
         .reduce((acc, v) => {
           const packageJsonPath = v;
           acc[`^${require(packageJsonPath).name}(.*)`] = `${path.dirname(
-            packageJsonPath
+            packageJsonPath,
           )}$1`;
           return acc;
         }, {});
       jestConfig.setupTestFrameworkScriptFile = './jest.setup.js';
     }
     wallaby.testFramework.configure(jestConfig);
-  }
+  },
 });
