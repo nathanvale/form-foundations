@@ -5,18 +5,24 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "prebuild": "rm -rf packages/*/dist",
-    "build": "cross-env NODE_ENV=production yarn bootstrap && yarn tsc && yarn lint && rollup -c",
+    "bootstrap": "yarn clean:all && yarn --ignore-engines && lerna bootstrap -- --ignore-engines && yarn build",
+    "prebuild": "yarn clean && yarn clean:dist",
+    "build": "cross-env NODE_ENV=production yarn tsc && rollup -c",
+    "clean": "rm -rf  coverage packages/*/npm-debug*",
+    "clean:all": "rm -rf  node_modules package-lock.json && yarn clean:packages:all && yarn clean",
+    "clean:dist": "rm -rf  packages/*/dist",
+    "clean:packages:all": "rm -rf  packages/*/node_modules packages/*/dist packages/*/package-lock.json",
+    "clean:packages:dist": "rm -rf  packages/*/dist",
     "precommit": "lint-staged",
     "format": "prettier --write  \"**/*.{ts,tsx,json,md}\" ",
     "lint": "eslint --fix --cache --ignore-path .gitignore --ext .tsx,.ts,.js ./packages/*/src *.js",
+    "start": "cross-env NODE_ENV=development rollup -w -c | tsc -b -w",
     "storybook": "start-storybook -p 9001",
     "test": "jest --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
     "test:all": "jest --notify --silent --coverage",
     "test:watch": "yarn test --watch --silent=false --collectCoverage=false",
-    "tsc": "tsc --build",
-    "tsc:watch": "yarn tsc --watch"
+    "tsc": "tsc -b",
+    "tsc:watch": "yarn tsc -w"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -75,6 +81,7 @@
     "rollup-plugin-uglify": "^6.0.0",
     "rollup-plugin-uglify-es": "^0.0.1",
     "styled-components": "^3.4.5",
+    "tsc-watch": "^1.0.31",
     "typescript": "3.1.1",
     "typescript-eslint-parser": "^21.0.2",
     "uglify-es": "^3.3.9"

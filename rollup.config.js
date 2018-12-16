@@ -8,7 +8,6 @@ import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import uglify from 'rollup-plugin-uglify-es';
 import { minify } from 'uglify-es';
-import tc from 'turbocolor';
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
