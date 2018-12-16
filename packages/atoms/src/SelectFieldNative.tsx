@@ -11,7 +11,7 @@ export const SelectFieldNative = styled<SelectFieldNativeProps>(props => (
       native: true,
       MenuProps: {
         // className: classes.menu
-      }
+      },
     }}
   >
     {props.options.map(option => (

@@ -9,8 +9,8 @@ export const Radio = styled<RadioProps>(MUIRadio).attrs<{}, MUIRadioProps>({
     checked: 'Radio-checked',
     colorPrimary: 'Radio-colorPrimary',
     colorSecondary: 'Radio-colorSecondary',
-    disabled: 'Radio-disabled'
-  }
+    disabled: 'Radio-disabled',
+  },
 })`
   && {
     svg {
@@ -44,5 +44,5 @@ export const Radio = styled<RadioProps>(MUIRadio).attrs<{}, MUIRadioProps>({
 ` as React.ComponentType<RadioProps>;
 
 Radio.defaultProps = {
-  'data-id': 'radio'
+  'data-id': 'radio',
 };

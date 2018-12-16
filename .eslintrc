@@ -1,7 +1,9 @@
 {
+  "extends": ["prettier"],
   "parser": "typescript-eslint-parser",
-  "plugins": ["typescript"],
+  "plugins": ["typescript", "prettier"],
   "rules": {
+    "prettier/prettier": "error",
     "typescript/array-type": [0, "array"],
     "camelcase": 0,
     "typescript/class-name-casing": 0,

@@ -1,7 +1,7 @@
 export function warnAboutMissingIdentifier({
   htmlContent,
   documentationAnchorLink,
-  handlerName
+  handlerName,
 }: {
   htmlContent: string;
   documentationAnchorLink: string;
@@ -13,7 +13,7 @@ export function warnAboutMissingIdentifier({
     ${htmlContent}
 
     Formik cannot determine which value to update. For more info see https://github.com/jaredpalmer/formik#${documentationAnchorLink}
-  `
+  `,
   );
 }
 
@@ -28,5 +28,5 @@ export {
   isNaN,
   isEmptyChildren,
   isPromise,
-  getActiveElement
+  getActiveElement,
 } from 'formik';

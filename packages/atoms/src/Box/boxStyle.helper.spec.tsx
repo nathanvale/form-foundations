@@ -189,7 +189,7 @@ describe('Box Helpers', () => {
 
     it('should keep the same value if it is custom property', () => {
       expect(
-        boxStyleHelper.dangerousStyleValue('custom-property', '100%', true)
+        boxStyleHelper.dangerousStyleValue('custom-property', '100%', true),
       ).toEqual('100%');
     });
   });
