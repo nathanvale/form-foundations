@@ -40,7 +40,7 @@ function onwarn(warning, warn) {
 
 async function config() {
   try {
-    const { stdout } = await exec(`lerna ls --json`);
+    const { stdout } = await exec(`lerna ls --json --no-private`);
     const packages = JSON.parse(stdout);
     const template = ({ name }) => `'use strict'
 

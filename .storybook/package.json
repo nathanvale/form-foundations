@@ -1,7 +1,7 @@
 {
-  "name":"website",
-  "version":"0.0.0",
+  "name":"storybook",
   "private": true,
+  "version":"0.0.0",
   "scripts": {
     "examples": "docusaurus-examples",
     "start": "docusaurus-start",
@@ -12,11 +12,6 @@
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
-    "@storybook/addon-options": "^4.0.12",
-    "@storybook/react": "^4.0.12",
-    "@types/storybook__react": "^4.0.0",
-    "babel-loader": "^8.0.4",
-    "fork-ts-checker-webpack-plugin": "^0.5.1",
-    "raw-loader": "^1.0.0"
+    "docusaurus": "^1.3.3"
   }
 }
