@@ -2,12 +2,16 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/*",".storybook","website"
+    "packages/*",
+    ".storybook",
+    "website"
   ],
   "scripts": {
+    "addc": "all-contributors add",
     "bootstrap": "yarn clean:all && yarn --ignore-engines && lerna bootstrap -- --ignore-engines && yarn build",
     "prebuild": "yarn clean && yarn clean:dist",
     "build": "cross-env NODE_ENV=production yarn tsc && rollup -c",
+    "build-website": "cd website && yarn install && yarn build",
     "clean": "rm -rf  coverage packages/*/npm-debug*",
     "clean:all": "rm -rf  node_modules package-lock.json && yarn clean:packages:all && yarn clean",
     "clean:dist": "rm -rf  packages/*/dist",
@@ -15,14 +19,15 @@
     "clean:packages:dist": "rm -rf  packages/*/dist",
     "precommit": "lint-staged",
     "format": "prettier --write  \"**/*.{ts,tsx,json,md}\" ",
+    "gen-docs": "all-contributors generate && doctoc README.md",
     "lint": "eslint --fix --cache --ignore-path .gitignore --ext .tsx,.ts,.js ./packages/*/src *.js",
+    "size": "size-limit",
     "start": "cross-env NODE_ENV=development rollup -w -c | tsc -b -w",
+    "start-website": "cd website && yarn start",
     "storybook": "start-storybook -p 9001",
-    "test": "jest --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
-    "test:all": "jest --notify --silent --coverage",
+    "test": "jest --env=jsdom --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
     "test:watch": "yarn test --watch --silent=false --collectCoverage=false",
-    "tsc": "tsc -b",
-    "tsc:watch": "yarn tsc -w"
+    "tsc": "tsc -b"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -50,6 +55,7 @@
     "babel-plugin-styled-components": "^1.9.4",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "cross-env": "^5.2.0",
+    "doctoc": "^1.3.0",
     "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.0",
@@ -74,6 +80,7 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-uglify": "^6.0.0",
     "rollup-plugin-uglify-es": "^0.0.1",
+    "size-limit": "^0.17.0",
     "styled-components": "^3.4.5",
     "tsc-watch": "^1.0.31",
     "typescript": "3.1.1",
@@ -86,5 +93,67 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "size-limit": [
+    {
+      "path": "./packages/atoms/dist/index.js",
+      "limit": "145 kB"
+    },
+    {
+      "path": "./packages/atoms/dist/ff-atoms.esm.js",
+      "limit": "117 kB"
+    },
+    {
+      "path": "./packages/atoms/dist/ff-atoms.umd.production.js",
+      "limit": "134 kB"
+    },
+    {
+      "path": "./packages/core/dist/index.js",
+      "limit": "130 kB"
+    },
+    {
+      "path": "./packages/core/dist/ff-core.esm.js",
+      "limit": "130 kB"
+    },
+    {
+      "path": "./packages/core/dist/ff-core.umd.production.js",
+      "limit": "129 kB"
+    },
+    {
+      "path": "./packages/examples/dist/index.js",
+      "limit": "48 kB"
+    },
+    {
+      "path": "./packages/examples/dist/ff-examples.esm.js",
+      "limit": "47 kB"
+    },
+    {
+      "path": "./packages/examples/dist/ff-examples.umd.production.js",
+      "limit": "39 kB"
+    },
+    {
+      "path": "./packages/normalize/dist/index.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/normalize/dist/ff-normalize.esm.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/normalize/dist/ff-normalize.umd.production.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/widgets/dist/index.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/widgets/dist/ff-widgets.esm.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/widgets/dist/ff-widgets.umd.production.js",
+      "limit": "1 kB"
+    }
+  ]
 }
