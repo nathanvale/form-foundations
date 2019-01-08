@@ -3,7 +3,7 @@ version: 2
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: circleci/node:8.9.1
+    - image: circleci/node:8.10.0
 
 jobs:
   test:
@@ -21,8 +21,12 @@ jobs:
           command: yarn install --frozen-lockfile
 
       - run:
+          name: Lerna bootstrap
+          command: npx lerna bootstrap && yarn build
+
+      - run:
           name: Run tests
-          command: yarn test --runInBand --no-cache --coverage
+          command: yarn test --runInBand --no-cache --coverage --ci --all --bail
 
       - save_cache:
           paths:
@@ -32,6 +36,18 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
+
+lerna-version:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Lerna version
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
+              yarn lerna:version         
+
   publish-canary:
     <<: *defaults
     steps:
@@ -72,14 +88,6 @@ workflows:
   test-deploy:
     jobs:
       - test
-      - deploy-docs:
+      - lerna-version:
           requires:
             - test
-      - publish-canary:
-          requires:
-            - test
-          filters:
-            tags:
-              only: /^.*canary.*($|\b)/
-            branches:
-              ignore: /.*/

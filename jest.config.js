@@ -16,46 +16,10 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      branches: 57.61,
-      functions: 62.1,
-      lines: 83.62,
-      statements: 81.44,
-    },
-    './scripts': {
-      branches: 15.29,
-      functions: 33.01,
-      lines: 29.71,
-      statements: 29.02,
-    },
-    './packages/atoms/src': {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90,
-    },
-    './packages/core/src': {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90,
-    },
-    './packages/examples/src': {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90,
-    },
-    './packages/widgets/src': {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90,
-    },
-    './packages/normalize/src': {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90,
+      branches: 48.84,
+      functions: 37.3,
+      lines: 49.42,
+      statements: 45.83,
     },
   },
 };

@@ -2,15 +2,6 @@
   "name":"storybook",
   "private": true,
   "version":"0.0.0",
-  "scripts": {
-    "examples": "docusaurus-examples",
-    "start": "docusaurus-start",
-    "build": "docusaurus-build",
-    "publish-gh-pages": "docusaurus-publish",
-    "write-translations": "docusaurus-write-translations",
-    "version": "docusaurus-version",
-    "rename-version": "docusaurus-rename-version"
-  },
   "devDependencies": {
     "@storybook/addon-options": "^4.0.12",
     "@storybook/react": "^4.0.12",
