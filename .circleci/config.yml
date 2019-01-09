@@ -36,16 +36,17 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-lerna-version:
-  <<: *defaults
-  steps:
-    - attach_workspace:
-        at: ~/repo
-    - run:
-        name: Lerna version
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-            yarn lerna:version         
+
+  lerna-version:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Lerna version
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
+              yarn lerna:version         
 
 workflows:
   version: 2
