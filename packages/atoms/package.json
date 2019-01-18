@@ -1,0 +1,33 @@
+{
+  "name": "@form-foundations/atoms",
+  "version": "0.0.0",
+  "description": "",
+  "license": "UNLICENSED",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/ff-atoms.esm.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "@babel/runtime-corejs2": "^7.0.0",
+    "@material-ui/core": "^3.6.2",
+    "formik": "^1.4.1",
+    "lodash": "^4.17.11",
+    "lodash-es": "^4.17.11",
+    "prop-types": "^15.6.2",
+    "recompose": "^0.30.0",
+    "warning": "^4.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^3.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "gitHead": "3c2e16752d99926229db3a693fc53e687d8d43de"
+}

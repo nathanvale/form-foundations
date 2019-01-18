@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "typeRoots": ["node_modules/@types"],
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "jsx": "react",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "noImplicitAny": false,
+    "strict": true,
+    "target": "esnext",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "keyofStringsOnly": true,
+    "downlevelIteration": true,
+    "noImplicitThis": false,
+    "pretty": true,
+    "emitDeclarationOnly": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "tags": ["styled", "css"]
+      }
+    ]
+  }
+}

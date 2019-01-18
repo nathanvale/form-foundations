@@ -1,0 +1,1 @@
+export { onlyLetters } from './onlyLetters';

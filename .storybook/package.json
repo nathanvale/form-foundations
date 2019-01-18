@@ -1,0 +1,12 @@
+{
+  "name": "storybook",
+  "private": true,
+  "devDependencies": {
+    "@storybook/addon-options": "^4.0.12",
+    "@storybook/react": "^4.0.12",
+    "@types/storybook__react": "^4.0.0",
+    "babel-loader": "^8.0.4",
+    "fork-ts-checker-webpack-plugin": "^0.5.1",
+    "raw-loader": "^1.0.0"
+  }
+}

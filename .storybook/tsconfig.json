@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@form-foundations/examples": ["../packages/examples/src"]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "lerna": "3.8.5",
+  "useWorkspaces": true,
+  "npmClient": "yarn",
+  "version": "independent",
+  "command": {
+    "run": {
+      "stream": "true"
+    },
+    "publish": {
+      "ammend": true,
+      "conventionalCommits": true,
+      "changelogPreset": "angular",
+      "yes": true,
+      "verifyAccess": false,
+      "npmClient": "npm",
+      "allowBranch": "master",
+      "ignoreChanges": ["storybook/**"]
+    }
+  }
+}

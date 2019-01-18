@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.settings.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "baseUrl": ".",
+    "declarationDir": "dist"
+  },
+  "references": [
+    { "path": "../core" },
+    { "path": "../widgets" },
+    { "path": "../normalize" },
+    { "path": "../atoms" }
+  ],
+  "include": ["src", "../../types"],
+  "exclude": ["node_modules", "dist"]
+}

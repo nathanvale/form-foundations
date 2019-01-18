@@ -1,0 +1,25 @@
+{
+  "name": "monorepo",
+  "version": 2,
+  "builds": [
+    { "src": "/website/build/**/*", "use": "@now/static" },
+    { "src": "/packages/core/website/build/**/*", "use": "@now/static" }
+  ],
+  "routes": [
+    {
+      "src": "/core/(.*)",
+      "dest": "/packages/core/website/build/$1",
+      "headers": {
+        "x-request-path": "$1"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/website/build/$1",
+      "headers": {
+        "x-request-path": "$1"
+      }
+    }
+  ],
+  "alias": ["formfoundations.com", "www.formfoundations.com"]
+}

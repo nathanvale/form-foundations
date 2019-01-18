@@ -1,0 +1,29 @@
+{
+  "name": "@form-foundations/examples",
+  "version": "0.0.0",
+  "description": " ",
+  "license": "UNLICENSED",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/ff-examples.esm.js",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "@babel/runtime-corejs2": "^7.0.0",
+    "@form-foundations/core": "^0.0.0",
+    "prop-types": "^15.6.2",
+    "yup": "0.21.3"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "styled-components": "^3.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "gitHead": "3c2e16752d99926229db3a693fc53e687d8d43de"
+}

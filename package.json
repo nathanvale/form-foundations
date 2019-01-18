@@ -1,0 +1,180 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    ".storybook",
+    "website",
+    "packages/*/website"
+  ],
+  "scripts": {
+    "addc": "all-contributors add",
+    "bootstrap": "lerna bootstrap",
+    "prebuild": "yarn clean",
+    "build": "cross-env NODE_ENV=production yarn tsc && rollup -c",
+    "build-website": "cd website && yarn install && yarn build",
+    "clean": "rm -rf packages/*/dist",
+    "clean:all": "rm -rf  node_modules coverage npm-debug* packages/*/npm-debug* && yarn clean",
+    "commit": "commit",
+    "docs:build": "lerna run docs:build",
+    "docs:start": "cd website && yarn docs:start",
+    "format": "prettier --write  \"**/*.{ts,tsx,json,md}\" ",
+    "gen-docs": "all-contributors generate && doctoc README.md",
+    "lerna:pr-publish": "lerna publish --canary --message 'chore(release): publish'",
+    "lerna:publish": "lerna publish from-package --push",
+    "lerna:publish-old": "lerna publish from-package --push --registry \"//http://registry.npmjs.org/:_authToken=$NPM_TOKEN\"",
+    "lerna:version": "lerna version --amend",
+    "lint": "eslint --fix --cache --ignore-path .gitignore --ext .tsx,.ts,.js ./packages/*/src *.js",
+    "now": "yarn docs:build && now --public --token=rSNLxsFEzve3IOhl5Kis39pE && now alias --token=rSNLxsFEzve3IOhl5Kis39pE",
+    "size": "size-limit",
+    "start": "cross-env NODE_ENV=development rollup -w -c | tsc -b -w",
+    "start-website": "cd website && yarn start",
+    "storybook": "start-storybook -p 9001",
+    "test": "jest --env=jsdom --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
+    "test:watch": "yarn test --watch --silent=false",
+    "tsc": "tsc -b"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@commitlint/cli": "^7.3.2",
+    "@commitlint/config-conventional": "^7.3.1",
+    "@commitlint/prompt-cli": "^7.3.1",
+    "@types/jest": "^23.3.10",
+    "@types/lodash": "^4.14.119",
+    "@types/node": "^10.12.12",
+    "@types/react": "^16.3.0",
+    "@types/react-dom": "^16.0.9",
+    "@types/recompose": "^0.30.2",
+    "@types/warning": "^3.0.0",
+    "@types/yup": "^0.26.3",
+    "all-contributors-cli": "^4.4.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-annotate-pure-calls": "^0.4.0",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-styled-components": "^1.9.4",
+    "babel-plugin-transform-rename-import": "^2.3.0",
+    "commitlint": "7.2.1",
+    "cross-env": "^5.2.0",
+    "doctoc": "^1.3.0",
+    "eslint": "^5.10.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "husky": "^1.2.1",
+    "jest": "^23.6.0",
+    "jest-styled-components": "^6.3.1",
+    "lerna": "^3.10.2",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "react": "^16.3.0",
+    "react-dev-utils": "^6.1.1",
+    "react-dom": "^16.3.0",
+    "react-testing-library": "^5.3.2",
+    "rollup": "^0.66.4",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-size-snapshot": "^0.7.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-uglify": "^6.0.0",
+    "rollup-plugin-uglify-es": "^0.0.1",
+    "size-limit": "^0.17.0",
+    "styled-components": "^3.4.5",
+    "tsc-watch": "^1.0.31",
+    "typescript": "^3.1.1",
+    "typescript-eslint-parser": "^21.0.2",
+    "uglify-es": "^3.3.9"
+  },
+  "engines": {
+    "node": ">= 6.9.0 < 12.0.0",
+    "yarn": ">=0.27.5 || >=1.0.0-20170811"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "post-rewrite": "npx lint-staged",
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js}": [
+      "yarn lint",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "size-limit": [
+    {
+      "path": "./packages/atoms/dist/index.js",
+      "limit": "145 kB"
+    },
+    {
+      "path": "./packages/atoms/dist/ff-atoms.esm.js",
+      "limit": "117 kB"
+    },
+    {
+      "path": "./packages/atoms/dist/ff-atoms.umd.production.js",
+      "limit": "134 kB"
+    },
+    {
+      "path": "./packages/core/dist/index.js",
+      "limit": "130 kB"
+    },
+    {
+      "path": "./packages/core/dist/ff-core.esm.js",
+      "limit": "130 kB"
+    },
+    {
+      "path": "./packages/core/dist/ff-core.umd.production.js",
+      "limit": "129 kB"
+    },
+    {
+      "path": "./packages/examples/dist/index.js",
+      "limit": "48 kB"
+    },
+    {
+      "path": "./packages/examples/dist/ff-examples.esm.js",
+      "limit": "47 kB"
+    },
+    {
+      "path": "./packages/examples/dist/ff-examples.umd.production.js",
+      "limit": "39 kB"
+    },
+    {
+      "path": "./packages/normalize/dist/index.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/normalize/dist/ff-normalize.esm.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/normalize/dist/ff-normalize.umd.production.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/widgets/dist/index.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/widgets/dist/ff-widgets.esm.js",
+      "limit": "1 kB"
+    },
+    {
+      "path": "./packages/widgets/dist/ff-widgets.umd.production.js",
+      "limit": "1 kB"
+    }
+  ]
+}
