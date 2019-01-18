@@ -68,6 +68,9 @@ jobs:
               yarn lerna:version --amend    
             fi
       - run:
+          name: Authenticate with NPM egistry
+          command: echo -e "@form-foundations:registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=4cdbefa7-ff58-44fa-942e-ff861f267ff4" > ~/repo/.npmrc
+      - run:
           name: Publish
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
