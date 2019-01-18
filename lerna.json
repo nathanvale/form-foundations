@@ -8,7 +8,6 @@
       "stream": "true"
     },
     "publish": {
-      "ammend": true,
       "conventionalCommits": true,
       "changelogPreset": "angular",
       "yes": true,
