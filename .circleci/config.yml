@@ -61,6 +61,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
               yarn build        
             fi
+            git reset --hard @[u}
       - run:
           name: Bump versions
           command: |
