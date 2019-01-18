@@ -1,6 +1,8 @@
 {
   "name": "root",
   "private": true,
+  "license": "MIT",
+  "author": "Nathan Vale <hi@nathanvale.com>",
   "workspaces": [
     "packages/*",
     ".storybook",

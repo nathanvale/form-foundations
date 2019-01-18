@@ -1,8 +1,8 @@
 {
   "name": "@form-foundations/core",
   "version": "0.0.0",
-  "description": " ",
-  "license": "UNLICENSED",
+  "description": "",
+  "license": "MIT",
   "files": [
     "dist",
     "src"
@@ -28,6 +28,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "sideEffects": false,
-  "gitHead": "3c2e16752d99926229db3a693fc53e687d8d43de"
+  "gitHead": "3c2e16752d99926229db3a693fc53e687d8d43de",
+  "sideEffects": false
 }
