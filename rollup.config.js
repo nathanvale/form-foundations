@@ -145,7 +145,7 @@ if (process.env.NODE_ENV === 'production') {
           },
         }),
         sourceMaps(),
-        sizeSnapshot(),
+        // sizeSnapshot(),
         env === 'production' &&
           uglify(
             {
@@ -182,7 +182,7 @@ if (process.env.NODE_ENV === 'production') {
           'process.env.NODE_ENV': JSON.stringify(env),
         }),
         sourceMaps(),
-        sizeSnapshot(),
+        // sizeSnapshot(),
       ],
     });
 
@@ -203,7 +203,7 @@ if (process.env.NODE_ENV === 'production') {
         }),
         ,
         babel(babelOptions({ transformRuntime: true, useESModules: true })),
-        sizeSnapshot(),
+        // sizeSnapshot(),
         sourceMaps(),
       ],
     });

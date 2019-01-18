@@ -61,12 +61,11 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
               yarn build        
             fi
-            git reset --hard @{u}
       - run:
           name: Bump versions
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              yarn lerna:version --amend    
+              yarn lerna:version    
             fi
       - run:
           name: Authenticate with NPM egistry

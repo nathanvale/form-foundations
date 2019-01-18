@@ -14,8 +14,7 @@
       "yes": true,
       "verifyAccess": false,
       "npmClient": "npm",
-      "allowBranch": "master",
-      "ignoreChanges": ["storybook/**"]
+      "allowBranch": "master"
     }
   }
 }
