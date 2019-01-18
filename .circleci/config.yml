@@ -61,16 +61,12 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
               yarn build        
             fi
-            git add .size-snapshot.json
-            git commit --amend --no-edit
-            git push --force
       - run:
           name: Bump versions
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              yarn lerna:version         
+              yarn lerna:version --amend    
             fi
-            git status
       - run:
           name: Publish
           command: |
