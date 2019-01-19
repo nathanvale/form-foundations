@@ -11,9 +11,9 @@
       "conventionalCommits": true,
       "changelogPreset": "angular",
       "yes": true,
-      "verifyAccess": false,
       "npmClient": "npm",
-      "allowBranch": "master"
+      "allowBranch": "master",
+      "message": "chore(release): publish %s"
     }
   }
 }
