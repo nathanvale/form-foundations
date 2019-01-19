@@ -57,7 +57,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
               yarn build        
               git add .size-snapshot.json
-              git commit -m "chore(build): update size=snapshot.json"
+              git commit -m "chore(build): update size=snapshot.json [ci skip]"
               git push
             fi
       - run:
