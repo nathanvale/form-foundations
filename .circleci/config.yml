@@ -52,10 +52,6 @@ jobs:
             git config --global user.name "$GIT_AUTHOR_NAME"
             git config --global push.default matching
       - run:
-          name: NPM setup
-          command: |
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-      - run:
           name: Build packages
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
@@ -74,7 +70,7 @@ jobs:
           name: Publish
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              yarn lerna:publish         
+              npx lerna publish from-package      
             fi
 
 workflows:
