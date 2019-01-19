@@ -12,7 +12,7 @@
   "typings": "dist/index.d.ts",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@form-foundations/atoms": "^0.0.1",
+    "@form-foundations/atoms": "^0.0.0",
     "prop-types": "^15.6.2",
     "recompose": "^0.30.0"
   },
