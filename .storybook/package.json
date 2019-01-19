@@ -2,7 +2,7 @@
   "name": "storybook",
   "version": "0.0.1",
   "private": true,
-  "license": "MIT",
+  "license": "UNKNOWN",
   "devDependencies": {
     "@storybook/addon-options": "^4.0.12",
     "@storybook/react": "^4.0.12",
