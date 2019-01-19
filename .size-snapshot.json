@@ -1,0 +1,122 @@
+{
+  "/Users/nathanvale/lerna-repo/packages/atoms/dist/ff-atoms.cjs.production.js": {
+    "bundled": 45923,
+    "minified": 32389,
+    "gzipped": 6287
+  },
+  "/Users/nathanvale/lerna-repo/packages/core/dist/ff-core.cjs.production.js": {
+    "bundled": 14927,
+    "minified": 8448,
+    "gzipped": 2596
+  },
+  "/Users/nathanvale/lerna-repo/packages/examples/dist/ff-examples.cjs.production.js": {
+    "bundled": 31768,
+    "minified": 21453,
+    "gzipped": 3586
+  },
+  "/Users/nathanvale/lerna-repo/packages/normalize/dist/ff-normalize.cjs.production.js": {
+    "bundled": 765,
+    "minified": 403,
+    "gzipped": 248
+  },
+  "/Users/nathanvale/lerna-repo/packages/widgets/dist/ff-widgets.cjs.production.js": {
+    "bundled": 62,
+    "minified": 54,
+    "gzipped": 71
+  },
+  "/Users/nathanvale/lerna-repo/packages/atoms/dist/ff-atoms.cjs.development.js": {
+    "bundled": 45923,
+    "minified": 32389,
+    "gzipped": 6287
+  },
+  "/Users/nathanvale/lerna-repo/packages/core/dist/ff-core.cjs.development.js": {
+    "bundled": 15526,
+    "minified": 9091,
+    "gzipped": 2752
+  },
+  "/Users/nathanvale/lerna-repo/packages/examples/dist/ff-examples.cjs.development.js": {
+    "bundled": 31768,
+    "minified": 21453,
+    "gzipped": 3586
+  },
+  "/Users/nathanvale/lerna-repo/packages/normalize/dist/ff-normalize.cjs.development.js": {
+    "bundled": 765,
+    "minified": 403,
+    "gzipped": 248
+  },
+  "/Users/nathanvale/lerna-repo/packages/widgets/dist/ff-widgets.cjs.development.js": {
+    "bundled": 62,
+    "minified": 54,
+    "gzipped": 71
+  },
+  "/Users/nathanvale/lerna-repo/packages/atoms/dist/ff-atoms.esm.js": {
+    "bundled": 47809,
+    "minified": 31180,
+    "gzipped": 6137,
+    "treeshaked": {
+      "rollup": {
+        "code": 1716,
+        "import_statements": 776
+      },
+      "webpack": {
+        "code": 3000
+      }
+    }
+  },
+  "/Users/nathanvale/lerna-repo/packages/core/dist/ff-core.esm.js": {
+    "bundled": 14643,
+    "minified": 8219,
+    "gzipped": 2638,
+    "treeshaked": {
+      "rollup": {
+        "code": 1635,
+        "import_statements": 1030
+      },
+      "webpack": {
+        "code": 3965
+      }
+    }
+  },
+  "/Users/nathanvale/lerna-repo/packages/examples/dist/ff-examples.esm.js": {
+    "bundled": 29648,
+    "minified": 19282,
+    "gzipped": 3475,
+    "treeshaked": {
+      "rollup": {
+        "code": 2714,
+        "import_statements": 915
+      },
+      "webpack": {
+        "code": 4458
+      }
+    }
+  },
+  "/Users/nathanvale/lerna-repo/packages/normalize/dist/ff-normalize.esm.js": {
+    "bundled": 675,
+    "minified": 323,
+    "gzipped": 198,
+    "treeshaked": {
+      "rollup": {
+        "code": 0,
+        "import_statements": 0
+      },
+      "webpack": {
+        "code": 951
+      }
+    }
+  },
+  "/Users/nathanvale/lerna-repo/packages/widgets/dist/ff-widgets.esm.js": {
+    "bundled": 45,
+    "minified": 41,
+    "gzipped": 57,
+    "treeshaked": {
+      "rollup": {
+        "code": 0,
+        "import_statements": 0
+      },
+      "webpack": {
+        "code": 951
+      }
+    }
+  }
+}
