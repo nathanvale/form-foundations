@@ -12,7 +12,7 @@
   "typings": "dist/index.d.ts",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@form-foundations/atoms": "^0.0.1",
+    "@form-foundations/atoms": "^0.0.0",
     "formik": "^1.4.0",
     "lodash": "^4.17.11",
     "lodash-es": "^4.17.11",
