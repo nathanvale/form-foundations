@@ -56,6 +56,9 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
               yarn build        
+              git add .size-snapshot.json
+              git commit -m "chore(build): update size=snapshot.json"
+              git push
             fi
       - run:
           name: Bump versions
