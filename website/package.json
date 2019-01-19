@@ -2,7 +2,7 @@
   "name": "website",
   "version": "0.0.1",
   "private": true,
-  "license": "MIT",
+  "license": "UNKNOWN",
   "scripts": {
     "docs:build": "docusaurus-build",
     "docs:create-version": "docusaurus-version",
