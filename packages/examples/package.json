@@ -1,6 +1,6 @@
 {
   "name": "@form-foundations/examples",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": " ",
   "license": "UNKNOWN",
   "files": [
@@ -12,7 +12,7 @@
   "typings": "dist/index.d.ts",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@form-foundations/core": "^0.0.3",
+    "@form-foundations/core": "^0.0.4",
     "prop-types": "^15.6.2",
     "yup": "0.21.3"
   },
