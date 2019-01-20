@@ -10,7 +10,7 @@
       "yes": true,
       "npmClient": "npm",
       "allowBranch": "master",
-      "message": "chore(release): publish %s [ci skip]"
+      "message": "chore(release): publish [ci skip]"
     }
   }
 }
