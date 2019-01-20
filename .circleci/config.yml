@@ -53,16 +53,15 @@ jobs:
       - run:
           name: Build packages
           command: |
-            if [ -n "$(git status --porcelain)" ]; then
-              echo "there are changes";
-            else
-              echo "no changes";
-            fi
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              yarn build        
-              git add .size-snapshot.json
-              git commit -m "chore(build): update size-snapshot.json [ci skip]"
-              git push
+              yarn build     
+              if [ -n "$(git status --porcelain)" ]; then   
+                git add .size-snapshot.json
+                git commit -m "chore(build): update size-snapshot.json [ci skip]"
+                git push
+              else
+                echo "no changes";
+              fi
             fi
       - run:
           name: Bump versions
