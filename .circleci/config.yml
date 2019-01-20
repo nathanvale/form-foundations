@@ -35,7 +35,6 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-
   publish-packages:
     <<: *defaults
     steps:
@@ -57,7 +56,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
               yarn build        
               git add .size-snapshot.json
-              git commit -m "chore(build): update size=snapshot.json [ci skip]"
+              git commit -m "chore(build): update size-snapshot.json [ci skip]"
               git push
             fi
       - run:
@@ -68,19 +67,41 @@ jobs:
             fi
       - run:
           name: Authenticate with NPM egistry
-          command: echo -e "@form-foundations:registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=4cdbefa7-ff58-44fa-942e-ff861f267ff4" > ~/repo/.npmrc
+          command: echo -e "@form-foundations:registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
               npx lerna publish from-package      
             fi
-
+  deploy-docs:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install Now CLI
+          command: sudo npm install --global --unsafe-perm now
+      - run:
+          name: Build Docs
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
+              yarn docs:build
+            fi
+      - run:
+          name: Deploy Docs
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
+               now --public --token=$NOW_TOKEN && now alias --token=$NOW_TOKEN     
+            fi
 workflows:
   version: 2
   test-deploy:
     jobs:
       - test
       - publish-packages:
+          requires:
+            - test
+      - deploy-docs:
           requires:
             - test
