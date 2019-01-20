@@ -4,9 +4,6 @@
   "npmClient": "yarn",
   "version": "independent",
   "command": {
-    "run": {
-      "stream": "true"
-    },
     "publish": {
       "conventionalCommits": true,
       "changelogPreset": "angular",
