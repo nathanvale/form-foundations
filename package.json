@@ -18,7 +18,7 @@
     "clean": "rm -rf packages/*/dist",
     "clean:all": "rm -rf  node_modules coverage npm-debug* packages/*/npm-debug* && yarn clean",
     "commit": "commit",
-    "docs:build": "lerna run docs:build",
+    "docs:build": "lerna run docs:build --concurrency=1",
     "docs:start": "cd website && yarn docs:start",
     "format": "prettier --write  \"**/*.{ts,tsx,json,md}\" ",
     "gen-docs": "all-contributors generate && doctoc README.md",
