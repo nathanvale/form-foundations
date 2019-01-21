@@ -106,6 +106,12 @@ workflows:
       - publish-packages:
           requires:
             - test
+          filters:
+            branches:
+              only: master
       - deploy-docs:
           requires:
             - test
+          filters:
+            branches:
+              only: master
