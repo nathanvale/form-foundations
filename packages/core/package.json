@@ -1,6 +1,6 @@
 {
   "name": "@form-foundations/core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "license": "MIT",
   "author": "Nathan Vale <hi@nathanvale.com>",
@@ -13,7 +13,7 @@
   "typings": "dist/index.d.ts",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@form-foundations/atoms": "^0.0.2",
+    "@form-foundations/atoms": "^0.0.3",
     "formik": "^1.4.0",
     "lodash": "^4.17.11",
     "lodash-es": "^4.17.11",
