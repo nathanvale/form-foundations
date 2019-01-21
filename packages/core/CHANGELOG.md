@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.6 (2019-01-21)
+
+
+### Bug Fixes
+
+* **core:** add MIT license ([8f85a04](https://github.com/nathanvale/form-foundations/commit/8f85a04))
+
+
+
+
+
 ## 0.0.5 (2019-01-21)
 
 
