@@ -1,6 +1,6 @@
 ---
 name: "\U0001F41B Bug report"
-about: Create a report to help make Formik better
+about: Create a report to help make Form Foundations better
 ---
 
 ## 🐛 Bug report
@@ -17,13 +17,13 @@ about: Create a report to help make Formik better
 
 <!-- Use one of the Codesandbox templates: -->
 
-<!-- Formik template: https://codesandbox.io/s/91q6rxmmrp -->
+<!-- Form Foundations template: https://codesandbox.io/s/91q6rxmmrp -->
 
-<!-- withFormik template: https://codesandbox.io/s/437wy20rx4 -->
+<!-- withForm Foundations template: https://codesandbox.io/s/437wy20rx4 -->
 
 ### Suggested solution(s)
 
-<!-- How could we solve this bug? What changes would need to made to Formik? -->
+<!-- How could we solve this bug? What changes would need to made to Form Foundations? -->
 
 ### Additional context
 
@@ -33,11 +33,15 @@ about: Create a report to help make Formik better
 
 <!-- PLEASE FILL THIS OUT -->
 
-| Software         | Version(s) |
-| ---------------- | ---------- |
-| Formik           |
-| React            |
-| TypeScript       |
-| Browser          |
-| npm/Yarn         |
-| Operating System |
+| Software                    | Version(s) |
+| --------------------------- | ---------- |
+| @form-foundations/atoms     |
+| @form-foundations/core      |
+| @form-foundations/examples  |
+| @form-foundations/normalize |
+| @form-foundations/widgets   |
+| React                       |
+| TypeScript                  |
+| Browser                     |
+| npm/Yarn                    |
+| Operating System            |

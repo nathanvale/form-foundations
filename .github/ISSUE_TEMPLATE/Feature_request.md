@@ -1,6 +1,6 @@
 ---
 name: "\U0001F680Feature request"
-about: Suggest an idea for Formik
+about: Suggest an idea for Form Foundations
 ---
 
 ## 🚀 Feature request
