@@ -53,21 +53,17 @@ jobs:
       - run:
           name: Bump versions
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              npx lerna version
-            fi
+            npx lerna version
       - run:
           name: Build packages
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              yarn build     
-              if [ -n "$(git status --porcelain)" ]; then   
-                git add .size-snapshot.json
-                git commit -m "chore(build): update size-snapshot.json [ci skip]"
-                git push
-              else
-                echo "no changes";
-              fi
+            yarn build     
+            if [ -n "$(git status --porcelain)" ]; then   
+              git add .size-snapshot.json
+              git commit -m "chore(build): update size-snapshot.json [ci skip]"
+              git push
+            else
+              echo "no changes";
             fi
       - run:
           name: Authenticate with NPM egistry
@@ -75,9 +71,7 @@ jobs:
       - run:
           name: Publish
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              npx lerna publish from-package      
-            fi
+            npx lerna publish from-package
   deploy-docs:
     <<: *defaults
     steps:
@@ -89,15 +83,11 @@ jobs:
       - run:
           name: Build Docs
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              yarn docs:build
-            fi
+            yarn docs:build
       - run:
           name: Deploy Docs
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-               now --public --token=$NOW_TOKEN && now alias --token=$NOW_TOKEN     
-            fi
+            now --public --token=$NOW_TOKEN && now alias --token=$NOW_TOKEN
 workflows:
   version: 2
   test-deploy:
@@ -106,6 +96,12 @@ workflows:
       - publish-packages:
           requires:
             - test
+          filters:
+            branches:
+              only: master
       - deploy-docs:
           requires:
             - test
+          filters:
+            branches:
+              only: master
