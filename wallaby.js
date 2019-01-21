@@ -10,7 +10,6 @@
 
 module.exports = wallaby => ({
   name: 'Origin React',
-  debug: true,
   env: {
     type: 'node',
     runner: 'node',
