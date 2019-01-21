@@ -51,6 +51,12 @@ jobs:
             git config --global user.name "$GIT_AUTHOR_NAME"
             git config --global push.default matching
       - run:
+          name: Bump versions
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
+              npx lerna version
+            fi
+      - run:
           name: Build packages
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then 
@@ -62,12 +68,6 @@ jobs:
               else
                 echo "no changes";
               fi
-            fi
-      - run:
-          name: Bump versions
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then 
-              npx lerna version
             fi
       - run:
           name: Authenticate with NPM egistry
