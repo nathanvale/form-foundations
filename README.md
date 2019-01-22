@@ -1,19 +1,6 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<!--- ![](https://user-images.githubusercontent.com/custom logo here.png) --->
 
-- [Docs](#docs)
-- [In-browser Playgrounds](#in-browser-playgrounds)
-- [Examples](#examples)
-- [Organizations and projects using Formik](#organizations-and-projects-using-formik)
-- [Authors](#authors)
-- [Contributors](#contributors)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-![](https://user-images.githubusercontent.com/4060187/27243721-3b5219d0-52b1-11e7-96f1-dae8391a3ef6.png)
-
-[[![CircleCI](https://circleci.com/gh/nathanvale/form-foundations.svg?style=svg)](https://circleci.com/gh/nathanvale/form-foundations)](https://circleci.com/gh/nathanvale/form-foundations)
+[![CircleCI](https://circleci.com/gh/nathanvale/form-foundations.svg?style=svg)](https://circleci.com/gh/nathanvale/form-foundations)
 [![Stable Release](https://img.shields.io/npm/v/@form-foundations/core.svg)](https://npm.im/formik)
 [![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/formik)
 [![gzip size](http://img.badgesize.io/https://unpkg.com/formik@latest/dist/formik.umd.production.js?compression=gzip)](https://unpkg.com/formik@latest/dist/formik.umd.production.js)
@@ -21,21 +8,16 @@
 [![Discord](https://img.shields.io/discord/102860784329052160.svg?style=flat-square)](https://discord.gg/cU6MCve)
 [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/palmer)
 
-Let's face it, forms are really verbose in
-[React](https://github.com/facebook/react). To make matters worse, most form
-helpers do wayyyy too much magic and often have a significant performance cost
-associated with them. Formik is a small library that helps you with the 3 most
-annoying parts:
+## Packages
 
-1.  Getting values in and out of form state
-2.  Validation and error messages
-3.  Handling form submission
-
-By colocating all of the above in one place, Formik will keep things
-organized--making testing, refactoring, and reasoning about your forms a breeze.
-
-<div id="handleblur-e-any--void"></div>
-<div id="handlechange-e-any--void"></div>
+* [@form-foundations/core ](https://jaredpalmer.com/formik/docs/overview) 
+ [![Stable Release](https://img.shields.io/npm/v/@form-foundations/core.svg)](https://npm.im/@form-foundations/core)
+ [![gzip size](http://img.badgesize.io/https://unpkg.com/@form-foundations/core@latest/dist/ff-core.umd.production.js?compression=gzip)](https://unpkg.com/@form-foundations/core@latest/dist/ff-core.umd.production.js)
+ [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
+* [API Reference](https://jaredpalmer.com/formik/docs/api/formik)
+* [Articles / Tutorials](https://jaredpalmer.com/formik/docs/resources)
+* [Get Help](https://jaredpalmer.com/formik/help)
+* [Release Notes](https://github.com/jaredpalmer/formik/releases)
 
 ## Docs
 
