@@ -1,19 +1,17 @@
 <!--- ![](https://user-images.githubusercontent.com/custom logo here.png) --->
 
 [![CircleCI](https://circleci.com/gh/nathanvale/form-foundations.svg?style=svg)](https://circleci.com/gh/nathanvale/form-foundations)
-[![Stable Release](https://img.shields.io/npm/v/@form-foundations/core.svg)](https://npm.im/formik)
 [![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/formik)
+  <a href="https://codecov.io/github/babel/babel"><img alt="Coverage Status" src="https://img.shields.io/codecov/c/github/babel/babel/master.svg?maxAge=43200"></a>
 [![gzip size](http://img.badgesize.io/https://unpkg.com/formik@latest/dist/formik.umd.production.js?compression=gzip)](https://unpkg.com/formik@latest/dist/formik.umd.production.js)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
-[![Discord](https://img.shields.io/discord/102860784329052160.svg?style=flat-square)](https://discord.gg/cU6MCve)
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/palmer)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 ## Packages
 
 * [@form-foundations/core ](https://jaredpalmer.com/formik/docs/overview) 
  [![Stable Release](https://img.shields.io/npm/v/@form-foundations/core.svg)](https://npm.im/@form-foundations/core)
  [![gzip size](http://img.badgesize.io/https://unpkg.com/@form-foundations/core@latest/dist/ff-core.umd.production.js?compression=gzip)](https://unpkg.com/@form-foundations/core@latest/dist/ff-core.umd.production.js)
- [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 * [API Reference](https://jaredpalmer.com/formik/docs/api/formik)
 * [Articles / Tutorials](https://jaredpalmer.com/formik/docs/resources)
 * [Get Help](https://jaredpalmer.com/formik/help)
