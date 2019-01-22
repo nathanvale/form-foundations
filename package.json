@@ -34,6 +34,7 @@
     "storybook": "start-storybook -p 9001",
     "test": "jest --env=jsdom --changedSince master --roots '<rootDir>' --silent --detectOpenHandles --forceExit",
     "test:watch": "yarn test --watch --silent=false",
+    "test:ci":"yarn test --runInBand --no-cache --coverage --ci --all --bail",
     "tsc": "tsc -b"
   },
   "devDependencies": {

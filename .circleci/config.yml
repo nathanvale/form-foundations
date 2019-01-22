@@ -26,7 +26,8 @@ jobs:
       - run:
           name: Run tests
           command: yarn test --runInBand --no-cache --coverage --ci --all --bail
-
+      - codecov/upload:
+          file: coverage/*.json
       - save_cache:
           paths:
             - node_modules

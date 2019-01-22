@@ -5,7 +5,7 @@ module.exports = {
   ...base,
   setupTestFrameworkScriptFile: './jest.setup.js',
   projects: ['<rootDir>', '<rootDir>/packages/*/jest.config.js'],
-  coverageReporters: ['lcov', 'text-summary'],
+  coverageReporters: ['json'],
   coverageDirectory: '<rootDir>/coverage/',
   collectCoverageFrom: [
     'src/**/*.{ts,tsx,js}',
