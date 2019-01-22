@@ -238,5 +238,175 @@
         "code": 951
       }
     }
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/ff-atoms.umd.production.js": {
+    "bundled": 1264356,
+    "minified": 420416,
+    "gzipped": 118474
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/ff-core.umd.production.js": {
+    "bundled": 158606,
+    "minified": 43047,
+    "gzipped": 13480
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/ff-examples.umd.production.js": {
+    "bundled": 442046,
+    "minified": 131069,
+    "gzipped": 36818
+  },
+  "/Users/nathanvale/form-foundations/packages/normalize/dist/ff-normalize.umd.production.js": {
+    "bundled": 1082,
+    "minified": 470,
+    "gzipped": 293
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/ff-widgets.umd.production.js": {
+    "bundled": 394,
+    "minified": 259,
+    "gzipped": 195
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/ff-atoms.umd.development.js": {
+    "bundled": 2036093,
+    "minified": 556278,
+    "gzipped": 156972
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/ff-core.umd.development.js": {
+    "bundled": 192309,
+    "minified": 54164,
+    "gzipped": 16624
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/ff-examples.umd.development.js": {
+    "bundled": 474908,
+    "minified": 142287,
+    "gzipped": 40051
+  },
+  "/Users/nathanvale/form-foundations/packages/normalize/dist/ff-normalize.umd.development.js": {
+    "bundled": 1082,
+    "minified": 470,
+    "gzipped": 293
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/ff-widgets.umd.development.js": {
+    "bundled": 394,
+    "minified": 259,
+    "gzipped": 195
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/ff-atoms.cjs.production.js": {
+    "bundled": 45923,
+    "minified": 32389,
+    "gzipped": 6287
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/ff-core.cjs.production.js": {
+    "bundled": 14927,
+    "minified": 8448,
+    "gzipped": 2596
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/ff-examples.cjs.production.js": {
+    "bundled": 31768,
+    "minified": 21453,
+    "gzipped": 3586
+  },
+  "/Users/nathanvale/form-foundations/packages/normalize/dist/ff-normalize.cjs.production.js": {
+    "bundled": 765,
+    "minified": 403,
+    "gzipped": 248
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/ff-widgets.cjs.production.js": {
+    "bundled": 62,
+    "minified": 54,
+    "gzipped": 71
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/ff-atoms.cjs.development.js": {
+    "bundled": 45923,
+    "minified": 32389,
+    "gzipped": 6287
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/ff-core.cjs.development.js": {
+    "bundled": 15526,
+    "minified": 9091,
+    "gzipped": 2752
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/ff-examples.cjs.development.js": {
+    "bundled": 31768,
+    "minified": 21453,
+    "gzipped": 3586
+  },
+  "/Users/nathanvale/form-foundations/packages/normalize/dist/ff-normalize.cjs.development.js": {
+    "bundled": 765,
+    "minified": 403,
+    "gzipped": 248
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/ff-widgets.cjs.development.js": {
+    "bundled": 62,
+    "minified": 54,
+    "gzipped": 71
+  },
+  "/Users/nathanvale/form-foundations/packages/atoms/dist/ff-atoms.esm.js": {
+    "bundled": 47809,
+    "minified": 31180,
+    "gzipped": 6137,
+    "treeshaked": {
+      "rollup": {
+        "code": 1716,
+        "import_statements": 776
+      },
+      "webpack": {
+        "code": 3000
+      }
+    }
+  },
+  "/Users/nathanvale/form-foundations/packages/core/dist/ff-core.esm.js": {
+    "bundled": 14643,
+    "minified": 8219,
+    "gzipped": 2638,
+    "treeshaked": {
+      "rollup": {
+        "code": 1635,
+        "import_statements": 1030
+      },
+      "webpack": {
+        "code": 3965
+      }
+    }
+  },
+  "/Users/nathanvale/form-foundations/packages/examples/dist/ff-examples.esm.js": {
+    "bundled": 29648,
+    "minified": 19282,
+    "gzipped": 3475,
+    "treeshaked": {
+      "rollup": {
+        "code": 2714,
+        "import_statements": 915
+      },
+      "webpack": {
+        "code": 4458
+      }
+    }
+  },
+  "/Users/nathanvale/form-foundations/packages/normalize/dist/ff-normalize.esm.js": {
+    "bundled": 675,
+    "minified": 323,
+    "gzipped": 198,
+    "treeshaked": {
+      "rollup": {
+        "code": 0,
+        "import_statements": 0
+      },
+      "webpack": {
+        "code": 951
+      }
+    }
+  },
+  "/Users/nathanvale/form-foundations/packages/widgets/dist/ff-widgets.esm.js": {
+    "bundled": 45,
+    "minified": 41,
+    "gzipped": 57,
+    "treeshaked": {
+      "rollup": {
+        "code": 0,
+        "import_statements": 0
+      },
+      "webpack": {
+        "code": 951
+      }
+    }
   }
 }

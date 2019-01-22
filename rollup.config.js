@@ -209,12 +209,12 @@ if (process.env.NODE_ENV === 'production') {
     });
 
     const configs = [
-      /*       ...packages.map(({ location, name }) =>
+      ...packages.map(({ location, name }) =>
         buildUmd({ env: 'production', location, name }),
       ),
       ...packages.map(({ location, name }) =>
         buildUmd({ env: 'development', location, name }),
-      ), */
+      ),
       ...packages.map(({ location, name }) =>
         buildCjs({ env: 'production', location, name }),
       ),

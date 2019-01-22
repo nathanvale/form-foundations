@@ -1,41 +1,21 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+<!--- ![](https://user-images.githubusercontent.com/custom logo here.png) --->
 
-- [Docs](#docs)
-- [In-browser Playgrounds](#in-browser-playgrounds)
-- [Examples](#examples)
-- [Organizations and projects using Formik](#organizations-and-projects-using-formik)
-- [Authors](#authors)
-- [Contributors](#contributors)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-![](https://user-images.githubusercontent.com/4060187/27243721-3b5219d0-52b1-11e7-96f1-dae8391a3ef6.png)
-
-[![CircleCI](https://circleci.com/gh/jaredpalmer/formik.svg?style=svg)](https://circleci.com/gh/jaredpalmer/formik)
-[![Stable Release](https://img.shields.io/npm/v/formik.svg)](https://npm.im/formik)
+[![CircleCI](https://circleci.com/gh/nathanvale/form-foundations.svg?style=svg)](https://circleci.com/gh/nathanvale/form-foundations)
 [![Blazing Fast](https://badgen.now.sh/badge/speed/blazing%20%F0%9F%94%A5/green)](https://npm.im/formik)
+  <a href="https://codecov.io/github/babel/babel"><img alt="Coverage Status" src="https://img.shields.io/codecov/c/github/babel/babel/master.svg?maxAge=43200"></a>
 [![gzip size](http://img.badgesize.io/https://unpkg.com/formik@latest/dist/formik.umd.production.js?compression=gzip)](https://unpkg.com/formik@latest/dist/formik.umd.production.js)
 [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
-[![Discord](https://img.shields.io/discord/102860784329052160.svg?style=flat-square)](https://discord.gg/cU6MCve)
-[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/palmer)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
-Let's face it, forms are really verbose in
-[React](https://github.com/facebook/react). To make matters worse, most form
-helpers do wayyyy too much magic and often have a significant performance cost
-associated with them. Formik is a small library that helps you with the 3 most
-annoying parts:
+## Packages
 
-1.  Getting values in and out of form state
-2.  Validation and error messages
-3.  Handling form submission
-
-By colocating all of the above in one place, Formik will keep things
-organized--making testing, refactoring, and reasoning about your forms a breeze.
-
-<div id="handleblur-e-any--void"></div>
-<div id="handlechange-e-any--void"></div>
+* [@form-foundations/core ](https://jaredpalmer.com/formik/docs/overview) 
+ [![Stable Release](https://img.shields.io/npm/v/@form-foundations/core.svg)](https://npm.im/@form-foundations/core)
+ [![gzip size](http://img.badgesize.io/https://unpkg.com/@form-foundations/core@latest/dist/ff-core.umd.production.js?compression=gzip)](https://unpkg.com/@form-foundations/core@latest/dist/ff-core.umd.production.js)
+* [API Reference](https://jaredpalmer.com/formik/docs/api/formik)
+* [Articles / Tutorials](https://jaredpalmer.com/formik/docs/resources)
+* [Get Help](https://jaredpalmer.com/formik/help)
+* [Release Notes](https://github.com/jaredpalmer/formik/releases)
 
 ## Docs
 
@@ -82,8 +62,8 @@ Formik is made with <3 thanks to these wonderful people
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 | [<img src="https://avatars2.githubusercontent.com/u/4060187?v=4" width="100px;"/><br /><sub><b>Jared Palmer</b></sub>](http://jaredpalmer.com)<br />[💬](#question-jaredpalmer "Answering Questions") [💻](https://github.com/jaredpalmer/formik/commits?author=jaredpalmer "Code") [🎨](#design-jaredpalmer "Design") [📖](https://github.com/jaredpalmer/formik/commits?author=jaredpalmer "Documentation") [💡](#example-jaredpalmer "Examples") [🤔](#ideas-jaredpalmer "Ideas, Planning, & Feedback") [👀](#review-jaredpalmer "Reviewed Pull Requests") [⚠️](https://github.com/jaredpalmer/formik/commits?author=jaredpalmer "Tests") | [<img src="https://avatars0.githubusercontent.com/u/109324?v=4" width="100px;"/><br /><sub><b>Ian White</b></sub>](https://www.stardog.io)<br />[💬](#question-eonwhite "Answering Questions") [🐛](https://github.com/jaredpalmer/formik/issues?q=author%3Aeonwhite "Bug reports") [💻](https://github.com/jaredpalmer/formik/commits?author=eonwhite "Code") [📖](https://github.com/jaredpalmer/formik/commits?author=eonwhite "Documentation") [🤔](#ideas-eonwhite "Ideas, Planning, & Feedback") [👀](#review-eonwhite "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/829963?v=4" width="100px;"/><br /><sub><b>Andrej Badin</b></sub>](http://andrejbadin.com)<br />[💬](#question-Andreyco "Answering Questions") [🐛](https://github.com/jaredpalmer/formik/issues?q=author%3AAndreyco "Bug reports") [📖](https://github.com/jaredpalmer/formik/commits?author=Andreyco "Documentation") | [<img src="https://avatars2.githubusercontent.com/u/91115?v=4" width="100px;"/><br /><sub><b>Adam Howard</b></sub>](http://adz.co.de)<br />[💬](#question-skattyadz "Answering Questions") [🐛](https://github.com/jaredpalmer/formik/issues?q=author%3Askattyadz "Bug reports") [🤔](#ideas-skattyadz "Ideas, Planning, & Feedback") [👀](#review-skattyadz "Reviewed Pull Requests") | [<img src="https://avatars1.githubusercontent.com/u/6711845?v=4" width="100px;"/><br /><sub><b>Vlad Shcherbin</b></sub>](https://github.com/VladShcherbin)<br />[💬](#question-VladShcherbin "Answering Questions") [🐛](https://github.com/jaredpalmer/formik/issues?q=author%3AVladShcherbin "Bug reports") [🤔](#ideas-VladShcherbin "Ideas, Planning, & Feedback") | [<img src="https://avatars3.githubusercontent.com/u/383212?v=4" width="100px;"/><br /><sub><b>Brikou CARRE</b></sub>](https://github.com/brikou)<br />[🐛](https://github.com/jaredpalmer/formik/issues?q=author%3Abrikou "Bug reports") [📖](https://github.com/jaredpalmer/formik/commits?author=brikou "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/5314713?v=4" width="100px;"/><br /><sub><b>Sam Kvale</b></sub>](http://skvale.github.io)<br />[🐛](https://github.com/jaredpalmer/formik/issues?q=author%3Askvale "Bug reports") [💻](https://github.com/jaredpalmer/formik/commits?author=skvale "Code") [⚠️](https://github.com/jaredpalmer/formik/commits?author=skvale "Tests") |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars0.githubusercontent.com/u/13765558?v=4" width="100px;"/><br /><sub><b>Jon Tansey</b></sub>](http://jon.tansey.info)<br />[🐛](https://github.com/jaredpalmer/formik/issues?q=author%3Ajontansey "Bug reports") [💻](https://github.com/jaredpalmer/formik/commits?author=jontansey "Code") | [<img src="https://avatars0.githubusercontent.com/u/6819171?v=4" width="100px;"/><br /><sub><b>Tyler Martinez</b></sub>](http://slightlytyler.com)<br />[🐛](https://github.com/jaredpalmer/formik/issues?q=author%3Aslightlytyler "Bug reports") [📖](https://github.com/jaredpalmer/formik/commits?author=slightlytyler "Documentation") |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                                             [<img src="https://avatars0.githubusercontent.com/u/13765558?v=4" width="100px;"/><br /><sub><b>Jon Tansey</b></sub>](http://jon.tansey.info)<br />[🐛](https://github.com/jaredpalmer/formik/issues?q=author%3Ajontansey "Bug reports") [💻](https://github.com/jaredpalmer/formik/commits?author=jontansey "Code")                                                                                                                                                             |                                                                                                       [<img src="https://avatars0.githubusercontent.com/u/6819171?v=4" width="100px;"/><br /><sub><b>Tyler Martinez</b></sub>](http://slightlytyler.com)<br />[🐛](https://github.com/jaredpalmer/formik/issues?q=author%3Aslightlytyler "Bug reports") [📖](https://github.com/jaredpalmer/formik/commits?author=slightlytyler "Documentation")                                                                                                       |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the
