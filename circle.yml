@@ -27,7 +27,7 @@ jobs:
           name: Run tests
           command: yarn test --runInBand --no-cache --coverage --ci --all --bail
       - codecov/upload:
-          conf: ./codecov/codecov.yml
+          conf: codecov.yml
           file: coverage/*.json
           flags: core,normalize,widgets
       - save_cache:
