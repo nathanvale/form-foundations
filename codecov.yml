@@ -6,19 +6,27 @@ coverage:
   status:
     project:
       default: off
+      atoms:
+        flags: atoms
       core:
         flags: core
+      examples:
+        flags: examples
       normalize:
-        target: 100%
         flags: normalize
       widgets:
-        target: 100%
         flags: widgets
 
   flags:
+    atoms:
+      paths:
+        - packages/atoms/src
     core:
       paths:
         - packages/core/src
+    examples:
+      paths:
+        - packages/examples/src
     normalize:
       paths:
         - packages/normalize/src
