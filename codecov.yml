@@ -4,15 +4,16 @@ codecov:
 
 coverage:
   status:
-    default: off
-    core:
-      flags: core
-    normalize:
-      target: 100%
-      flags: normalize
-    widgets:
-      target: 100%
-      flags: widgets
+    project:
+      default: off
+      core:
+        flags: core
+      normalize:
+        target: 100%
+        flags: normalize
+      widgets:
+        target: 100%
+        flags: widgets
 
   flags:
     core:
