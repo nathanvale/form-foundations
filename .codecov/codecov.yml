@@ -6,18 +6,28 @@ coverage:
   precision: 2
   round: down
   range: '70...100'
-  project:
-  default: false # disable the default status that measures entire project
-  tests: # declare a new status context "tests"
-    target: 100% # we always want 100% coverage here
-    paths: 'tests/' # only include coverage in "tests/" folder
-  app: # declare a new status context "app"
-    paths: '!tests/' # remove all files in "tests/"
 
   status:
-    project: yes
-    patch: yes
-    changes: no
+    default: off
+    core:
+      flags: core
+    normalize:
+      target: 50%
+      flags: normalize
+    widgets:
+      target: 89%
+      flags: widgets
+
+  flags:
+    core:
+      paths:
+        - packages/core/
+    normalize:
+      paths:
+        - packages/normalize/
+    widgets:
+      paths:
+        - packages/widgets/
 
 parsers:
   gcov:

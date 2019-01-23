@@ -29,7 +29,7 @@ jobs:
       - codecov/upload:
           conf: ./codecov/codecov.yml
           file: coverage/*.json
-          flags: core,atoms,normalize,widgets
+          flags: core,normalize,widgets
       - save_cache:
           paths:
             - node_modules
