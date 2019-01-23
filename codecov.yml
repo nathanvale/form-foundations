@@ -1,0 +1,39 @@
+codecov:
+  notify:
+    require_ci_to_pass: yes
+
+coverage:
+  status:
+    default: off
+    core:
+      flags: core
+    normalize:
+      target: 100%
+      flags: normalize
+    widgets:
+      target: 100%
+      flags: widgets
+
+  flags:
+    core:
+      paths:
+        - packages/core/src
+    normalize:
+      paths:
+        - packages/normalize/src
+    widgets:
+      paths:
+        - packages/widgets/src
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
+comment:
+  layout: 'header, diff'
+  behavior: default
+  require_changes: no
