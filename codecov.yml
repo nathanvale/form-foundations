@@ -3,31 +3,27 @@ codecov:
     require_ci_to_pass: yes
 
 coverage:
-  precision: 2
-  round: down
-  range: '70...100'
-
   status:
     default: off
     core:
       flags: core
     normalize:
-      target: 50%
+      target: 100%
       flags: normalize
     widgets:
-      target: 89%
+      target: 100%
       flags: widgets
 
   flags:
     core:
       paths:
-        - packages/core/
+        - packages/core/src
     normalize:
       paths:
-        - packages/normalize/
+        - packages/normalize/src
     widgets:
       paths:
-        - packages/widgets/
+        - packages/widgets/src
 
 parsers:
   gcov:
