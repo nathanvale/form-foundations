@@ -20,19 +20,19 @@ coverage:
   flags:
     atoms:
       paths:
-        - packages/atoms/src
+        - packages/atoms
     core:
       paths:
-        - packages/core/src
+        - packages/core
     examples:
       paths:
-        - packages/examples/src
+        - packages/examples
     normalize:
       paths:
-        - packages/normalize/src
+        - packages/normalize
     widgets:
       paths:
-        - packages/widgets/src
+        - packages/widgets
 
 parsers:
   gcov:
