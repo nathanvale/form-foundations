@@ -9,7 +9,7 @@ import {
 } from '@form-foundations/core';
 import { FormikProps } from 'formik';
 import { onlyLetters } from '@form-foundations/normalize';
-import { Box, Button } from '@form-foundations/atoms';
+import { Button } from '@form-foundations/atoms';
 import * as React from 'react';
 import * as Yup from 'yup';
 
@@ -148,81 +148,61 @@ const InnerForm: React.SFC<FormProps & FormikProps<FormValues>> = ({
   errors,
 }) => (
   <Form debug>
-    <Box
-      justifyContent={'start'}
-      alignItems={'start'}
-      direction={'column'}
-      display={'flex'}
-      color="white"
-      padding={4}
+    <SelectFieldNative
+      fullWidth
+      label="Salutation"
+      name="salutation"
+      options={[
+        {
+          value: 'Mr.',
+          label: 'Mr.',
+        },
+        {
+          value: 'Mrs.',
+          label: 'Mrs.',
+        },
+        {
+          value: 'Miss',
+          label: 'Miss',
+        },
+        {
+          value: 'Dr.',
+          label: 'Dr.',
+        },
+        {
+          value: 'Ms.',
+          label: 'Ms.',
+        },
+        {
+          value: 'Prof.',
+          label: 'Prof.',
+        },
+      ]}
+    />
+
+    <RadioGroupField name="sex" />
+    <TextFieldNormalize
+      fullWidth
+      label="First name"
+      name="firstName"
+      normalize={onlyLetters}
+    />
+
+    <TextField fullWidth label="Surname" name="surname" />
+    <TextField
+      fullWidth
+      label="Email"
+      name="email"
+      helperText="We may use your personal information to contact you about this service"
+    />
+    <Button
+      type="button"
+      onClick={handleReset}
+      disabled={(!dirty || isSubmitting) && isEmpty(errors)}
     >
-      <SelectFieldNative
-        fullWidth
-        label="Salutation"
-        name="salutation"
-        options={[
-          {
-            value: 'Mr.',
-            label: 'Mr.',
-          },
-          {
-            value: 'Mrs.',
-            label: 'Mrs.',
-          },
-          {
-            value: 'Miss',
-            label: 'Miss',
-          },
-          {
-            value: 'Dr.',
-            label: 'Dr.',
-          },
-          {
-            value: 'Ms.',
-            label: 'Ms.',
-          },
-          {
-            value: 'Prof.',
-            label: 'Prof.',
-          },
-        ]}
-      />
-
-      <RadioGroupField name="sex" />
-      <TextFieldNormalize
-        fullWidth
-        label="First name"
-        name="firstName"
-        normalize={onlyLetters}
-      />
-
-      <TextField fullWidth label="Surname" name="surname" />
-
-      <TextField
-        fullWidth
-        label="Email"
-        name="email"
-        helperText="We may use your personal information to contact you about this service"
-      />
-
-      <Box
-        justifyContent={'start'}
-        alignItems={'baseline'}
-        direction={'row'}
-        display={'flex'}
-        marginBottom={4}
-      >
-        <Button
-          type="button"
-          onClick={handleReset}
-          disabled={(!dirty || isSubmitting) && isEmpty(errors)}
-        >
-          Reset
-        </Button>
-        <Box width={10} />
-        <ButtonSubmit />
-      </Box>
-    </Box>
+      Reset
+    </Button>
+    <ButtonSubmit />
   </Form>
 );
 
