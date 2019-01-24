@@ -19,7 +19,7 @@
     "lodash-es": "^4.17.11",
     "prop-types": "^15.6.1",
     "recompose": "^0.30.0",
-    "warning": "^4.0.2",
+    "tiny-warning": "^1.0.2",
     "yup": "^0.26.6"
   },
   "peerDependencies": {
