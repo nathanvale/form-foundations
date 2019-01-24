@@ -1,0 +1,39 @@
+import * as React from 'react';
+import { create } from 'react-test-renderer';
+import { Box } from './Box';
+
+describe('Box', () => {
+  it('should render', () => {
+    const tree = create(<Box />);
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render dimensions', () => {
+    const tree = create(
+      <Box
+        width={10}
+        height={10}
+        minHeight={10}
+        maxHeight={10}
+        minWidth={10}
+        maxWidth={10}
+      />,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render xs with display undefined', () => {
+    const tree = create(<Box sm={{ display: undefined }} />);
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render xs with no value', () => {
+    const tree = create(<Box sm={undefined} />);
+    expect(tree).toMatchSnapshot();
+  });
+  it('should render with dangerouslySetInlineStyle', () => {
+    const tree = create(
+      <Box dangerouslySetInlineStyle={{ __style: { opacity: 1 } }} />,
+    );
+    expect(tree).toMatchSnapshot();
+  });
+});
