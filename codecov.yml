@@ -2,38 +2,6 @@ codecov:
   notify:
     require_ci_to_pass: yes
 
-coverage:
-  status:
-    project:
-      default: off
-      atoms:
-        flags: atoms
-      core:
-        flags: core
-      examples:
-        flags: examples
-      normalize:
-        flags: normalize
-      widgets:
-        flags: widgets
-
-  flags:
-    atoms:
-      paths:
-        - packages/atoms
-    core:
-      paths:
-        - packages/core
-    examples:
-      paths:
-        - packages/examples
-    normalize:
-      paths:
-        - packages/normalize
-    widgets:
-      paths:
-        - packages/widgets
-
 parsers:
   gcov:
     branch_detection:
