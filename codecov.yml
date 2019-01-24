@@ -3,36 +3,14 @@ codecov:
     require_ci_to_pass: yes
 
 coverage:
-  status:
-    project:
-      default: off
-      atoms:
-        flags: atoms
-      core:
-        flags: core
-      examples:
-        flags: examples
-      normalize:
-        flags: normalize
-      widgets:
-        flags: widgets
+  precision: 2
+  round: down
+  range: '70...100'
 
-  flags:
-    atoms:
-      paths:
-        - packages/atoms/src
-    core:
-      paths:
-        - packages/core/src
-    examples:
-      paths:
-        - packages/examples/src
-    normalize:
-      paths:
-        - packages/normalize/src
-    widgets:
-      paths:
-        - packages/widgets/src
+  status:
+    project: yes
+    patch: yes
+    changes: no
 
 parsers:
   gcov:
