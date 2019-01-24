@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://github.com/nathanvale/form-foundations/compare/@form-foundations/core@0.0.6...@form-foundations/core@0.0.7) (2019-01-24)
+
+
+### Bug Fixes
+
+* switch to tiny warning ([eb1e8bf](https://github.com/nathanvale/form-foundations/commit/eb1e8bf))
+
+
+
+
+
 ## 0.0.6 (2019-01-21)
 
 

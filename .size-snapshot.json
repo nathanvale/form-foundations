@@ -125,9 +125,9 @@
     "gzipped": 6287
   },
   "/home/circleci/repo/packages/core/dist/ff-core.cjs.production.js": {
-    "bundled": 14927,
-    "minified": 8448,
-    "gzipped": 2596
+    "bundled": 14932,
+    "minified": 8453,
+    "gzipped": 2600
   },
   "/home/circleci/repo/packages/examples/dist/ff-examples.cjs.production.js": {
     "bundled": 31768,
@@ -150,9 +150,9 @@
     "gzipped": 6287
   },
   "/home/circleci/repo/packages/core/dist/ff-core.cjs.development.js": {
-    "bundled": 15526,
-    "minified": 9091,
-    "gzipped": 2752
+    "bundled": 15531,
+    "minified": 9096,
+    "gzipped": 2756
   },
   "/home/circleci/repo/packages/examples/dist/ff-examples.cjs.development.js": {
     "bundled": 31768,
@@ -184,16 +184,16 @@
     }
   },
   "/home/circleci/repo/packages/core/dist/ff-core.esm.js": {
-    "bundled": 14643,
-    "minified": 8219,
-    "gzipped": 2638,
+    "bundled": 14648,
+    "minified": 8224,
+    "gzipped": 2644,
     "treeshaked": {
       "rollup": {
-        "code": 1635,
-        "import_statements": 1030
+        "code": 1640,
+        "import_statements": 1035
       },
       "webpack": {
-        "code": 3965
+        "code": 3970
       }
     }
   },
