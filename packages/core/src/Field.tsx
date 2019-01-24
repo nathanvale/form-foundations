@@ -1,5 +1,5 @@
 import * as React from 'react';
-import warning from 'warning';
+import warning from 'tiny-warning';
 import { connect } from './connect';
 import { FieldAttributes, FFContext, FieldProps } from './types';
 import { getIn, isEmptyChildren, isFunction } from './utils';
