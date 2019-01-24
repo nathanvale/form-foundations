@@ -9,9 +9,8 @@ import sourceMaps from 'rollup-plugin-sourcemaps';
 import uglify from 'rollup-plugin-uglify-es';
 import { minify } from 'uglify-es';
 import builtins from 'rollup-plugin-node-builtins';
+import { getPackages } from '@lerna/project';
 
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
 const extensions = ['.js', '.ts', '.tsx'];
 
 function toTitleCase(str) {
@@ -46,8 +45,7 @@ function onwarn(warning, warn) {
 
 async function config() {
   try {
-    const { stdout } = await exec(`lerna ls --json --no-private`);
-    const packages = JSON.parse(stdout);
+    const packages = (await getPackages()).filter(p => !p.private);
     const template = ({ name }) => `'use strict'
 
 if (process.env.NODE_ENV === 'production') {

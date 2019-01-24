@@ -1,24 +1,25 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
+const { getPackages } = require('@lerna/project');
 
-module.exports = (baseConfig, configType, config) => {
+async function getPackageAliases() {
+  const aliases = (await getPackages())
+    .filter(package => !package.private)
+    .reduce((result, { name, location }) => {
+      result[`${name}$`] = location + '/src';
+      return result;
+    }, {});
+  return aliases;
+}
+
+module.exports = async (baseConfig, configType, config) => {
+  const packageAliases = await getPackageAliases();
   config.resolve.extensions.push('.ts', '.tsx');
   config.module.rules[0].test = /\.(mjs|jsx?|tsx?)$/;
   config.resolve.extensions.push('.ts', '.tsx');
-
   config.resolve.alias = {
-    '@form-foundations/examples': path.resolve(
-      __dirname,
-      '../packages/examples/src',
-    ),
-    '@form-foundations/core': path.resolve(__dirname, '../packages/core/src'),
-    '@form-foundations/atoms': path.resolve(__dirname, '../packages/atoms/src'),
-    '@form-foundations/widgets': path.resolve(
-      __dirname,
-      '../packages/widgets/src',
-    ),
+    ...packageAliases,
   };
-
   config.plugins.push(
     new ForkTsCheckerWebpackPlugin({
       async: false,
@@ -26,6 +27,5 @@ module.exports = (baseConfig, configType, config) => {
       formatter: require('react-dev-utils/typescriptFormatter'),
     }),
   );
-
   return config;
 };
