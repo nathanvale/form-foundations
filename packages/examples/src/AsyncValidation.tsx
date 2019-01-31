@@ -1,27 +1,27 @@
-import * as React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import Debug from './Debug';
+import * as React from 'react'
+import {Formik, Field, Form, ErrorMessage} from 'formik'
+import Debug from './Debug'
 
 // Async Validation
-const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms))
 
 const validate = (values: any) => {
   return sleep(300).then(() => {
-    let errors: any = {};
+    let errors: any = {}
 
     if (['admin', 'null', 'god'].includes(values.username)) {
-      errors.username = 'Nice try';
+      errors.username = 'Nice try'
     }
 
     if (!values.username) {
-      errors.username = 'Required';
+      errors.username = 'Required'
     }
 
     if (Object.keys(errors).length) {
-      throw errors;
+      throw errors
     }
-  });
-};
+  })
+}
 
 const Username = () => (
   <div>
@@ -33,8 +33,8 @@ const Username = () => (
       validate={validate}
       onSubmit={values => {
         sleep(500).then(() => {
-          alert(JSON.stringify(values, null, 2));
-        });
+          alert(JSON.stringify(values, null, 2))
+        })
       }}
       render={() => (
         <Form>
@@ -47,6 +47,6 @@ const Username = () => (
       )}
     />
   </div>
-);
+)
 
-export default Username;
+export default Username

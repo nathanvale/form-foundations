@@ -4,29 +4,23 @@ import {
   FormikValues,
   withFormik,
   WithFormikConfig,
-} from 'formik';
-import {
-  compose,
-  withHandlers,
-  withState,
-  mapProps,
-  withProps,
-} from 'recompose';
-import { handleClick, handleReset } from './handlers';
-import * as state from './state';
-import { withProvider } from './withProvider';
+} from 'formik'
+import {compose, withHandlers, withState, mapProps, withProps} from 'recompose'
+import {handleClick, handleReset} from './handlers'
+import * as state from './state'
+import {withProvider} from './withProvider'
 
 export const handlers = {
   handleClick,
   handleReset,
-};
+}
 
-export const propsMapper = ({ state, ...other }) => {
+export const propsMapper = ({state, ...other}) => {
   return {
     ...state,
     ...other,
-  };
-};
+  }
+}
 
 /**
  * Create a wrapper around https://jaredpalmer.com/formik by composing multiple
@@ -58,7 +52,7 @@ export function withFF<
     // TODO: please explain
     withProvider,
     withProps(console.log),
-  );
+  )
 }
 
 // eslint-disable-next-line typescript/no-empty-interface

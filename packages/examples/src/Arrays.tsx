@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Formik, Field, Form, ErrorMessage, FieldArray } from 'formik';
-import Debug from './Debug';
+import * as React from 'react'
+import {Formik, Field, Form, ErrorMessage, FieldArray} from 'formik'
+import Debug from './Debug'
 
 const initialValues = {
   friends: [
@@ -9,7 +9,7 @@ const initialValues = {
       email: '',
     },
   ],
-};
+}
 const SignIn = () => (
   <div>
     <h1>Invite friends</h1>
@@ -17,14 +17,14 @@ const SignIn = () => (
       initialValues={initialValues}
       onSubmit={values => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-        }, 500);
+          alert(JSON.stringify(values, null, 2))
+        }, 500)
       }}
-      render={({ values }) => (
+      render={({values}) => (
         <Form>
           <FieldArray
             name="friends"
-            render={({ remove, push }) => (
+            render={({remove, push}) => (
               <div>
                 {values.friends.length > 0 &&
                   values.friends.map(index => (
@@ -69,7 +69,7 @@ const SignIn = () => (
                 <button
                   type="button"
                   className="secondary"
-                  onClick={() => push({ name: '', email: '' })}
+                  onClick={() => push({name: '', email: ''})}
                 >
                   Add Friend
                 </button>
@@ -82,6 +82,6 @@ const SignIn = () => (
       )}
     />
   </div>
-);
+)
 
-export default SignIn;
+export default SignIn

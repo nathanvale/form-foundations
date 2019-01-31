@@ -1,1 +1,1 @@
-export { handleChange } from './handleChange';
+export {handleChange} from './handleChange'

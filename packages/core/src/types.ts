@@ -2,7 +2,7 @@ import {
   RadioGroupFieldProps as RadioGroupFieldAtomProps,
   SelectFieldNativeProps as SelectFieldNativeAtomProps,
   TextFieldProps as TextFieldAtomProps,
-} from '@form-foundations/atoms';
+} from '@form-foundations/atoms'
 import {
   FieldProps,
   FormikActions,
@@ -14,13 +14,13 @@ import {
   FormikSharedConfig,
   FormikState,
   GenericFieldHTMLAttributes,
-} from 'formik';
-import * as React from 'react';
+} from 'formik'
+import * as React from 'react'
 
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 
 export type FieldPropsInjected<Props = {}, Values = {}> = FieldProps<Values> &
-  Props;
+  Props
 
 /**
  * Note: These typings could be more restrictive, but then it would limit the
@@ -44,15 +44,15 @@ export type FieldPropsInjected<Props = {}, Values = {}> = FieldProps<Values> &
 export interface FieldProps<V = any> {
   field: {
     /** Classic React change handler, keyed by input name */
-    onChange: (e: React.ChangeEvent<any>) => void;
+    onChange: (e: React.ChangeEvent<any>) => void
     /** Mark input as touched */
-    onBlur: (e: any) => void;
+    onBlur: (e: any) => void
     /** Value of the input */
-    value: any;
+    value: any
     /* name of the input */
-    name: string;
-  };
-  form: FormikProps<V>; // if ppl want to restrict this for a given form, let them.
+    name: string
+  }
+  form: FormikProps<V> // if ppl want to restrict this for a given form, let them.
 }
 
 export interface FieldConfig {
@@ -62,100 +62,100 @@ export interface FieldConfig {
   component?:
     | string
     | React.ComponentType<FieldProps<any>>
-    | React.ComponentType<void>;
+    | React.ComponentType<void>
 
   /**
    * Render prop (works like React router's <Route render={props =>} />)
    */
-  render?: ((props: FieldProps<any>) => React.ReactNode);
+  render?: ((props: FieldProps<any>) => React.ReactNode)
 
   /**
    * Children render function <Field name>{props => ...}</Field>)
    */
-  children?: ((props: FieldProps<any>) => React.ReactNode) | React.ReactNode;
+  children?: ((props: FieldProps<any>) => React.ReactNode) | React.ReactNode
 
   /**
    * Validate a single field value independently
    */
-  validate?: ((value: any) => string | Promise<void> | undefined);
+  validate?: ((value: any) => string | Promise<void> | undefined)
 
   /**
    * Field name
    */
-  name: string;
+  name: string
 
   /** HTML input type */
-  type?: string;
+  type?: string
 
   /** Field value */
-  value?: any;
+  value?: any
 
   /** Inner ref */
-  innerRef?: (instance: any) => void;
+  innerRef?: (instance: any) => void
 }
 
-export type FieldAttributes<T> = GenericFieldHTMLAttributes & FieldConfig & T;
+export type FieldAttributes<T> = GenericFieldHTMLAttributes & FieldConfig & T
 
 export type RadioGroupFieldProps =
   | Omit<
       Partial<RadioGroupFieldAtomProps>,
       'error' | 'onChange' | 'value' | 'onBlur'
     >
-  | any;
+  | any
 
 export type TextFieldProps =
   | Omit<Partial<TextFieldAtomProps>, 'error' | 'onChange' | 'value' | 'onBlur'>
-  | any;
+  | any
 
 export type TextFieldNormalizeProps = {
-  normalize?: (value: string, previousValue: string) => string;
-} & TextFieldProps;
+  normalize?: (value: string, previousValue: string) => string
+} & TextFieldProps
 
 export type SelectFieldNativeProps =
   | Omit<
       Partial<SelectFieldNativeAtomProps>,
       'error' | 'onChange' | 'value' | 'onBlur'
     >
-  | any;
+  | any
 
 // Extended from Formik
 export interface FFConfig<Values> extends FormikSharedConfig {
-  component?: React.ComponentType<FormikProps<Values>> | React.ReactNode;
-  render?: ((props: FFProps<Values>) => React.ReactNode);
-  children?: ((props: FFProps<Values>) => React.ReactNode) | React.ReactNode;
-  initialValues: Values;
-  onReset?: (values: Values, formikActions: FFActions<Values>) => void;
-  onSubmit: (values: Values, formikActions: FFActions<Values>) => void;
-  validationSchema?: any | (() => any);
-  validate?: ((values: Values) => void | object | Promise<FFErrors<Values>>);
+  component?: React.ComponentType<FormikProps<Values>> | React.ReactNode
+  render?: ((props: FFProps<Values>) => React.ReactNode)
+  children?: ((props: FFProps<Values>) => React.ReactNode) | React.ReactNode
+  initialValues: Values
+  onReset?: (values: Values, formikActions: FFActions<Values>) => void
+  onSubmit: (values: Values, formikActions: FFActions<Values>) => void
+  validationSchema?: any | (() => any)
+  validate?: ((values: Values) => void | object | Promise<FFErrors<Values>>)
 }
-export type FFErrors<Values> = FormikErrors<Values> & {};
-export type FFSharedConfig = FormikSharedConfig & {};
-export type FFState<Values> = FormikState<Values> & {};
-export type FFActions<Values> = FormikActions<Values> & {};
+export type FFErrors<Values> = FormikErrors<Values> & {}
+export type FFSharedConfig = FormikSharedConfig & {}
+export type FFState<Values> = FormikState<Values> & {}
+export type FFActions<Values> = FormikActions<Values> & {}
 export type FFHandlers = FormikHandlers & {
-  handleClick(e: React.ChangeEvent<any>): void;
-  handleClick<T = string | React.ChangeEvent<any>>(field: T): T;
-};
-export type FFComputedProps<Values> = FormikComputedProps<Values> & {};
-export type FFRegistration = FormikRegistration & {};
+  handleClick(e: React.ChangeEvent<any>): void
+  handleClick<T = string | React.ChangeEvent<any>>(field: T): T
+}
+export type FFComputedProps<Values> = FormikComputedProps<Values> & {}
+export type FFRegistration = FormikRegistration & {}
 
 export type FFProps<Values> = FFSharedConfig &
   FFState<Values> &
   FFActions<Values> &
   FFHandlers &
   FFComputedProps<Values> &
-  FFRegistration;
+  FFRegistration
 
 export declare type FFContext<Values> = FFProps<Values> &
-  Pick<FFConfig<Values>, 'validate' | 'validationSchema'>;
+  Pick<FFConfig<Values>, 'validate' | 'validationSchema'>
 export interface SharedRenderProps<T> {
-  component?: string | React.ComponentType<T | void>;
-  render?: ((props: T) => React.ReactNode);
-  children?: ((props: T) => React.ReactNode);
+  component?: string | React.ComponentType<T | void>
+  render?: ((props: T) => React.ReactNode)
+  children?: ((props: T) => React.ReactNode)
 }
 
 export declare type GenericFieldHTMLAttributes =
   | React.InputHTMLAttributes<HTMLInputElement>
   | React.SelectHTMLAttributes<HTMLSelectElement>
-  | React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+  | React.TextareaHTMLAttributes<HTMLTextAreaElement>

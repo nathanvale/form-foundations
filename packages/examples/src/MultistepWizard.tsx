@@ -1,65 +1,65 @@
-import * as React from 'react';
-import { Formik, Field, ErrorMessage } from 'formik';
-import Debug from './Debug';
+import * as React from 'react'
+import {Formik, Field, ErrorMessage} from 'formik'
+import Debug from './Debug'
 
-const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms: any) => new Promise(resolve => setTimeout(resolve, ms))
 
-const required = (value: any) => (value ? undefined : 'Required');
+const required = (value: any) => (value ? undefined : 'Required')
 
 class Wizard extends React.Component<any, any> {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       page: 0,
       values: props.initialValues,
-    };
+    }
   }
 
-  static Page = ({ children }: any) => children;
+  static Page = ({children}: any) => children
 
   next = (values: any) =>
     this.setState((state: any) => ({
       page: Math.min(state.page + 1, Array(this.props.children).length - 1),
       values,
-    }));
+    }))
 
   previous = () =>
     this.setState(state => ({
       page: Math.max(state.page - 1, 0),
-    }));
+    }))
 
   validate = values => {
     const activePage: any = React.Children.toArray(this.props.children)[
       this.state.page
-    ];
-    return activePage.props.validate ? activePage.props.validate(values) : {};
-  };
+    ]
+    return activePage.props.validate ? activePage.props.validate(values) : {}
+  }
 
   handleSubmit = (values, bag) => {
-    const { children, onSubmit } = this.props;
-    const { page } = this.state;
-    const isLastPage = page === React.Children.count(children) - 1;
+    const {children, onSubmit} = this.props
+    const {page} = this.state
+    const isLastPage = page === React.Children.count(children) - 1
     if (isLastPage) {
-      return onSubmit(values, bag);
+      return onSubmit(values, bag)
     } else {
-      this.next(values);
-      bag.setTouched({});
-      bag.setSubmitting(false);
+      this.next(values)
+      bag.setTouched({})
+      bag.setSubmitting(false)
     }
-  };
+  }
 
   render() {
-    const { children } = this.props;
-    const { page, values } = this.state;
-    const activePage = React.Children.toArray(children)[page];
-    const isLastPage = page === React.Children.count(children) - 1;
+    const {children} = this.props
+    const {page, values} = this.state
+    const activePage = React.Children.toArray(children)[page]
+    const isLastPage = page === React.Children.count(children) - 1
     return (
       <Formik
         initialValues={values}
         enableReinitialize={false}
         validate={this.validate}
         onSubmit={this.handleSubmit}
-        render={({ handleSubmit, isSubmitting }) => (
+        render={({handleSubmit, isSubmitting}) => (
           <form onSubmit={handleSubmit}>
             {activePage}
             <div className="buttons">
@@ -85,7 +85,7 @@ class Wizard extends React.Component<any, any> {
           </form>
         )}
       />
-    );
+    )
   }
 }
 
@@ -101,9 +101,9 @@ const App = () => (
       }}
       onSubmit={(values, actions) => {
         sleep(300).then(() => {
-          window.alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        });
+          window.alert(JSON.stringify(values, null, 2))
+          actions.setSubmitting(false)
+        })
       }}
     >
       <Wizard.Page>
@@ -140,14 +140,14 @@ const App = () => (
       </Wizard.Page>
       <Wizard.Page
         validate={values => {
-          const errors: any = {};
+          const errors: any = {}
           if (!values.email) {
-            errors.email = 'Required';
+            errors.email = 'Required'
           }
           if (!values.favoriteColor) {
-            errors.favoriteColor = 'Required';
+            errors.favoriteColor = 'Required'
           }
-          return errors;
+          return errors
         }}
       >
         <div>
@@ -177,6 +177,6 @@ const App = () => (
       </Wizard.Page>
     </Wizard>
   </div>
-);
+)
 
-export default App;
+export default App

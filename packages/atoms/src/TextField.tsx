@@ -1,7 +1,7 @@
-import MUITextField from '@material-ui/core/TextField';
-import * as React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { TextFieldProps } from './types';
+import MUITextField from '@material-ui/core/TextField'
+import * as React from 'react'
+import styled, {keyframes} from 'styled-components'
+import {TextFieldProps} from './types'
 export const headShake = keyframes`
   0% {
      transform: translateX(0);
@@ -21,7 +21,7 @@ export const headShake = keyframes`
    50% {
      transform: translateX(0);
    }
-`;
+`
 
 export const TextField = styled<TextFieldProps>(props => (
   <MUITextField
@@ -188,4 +188,4 @@ export const TextField = styled<TextFieldProps>(props => (
       transform: translate(12px, 8px) scale(0.75);
     }
   }
-` as React.ComponentType<TextFieldProps>;
+` as React.ComponentType<TextFieldProps>

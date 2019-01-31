@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { FormikConsumer } from 'formik';
+import * as React from 'react'
+import {FormikConsumer} from 'formik'
 
 const Debug = () => (
   <div
@@ -27,7 +27,7 @@ const Debug = () => (
       Formik State
     </div>
     <FormikConsumer>
-      {({ validationSchema, validate, ...rest }) => (
+      {({validationSchema, validate, ...rest}) => (
         <pre
           style={{
             fontSize: '.65rem',
@@ -40,6 +40,6 @@ const Debug = () => (
       )}
     </FormikConsumer>
   </div>
-);
+)
 
-export default Debug;
+export default Debug

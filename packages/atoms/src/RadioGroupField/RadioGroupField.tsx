@@ -1,22 +1,16 @@
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormLabel from '@material-ui/core/FormLabel';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import * as React from 'react';
-import {
-  compose,
-  withHandlers,
-  withState,
-  mapProps,
-  withProps,
-} from 'recompose';
-import styled from 'styled-components';
-import { Radio } from '../Radio';
-import { RadioGroupFieldInnerProps, RadioGroupFieldProps } from '../types';
-import { handleChange } from './handlers';
-import * as state from './state';
-import { omit } from 'lodash';
+import FormControl from '@material-ui/core/FormControl'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormHelperText from '@material-ui/core/FormHelperText'
+import FormLabel from '@material-ui/core/FormLabel'
+import RadioGroup from '@material-ui/core/RadioGroup'
+import * as React from 'react'
+import {compose, withHandlers, withState, mapProps, withProps} from 'recompose'
+import styled from 'styled-components'
+import {Radio} from '../Radio'
+import {RadioGroupFieldInnerProps, RadioGroupFieldProps} from '../types'
+import {handleChange} from './handlers'
+import * as state from './state'
+import {omit} from 'lodash'
 
 export const RadioGroupFieldInner = styled<RadioGroupFieldInnerProps>(
   ({
@@ -85,14 +79,14 @@ export const RadioGroupFieldInner = styled<RadioGroupFieldInnerProps>(
 )`
   && {
   }
-`;
+`
 
 export const handlers = {
   handleChange,
-};
+}
 
 // TODO: move to @origin-digital/recompose
-const omitProps = keys => mapProps(props => omit(props, keys));
+const omitProps = keys => mapProps(props => omit(props, keys))
 
 export const enhance = compose<RadioGroupFieldInnerProps, RadioGroupFieldProps>(
   withProps(console.log),
@@ -100,6 +94,6 @@ export const enhance = compose<RadioGroupFieldInnerProps, RadioGroupFieldProps>(
   withHandlers(handlers),
   omitProps('setState'),
   withProps(console.log),
-);
+)
 
-export const RadioGroupField = enhance(RadioGroupFieldInner as any);
+export const RadioGroupField = enhance(RadioGroupFieldInner as any)

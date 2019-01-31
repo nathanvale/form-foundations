@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import Debug from './Debug';
+import * as React from 'react'
+import {Formik, Field, Form, ErrorMessage} from 'formik'
+import Debug from './Debug'
 
-const isRequired = message => value => (!!value ? undefined : message);
+const isRequired = message => value => (!!value ? undefined : message)
 
 const FieldLevelValidation = () => (
   <div>
     <h1>Pick a username</h1>
     <Formik
-      initialValues={{ username: '', email: '' }}
+      initialValues={{username: '', email: ''}}
       onSubmit={values => {
-        alert(JSON.stringify(values, null, 2));
+        alert(JSON.stringify(values, null, 2))
       }}
       render={({
         setFieldValue,
@@ -45,7 +45,7 @@ const FieldLevelValidation = () => (
             <button
               type="button"
               onClick={() => {
-                setFieldTouched('username', true, true);
+                setFieldTouched('username', true, true)
               }}
             >
               setFieldTouched
@@ -53,7 +53,7 @@ const FieldLevelValidation = () => (
             <button
               type="button"
               onClick={() => {
-                setFieldValue('username', '', true);
+                setFieldValue('username', '', true)
               }}
             >
               setFieldValue
@@ -61,7 +61,7 @@ const FieldLevelValidation = () => (
             <button
               type="button"
               onClick={() => {
-                validateField('username');
+                validateField('username')
               }}
             >
               validateField
@@ -81,6 +81,6 @@ const FieldLevelValidation = () => (
       )}
     />
   </div>
-);
+)
 
-export default FieldLevelValidation;
+export default FieldLevelValidation

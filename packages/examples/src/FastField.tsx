@@ -1,17 +1,17 @@
-import * as React from 'react';
-import { Formik, FastField, Form } from 'formik';
-import Debug from './Debug';
+import * as React from 'react'
+import {Formik, FastField, Form} from 'formik'
+import Debug from './Debug'
 
 class Input extends React.Component<any, any> {
-  renders = 0;
+  renders = 0
   render() {
-    const { field, form, ...rest } = this.props;
+    const {field, form, ...rest} = this.props
     return (
       <div>
         <input {...field} {...rest} />
         <p># of renders: {this.renders++}</p>
       </div>
-    );
+    )
   }
 }
 
@@ -24,14 +24,14 @@ const Basic = () => (
         lastName: '',
         email: '',
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, {setSubmitting}) => {
         setTimeout(() => {
-          setSubmitting(false);
+          setSubmitting(false)
 
-          alert(JSON.stringify(values, null, 2));
-        }, 500);
+          alert(JSON.stringify(values, null, 2))
+        }, 500)
       }}
-      render={({ isSubmitting }) => (
+      render={({isSubmitting}) => (
         <Form>
           <label htmlFor="firstName">First Name</label>
           <FastField
@@ -64,6 +64,6 @@ const Basic = () => (
       )}
     />
   </div>
-);
+)
 
-export default Basic;
+export default Basic

@@ -1,5 +1,5 @@
-export function handleChange({ setState }) {
+export function handleChange({setState}) {
   return event => {
-    setState(() => ({ value: event.target.value }));
-  };
+    setState(() => ({value: event.target.value}))
+  }
 }

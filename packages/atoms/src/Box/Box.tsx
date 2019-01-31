@@ -7,11 +7,11 @@ the Typescript Types & PropTypes (even though they look scary).
 
 */
 
-import * as React from 'react';
-import styled, { StyledComponentClass } from 'styled-components';
-import { Omit } from '../types';
-import { BoxProps } from './Box.types';
-import { propToStyleFn } from './propMapper.helper';
+import * as React from 'react'
+import styled, {StyledComponentClass} from 'styled-components'
+import {Omit} from '../types'
+import {BoxProps} from './Box.types'
+import {propToStyleFn} from './propMapper.helper'
 
 // ;
 // React.HTMLAttributes<HTMLDivElement>
@@ -20,7 +20,7 @@ const Box: StyledComponentClass<
   {}
 > = styled.div.attrs<BoxProps>({
   'data-id': props => props['data-id'] || 'box',
-  style: ({ dangerouslySetInlineStyle }: any) =>
+  style: ({dangerouslySetInlineStyle}: any) =>
     dangerouslySetInlineStyle && dangerouslySetInlineStyle.__style
       ? dangerouslySetInlineStyle.__style
       : {},
@@ -39,16 +39,16 @@ const Box: StyledComponentClass<
   because there's so much code here.
   */
   props => {
-    let c = [];
+    let c = []
     for (const prop in props) {
       if (Object.prototype.hasOwnProperty.call(propToStyleFn, prop)) {
-        const fn = propToStyleFn[prop];
-        const value = props[prop];
-        c = c.concat(fn(value));
+        const fn = propToStyleFn[prop]
+        const value = props[prop]
+        c = c.concat(fn(value))
       }
     }
-    return c;
+    return c
   }};
-`;
+`
 
-export { Box };
+export {Box}

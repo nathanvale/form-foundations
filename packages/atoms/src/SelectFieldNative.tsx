@@ -1,7 +1,7 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import { TextField } from './TextField';
-import { SelectFieldNativeProps } from './types';
+import * as React from 'react'
+import styled from 'styled-components'
+import {TextField} from './TextField'
+import {SelectFieldNativeProps} from './types'
 
 export const SelectFieldNative = styled<SelectFieldNativeProps>(props => (
   <TextField
@@ -23,4 +23,4 @@ export const SelectFieldNative = styled<SelectFieldNativeProps>(props => (
 ))`
   && {
   }
-` as React.ComponentType<SelectFieldNativeProps>;
+` as React.ComponentType<SelectFieldNativeProps>

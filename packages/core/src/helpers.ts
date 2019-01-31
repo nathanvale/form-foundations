@@ -1,12 +1,12 @@
-import { TextFieldProps } from '@form-foundations/atoms';
-import { FormikErrors, FormikTouched, getIn } from 'formik';
-import { FieldPropsInjected, TextFieldNormalizeProps } from './types';
+import {TextFieldProps} from '@form-foundations/atoms'
+import {FormikErrors, FormikTouched, getIn} from 'formik'
+import {FieldPropsInjected, TextFieldNormalizeProps} from './types'
 
 /**
  *
  */
 export function callAll(...fns) {
-  return (...args) => fns.forEach(fn => fn && fn(...args));
+  return (...args) => fns.forEach(fn => fn && fn(...args))
 }
 
 /**
@@ -21,9 +21,9 @@ export function materialUIMapper({
   disabled = false,
   ...props
 }: FieldPropsInjected<TextFieldProps>): any /*TODO: remove any */ {
-  const { name } = field;
-  const { touched, errors, isSubmitting } = form;
-  const showError = isFieldShowingError({ errors, touched, name });
+  const {name} = field
+  const {touched, errors, isSubmitting} = form
+  const showError = isFieldShowingError({errors, touched, name})
   return {
     ...props,
     ...field,
@@ -35,7 +35,7 @@ export function materialUIMapper({
       touched,
     }),
     disabled: isSubmitting || disabled,
-  };
+  }
 }
 
 /**
@@ -47,30 +47,30 @@ export function normalizeMapper({
   normalize,
   ...props
 }: FieldPropsInjected<TextFieldNormalizeProps>): any /*TODO: remove any */ {
-  const { name } = field;
-  const { values } = form;
-  const previousValue = values[name];
+  const {name} = field
+  const {values} = form
+  const previousValue = values[name]
   field.onChange = event => {
-    const { value } = event.target;
-    form.setFieldValue(name, value ? normalize(value, previousValue) : '');
-  };
+    const {value} = event.target
+    form.setFieldValue(name, value ? normalize(value, previousValue) : '')
+  }
   return {
     ...props,
     field,
     form,
-  };
+  }
 }
 
 /**
  *
  */
 export function fieldError(props: {
-  errors: FormikErrors<{}>;
-  name: string;
+  errors: FormikErrors<{}>
+  name: string
 }): string {
-  const { errors, name } = props;
-  const fieldError = getIn(errors, name);
-  return fieldError;
+  const {errors, name} = props
+  const fieldError = getIn(errors, name)
+  return fieldError
 }
 
 /**
@@ -82,14 +82,14 @@ export function getFieldHelperText({
   touched,
   helperText,
 }: {
-  errors: FormikErrors<{}>;
-  name: string;
-  touched: FormikTouched<{}>;
-  helperText: string | undefined;
+  errors: FormikErrors<{}>
+  name: string
+  touched: FormikTouched<{}>
+  helperText: string | undefined
 }): string | undefined {
-  return isFieldShowingError({ errors, name, touched })
-    ? fieldError({ errors, name })
-    : helperText;
+  return isFieldShowingError({errors, name, touched})
+    ? fieldError({errors, name})
+    : helperText
 }
 
 /**
@@ -100,9 +100,9 @@ export function isFieldShowingError<Values = {}>({
   touched,
   name,
 }: {
-  errors: FormikErrors<Values>;
-  touched: FormikTouched<Values>;
-  name: string;
+  errors: FormikErrors<Values>
+  touched: FormikTouched<Values>
+  name: string
 }): boolean {
-  return getIn(touched, name) && !!fieldError({ errors, name });
+  return getIn(touched, name) && !!fieldError({errors, name})
 }

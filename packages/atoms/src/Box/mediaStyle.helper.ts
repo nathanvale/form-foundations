@@ -1,7 +1,7 @@
-import { css } from 'styled-components';
-import { BREAK_POINTS } from './mediaQuery.const';
+import {css} from 'styled-components'
+import {BREAK_POINTS} from './mediaQuery.const'
 
-const styledCss: Function = css;
+const styledCss: Function = css
 export const media = {
   SM: (...args) => styledCss`
     @media only screen and (min-width: ${BREAK_POINTS.Min.SM}) {
@@ -27,4 +27,4 @@ export const media = {
       ${styledCss(...args)};
     }
   `,
-} as any;
+} as any

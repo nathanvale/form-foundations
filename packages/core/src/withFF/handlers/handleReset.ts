@@ -1,9 +1,9 @@
-export function handleReset({ setState, handleReset }) {
+export function handleReset({setState, handleReset}) {
   return () => {
-    handleReset();
+    handleReset()
     setState(prevState => ({
       ...prevState,
       active: {},
-    }));
-  };
+    }))
+  }
 }

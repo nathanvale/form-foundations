@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Formik, Field, Form } from 'formik';
-import Debug from './Debug';
+import * as React from 'react'
+import {Formik, Field, Form} from 'formik'
+import Debug from './Debug'
 
 const Basic = () => (
   <div>
@@ -13,8 +13,8 @@ const Basic = () => (
       }}
       onSubmit={values => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-        }, 500);
+          alert(JSON.stringify(values, null, 2))
+        }, 500)
       }}
       render={() => (
         <Form>
@@ -32,6 +32,6 @@ const Basic = () => (
       )}
     />
   </div>
-);
+)
 
-export default Basic;
+export default Basic

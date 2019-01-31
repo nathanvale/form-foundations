@@ -6,10 +6,10 @@
     "declarationDir": "dist"
   },
   "references": [
-    { "path": "../core" },
-    { "path": "../widgets" },
-    { "path": "../normalize" },
-    { "path": "../atoms" }
+    {"path": "../core"},
+    {"path": "../widgets"},
+    {"path": "../normalize"},
+    {"path": "../atoms"}
   ],
   "include": ["src", "../../types"],
   "exclude": ["node_modules", "dist"]

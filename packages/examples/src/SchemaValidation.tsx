@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import Debug from './Debug';
+import * as React from 'react'
+import {Formik, Field, Form, ErrorMessage} from 'formik'
+import * as Yup from 'yup'
+import Debug from './Debug'
 
 // While you can use any validation library (or write you own), Formik
 // comes with special support for Yup by @jquense. It has a builder API like
@@ -19,7 +19,7 @@ const SignUpSchema = Yup.object().shape({
     .min(2, 'Must be longer than 2 characters')
     .max(20, 'Nice try, nobody has a last name that long')
     .required('Required'),
-});
+})
 
 const SignUp = () => (
   <div>
@@ -33,8 +33,8 @@ const SignUp = () => (
       validationSchema={SignUpSchema}
       onSubmit={values => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-        }, 500);
+          alert(JSON.stringify(values, null, 2))
+        }, 500)
       }}
       render={() => (
         <Form>
@@ -65,6 +65,6 @@ const SignUp = () => (
       )}
     />
   </div>
-);
+)
 
-export default SignUp;
+export default SignUp

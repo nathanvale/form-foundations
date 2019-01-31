@@ -1,4 +1,4 @@
-import * as boxStyleHelper from './boxStyle.helper';
+import * as boxStyleHelper from './boxStyle.helper'
 /*
 Transforms
 These are a collection of a few functors that take values and returns
@@ -12,7 +12,7 @@ function.
  * @param mixin
  */
 
-export const toggle = (mixin: any) => (val: any) => (val ? mixin : '');
+export const toggle = (mixin: any) => (val: any) => (val ? mixin : '')
 
 /**
  * Maps string values to styles
@@ -20,7 +20,7 @@ export const toggle = (mixin: any) => (val: any) => (val ? mixin : '');
  * @param map
  */
 export const mapping = (map: any) => (val: any) =>
-  Object.prototype.hasOwnProperty.call(map, val) ? map[val] : '';
+  Object.prototype.hasOwnProperty.call(map, val) ? map[val] : ''
 
 /**
  * Maps a range of integers to a range of classnames
@@ -29,7 +29,7 @@ export const mapping = (map: any) => (val: any) =>
  * @param breakpoint
  */
 export const range = (scale: any, breakpoint: any) => (n: any) =>
-  boxStyleHelper[scale](breakpoint)(n);
+  boxStyleHelper[scale](breakpoint)(n)
 
 /**
  * Like `range`, maps a range of integers to a range of classnames, excluding
@@ -43,7 +43,7 @@ export const range = (scale: any, breakpoint: any) => (n: any) =>
  * Create a range only if the value is not zero.
  */
 export const rangeWithoutZero = (scale: any, breakpoint?: string) => (n: any) =>
-  n === 0 ? '' : range(scale, breakpoint)(n);
+  n === 0 ? '' : range(scale, breakpoint)(n)
 
 /**
  * This takes a series of the previously defined functors, runs them all against
@@ -51,4 +51,4 @@ export const rangeWithoutZero = (scale: any, breakpoint?: string) => (n: any) =>
  * @param fns
  */
 export const union = (...fns: any) => (val: any) =>
-  [].concat(fns.map((fn: any) => fn(val)));
+  [].concat(fns.map((fn: any) => fn(val)))

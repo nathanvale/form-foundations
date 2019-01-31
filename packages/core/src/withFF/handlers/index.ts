@@ -1,2 +1,2 @@
-export { handleClick } from './handleClick';
-export { handleReset } from './handleReset';
+export {handleClick} from './handleClick'
+export {handleReset} from './handleReset'

@@ -19,4 +19,4 @@ export const BREAK_POINTS = {
     LG: '991px',
     XL: '1199px',
   },
-};
+}

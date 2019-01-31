@@ -1,13 +1,13 @@
-import { shouldDeleteLastChar } from './@internal/helper';
+import {shouldDeleteLastChar} from './@internal/helper'
 
 export function format(value) {
-  return value.replace(/[^a-zA-Z ]+/g, '');
+  return value.replace(/[^a-zA-Z ]+/g, '')
 }
 
 export function onlyLetters(value, previousValue) {
   if (!value) {
-    return value;
+    return value
   }
 
-  return shouldDeleteLastChar(value, previousValue, '') || format(value);
+  return shouldDeleteLastChar(value, previousValue, '') || format(value)
 }

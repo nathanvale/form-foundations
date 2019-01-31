@@ -2,8 +2,8 @@
   "name": "monorepo",
   "version": 2,
   "builds": [
-    { "src": "/website/build/**/*", "use": "@now/static" },
-    { "src": "/packages/core/website/build/**/*", "use": "@now/static" }
+    {"src": "/website/build/**/*", "use": "@now/static"},
+    {"src": "/packages/core/website/build/**/*", "use": "@now/static"}
   ],
   "routes": [
     {

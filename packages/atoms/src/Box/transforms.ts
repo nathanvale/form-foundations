@@ -1,4 +1,4 @@
-import * as boxStyleHelper from './boxStyle.helper';
+import * as boxStyleHelper from './boxStyle.helper'
 
 /*
 
@@ -12,21 +12,21 @@ These are a collection of a few functors that take values and returns Style's. O
 //
 //     <Box top />
 //
-export const toggle = mixin => val => (val ? mixin : '');
+export const toggle = mixin => val => (val ? mixin : '')
 
 // Maps string values to classes
 //
 //     <Box alignItems="center" />
 //
 export const mapping = map => val =>
-  Object.prototype.hasOwnProperty.call(map, val) ? map[val] : '';
+  Object.prototype.hasOwnProperty.call(map, val) ? map[val] : ''
 
 // Maps a range of integers to a range of classnames
 //
 //     <Box padding={1} />
 //
 export const range = (scale, breakpoint) => n =>
-  boxStyleHelper[scale](breakpoint)(n);
+  boxStyleHelper[scale](breakpoint)(n)
 // fromClassName(`${scale}${n < 0 ? `N${Math.abs(n)}` : n}`);
 
 // Like `range`, maps a range of integers to a range of classnames, excluding
@@ -34,9 +34,9 @@ export const range = (scale, breakpoint) => n =>
 //
 //     <Box padding={0} />
 export const rangeWithoutZero = (scale, breakpoint?: string) => n =>
-  n === 0 ? '' : range(scale, breakpoint)(n);
+  n === 0 ? '' : range(scale, breakpoint)(n)
 
 // This takes a series of the previously defined functors, runs them all
 // against a value and returns the set of their classnames.
 export const union = (...fns: any) => (val: any) =>
-  [].concat(fns.map((fn: any) => fn(val)));
+  [].concat(fns.map((fn: any) => fn(val)))

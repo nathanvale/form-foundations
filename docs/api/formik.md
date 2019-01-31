@@ -10,19 +10,19 @@ props pattern made popular by libraries like React Motion and React Router.
 ## Example
 
 ```jsx
-import React from 'react';
-import { Formik } from 'formik';
+import React from 'react'
+import {Formik} from 'formik'
 
 const BasicExample = () => (
   <div>
     <h1>My Form</h1>
     <Formik
-      initialValues={{ name: 'jared' }}
+      initialValues={{name: 'jared'}}
       onSubmit={(values, actions) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        }, 1000);
+          alert(JSON.stringify(values, null, 2))
+          actions.setSubmitting(false)
+        }, 1000)
       }}
       render={props => (
         <form onSubmit={props.handleSubmit}>
@@ -39,7 +39,7 @@ const BasicExample = () => (
       )}
     />
   </div>
-);
+)
 ```
 
 #### Props
@@ -56,9 +56,9 @@ const BasicExample = () => (
 
 There are three ways to render things with `<Formik />`
 
-* `<Formik component>`
-* `<Formik render>`
-* `<Formik children>`
+- `<Formik component>`
+- `<Formik render>`
+- `<Formik children>`
 
 All three render methods will be passed the same props:
 
@@ -326,38 +326,38 @@ Validate the form's `values` with function. This function can either be:
 ```js
 // Synchronous validation
 const validate = values => {
-  let errors = {};
+  let errors = {}
 
   if (!values.email) {
-    errors.email = 'Required';
+    errors.email = 'Required'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Invalid email address'
   }
 
   //...
 
-  return errors;
-};
+  return errors
+}
 ```
 
-* Asynchronous and return a Promise that's error in an `errors` object
+- Asynchronous and return a Promise that's error in an `errors` object
 
 ```js
 // Async Validation
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const validate = values => {
   return sleep(2000).then(() => {
-    let errors = {};
+    let errors = {}
     if (['admin', 'null', 'god'].includes(values.username)) {
-      errors.username = 'Nice try';
+      errors.username = 'Nice try'
     }
     // ...
     if (Object.keys(errors).length) {
-      throw errors;
+      throw errors
     }
-  });
-};
+  })
+}
 ```
 
 ### `validateOnBlur?: boolean`

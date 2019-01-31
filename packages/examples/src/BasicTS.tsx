@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { Formik, Field, Form, FormikActions } from 'formik';
+import * as React from 'react'
+import {Formik, Field, Form, FormikActions} from 'formik'
 
 interface Values {
-  firstName: string;
-  lastName: string;
-  email: string;
+  firstName: string
+  lastName: string
+  email: string
 }
 
 const BasicTS: React.SFC<{}> = () => (
@@ -16,11 +16,11 @@ const BasicTS: React.SFC<{}> = () => (
         lastName: '',
         email: '',
       }}
-      onSubmit={(values: Values, { setSubmitting }: FormikActions<Values>) => {
+      onSubmit={(values: Values, {setSubmitting}: FormikActions<Values>) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 500);
+          alert(JSON.stringify(values, null, 2))
+          setSubmitting(false)
+        }, 500)
       }}
       render={() => (
         <Form>
@@ -43,6 +43,6 @@ const BasicTS: React.SFC<{}> = () => (
       )}
     />
   </div>
-);
+)
 
-export default BasicTS;
+export default BasicTS

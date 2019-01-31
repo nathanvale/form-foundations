@@ -10,8 +10,8 @@ Create a higher-order React component class that passes props and form handlers
 ## Example
 
 ```jsx
-import React from 'react';
-import { withFormik } from 'formik';
+import React from 'react'
+import {withFormik} from 'formik'
 
 const MyForm = props => {
   const {
@@ -21,7 +21,7 @@ const MyForm = props => {
     handleChange,
     handleBlur,
     handleSubmit,
-  } = props;
+  } = props
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -34,32 +34,32 @@ const MyForm = props => {
       {errors.name && touched.name && <div id="feedback">{errors.name}</div>}
       <button type="submit">Submit</button>
     </form>
-  );
-};
+  )
+}
 
 const MyEnhancedForm = withFormik({
-  mapPropsToValues: () => ({ name: '' }),
+  mapPropsToValues: () => ({name: ''}),
 
   // Custom sync validation
   validate: values => {
-    const errors = {};
+    const errors = {}
 
     if (!values.name) {
-      errors.name = 'Required';
+      errors.name = 'Required'
     }
 
-    return errors;
+    return errors
   },
 
-  handleSubmit: (values, { setSubmitting }) => {
+  handleSubmit: (values, {setSubmitting}) => {
     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+      alert(JSON.stringify(values, null, 2))
+      setSubmitting(false)
+    }, 1000)
   },
 
   displayName: 'BasicForm',
-})(MyForm);
+})(MyForm)
 ```
 
 #### `options`
@@ -97,16 +97,16 @@ passed to the the wrapped component.
 
 #### The "FormikBag":
 
-* `props` (props passed to the wrapped component)
-* `resetForm`
-* `setErrors`
-* `setFieldError`
-* `setFieldTouched`
-* `setFieldValue`
-* `setStatus`
-* `setSubmitting`
-* `setTouched`
-* `setValues`
+- `props` (props passed to the wrapped component)
+- `resetForm`
+- `setErrors`
+- `setFieldError`
+- `setFieldTouched`
+- `setFieldValue`
+- `setStatus`
+- `setSubmitting`
+- `setTouched`
+- `setValues`
 
 Note: `errors`, `touched`, `status` and all event handlers are NOT
 included in the `FormikBag`.
@@ -141,38 +141,38 @@ Validate the form's `values` with function. This function can either be:
 ```js
 // Synchronous validation
 const validate = (values, props) => {
-  let errors = {};
+  let errors = {}
 
   if (!values.email) {
-    errors.email = 'Required';
+    errors.email = 'Required'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Invalid email address'
   }
 
   //...
 
-  return errors;
-};
+  return errors
+}
 ```
 
-* Asynchronous and return a Promise that's error is an `errors` object
+- Asynchronous and return a Promise that's error is an `errors` object
 
 ```js
 // Async Validation
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const validate = (values, props) => {
   return sleep(2000).then(() => {
-    let errors = {};
+    let errors = {}
     if (['admin', 'null', 'god'].includes(values.username)) {
-      errors.username = 'Nice try';
+      errors.username = 'Nice try'
     }
     // ...
     if (Object.keys(errors).length) {
-      throw errors;
+      throw errors
     }
-  });
-};
+  })
+}
 ```
 
 ### `validateOnBlur?: boolean`

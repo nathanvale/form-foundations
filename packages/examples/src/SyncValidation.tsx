@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
-import Debug from './Debug';
+import * as React from 'react'
+import {Formik, Field, Form, ErrorMessage} from 'formik'
+import Debug from './Debug'
 
 const validate = values => {
-  let errors: any = {};
+  let errors: any = {}
   if (!values.email) {
-    errors.email = 'Required';
+    errors.email = 'Required'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Invalid email address'
   }
-  return errors;
-};
+  return errors
+}
 
 const SignIn = () => (
   <div>
@@ -23,8 +23,8 @@ const SignIn = () => (
       validate={validate}
       onSubmit={values => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-        }, 500);
+          alert(JSON.stringify(values, null, 2))
+        }, 500)
       }}
       render={() => (
         <Form>
@@ -41,6 +41,6 @@ const SignIn = () => (
       )}
     />
   </div>
-);
+)
 
-export default SignIn;
+export default SignIn

@@ -1,1 +1,1 @@
-export { onlyLetters } from './onlyLetters';
+export {onlyLetters} from './onlyLetters'

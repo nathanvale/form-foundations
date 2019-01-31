@@ -91,8 +91,8 @@ Once you've added this you will have access to the `window.Formik.<Insert_Compon
 
 You can play with Formik in your web browser with these live online playgrounds.
 
-* CodeSandbox (ReactDOM) https://codesandbox.io/s/zKrK5YLDZ
-* Expo Snack (React Native) https://snack.expo.io/Bk9pPK87X
+- CodeSandbox (ReactDOM) https://codesandbox.io/s/zKrK5YLDZ
+- Expo Snack (React Native) https://snack.expo.io/Bk9pPK87X
 
 ## The Gist
 
@@ -103,30 +103,30 @@ expected--they use a `name` or `id` attribute to figure out which field to
 update.
 
 ```jsx
-import React from 'react';
-import { Formik } from 'formik';
+import React from 'react'
+import {Formik} from 'formik'
 
 const Basic = () => (
   <div>
     <h1>Anywhere in your app!</h1>
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{email: '', password: ''}}
       validate={values => {
-        let errors = {};
+        let errors = {}
         if (!values.email) {
-          errors.email = 'Required';
+          errors.email = 'Required'
         } else if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
         ) {
-          errors.email = 'Invalid email address';
+          errors.email = 'Invalid email address'
         }
-        return errors;
+        return errors
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, {setSubmitting}) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+          alert(JSON.stringify(values, null, 2))
+          setSubmitting(false)
+        }, 400)
       }}
     >
       {({
@@ -163,9 +163,9 @@ const Basic = () => (
       )}
     </Formik>
   </div>
-);
+)
 
-export default Basic;
+export default Basic
 ```
 
 ### Reducing boilerplate
@@ -174,33 +174,33 @@ The code above is very explicit about exactly what Formik is doing. `onChange` -
 
 ```jsx
 // Render Prop
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React from 'react'
+import {Formik, Form, Field, ErrorMessage} from 'formik'
 
 const Basic = () => (
   <div>
     <h1>Any place in your app!</h1>
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{email: '', password: ''}}
       validate={values => {
-        let errors = {};
+        let errors = {}
         if (!values.email) {
-          errors.email = 'Required';
+          errors.email = 'Required'
         } else if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
         ) {
-          errors.email = 'Invalid email address';
+          errors.email = 'Invalid email address'
         }
-        return errors;
+        return errors
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, {setSubmitting}) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+          alert(JSON.stringify(values, null, 2))
+          setSubmitting(false)
+        }, 400)
       }}
     >
-      {({ isSubmitting }) => (
+      {({isSubmitting}) => (
         <Form>
           <Field type="email" name="email" />
           <ErrorMessage name="email" component="div" />
@@ -213,9 +213,9 @@ const Basic = () => (
       )}
     </Formik>
   </div>
-);
+)
 
-export default Basic;
+export default Basic
 ```
 
 ### Complementary Packages

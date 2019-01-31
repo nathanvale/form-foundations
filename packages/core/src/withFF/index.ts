@@ -1,2 +1,2 @@
-import { withFF } from './withFF';
-export { withFF };
+import {withFF} from './withFF'
+export {withFF}

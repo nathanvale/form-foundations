@@ -37,15 +37,15 @@ module.exports = wallaby => ({
   },
   tests: ['packages/*/src/**/*.spec.{ts,tsx}'],
   setup: function(wallaby) {
-    let jestConfig = global._modifiedJestConfig;
+    let jestConfig = global._modifiedJestConfig
     if (!jestConfig) {
-      jestConfig = global._modifiedJestConfig = require('./jest.config.js');
+      jestConfig = global._modifiedJestConfig = require('./jest.config.js')
       jestConfig.moduleNameMapper = {
         '^@form-foundations/([a-zA-Z0-9_-]+)$':
           process.cwd() + '/packages/$1/src/index.js',
-      };
-      jestConfig.setupTestFrameworkScriptFile = './jest.setup.js';
+      }
+      jestConfig.setupTestFrameworkScriptFile = './jest.setup.js'
     }
-    wallaby.testFramework.configure(jestConfig);
+    wallaby.testFramework.configure(jestConfig)
   },
-});
+})

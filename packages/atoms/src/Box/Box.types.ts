@@ -2,7 +2,7 @@ import {
   StyledComponentClass,
   Styles,
   InterpolationFunction,
-} from 'styled-components';
+} from 'styled-components'
 
 /*
 Box's type definition is exhaustive. With the exception of
@@ -17,26 +17,13 @@ export type BoxDisplay =
   | 'flex'
   | 'block'
   | 'inlineBlock'
-  | 'inlineFlex';
-export type BoxDirection = 'row' | 'column';
-export type BoxColumnType =
-  | 0
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
-  | 10
-  | 11
-  | 12;
+  | 'inlineFlex'
+export type BoxDirection = 'row' | 'column'
+export type BoxColumnType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 export type BoxResponsiveProps = {
-  column?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-  display?: boolean | 'flex' | 'flexColumn' | 'inlineBlock';
-};
+  column?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+  display?: boolean | 'flex' | 'flexColumn' | 'inlineBlock'
+}
 export type BoxMargin =
   | -12
   | -11
@@ -62,8 +49,8 @@ export type BoxMargin =
   | 9
   | 10
   | 11
-  | 12;
-export type BoxPadding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+  | 12
+export type BoxPadding = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 export type BoxAlignContent =
   | 'start'
@@ -71,9 +58,9 @@ export type BoxAlignContent =
   | 'center'
   | 'between'
   | 'around'
-  | 'stretch';
+  | 'stretch'
 
-export type BoxAlignItems = 'start' | 'end' | 'center' | 'baseline' | 'stretch';
+export type BoxAlignItems = 'start' | 'end' | 'center' | 'baseline' | 'stretch'
 
 export type BoxAlignSelf =
   | 'auto'
@@ -81,14 +68,14 @@ export type BoxAlignSelf =
   | 'end'
   | 'center'
   | 'baseline'
-  | 'stretch';
+  | 'stretch'
 
 export type BoxJustifyContent =
   | 'start'
   | 'end'
   | 'center'
   | 'between'
-  | 'around';
+  | 'around'
 
 export type BoxOverflow =
   | 'visible'
@@ -96,11 +83,11 @@ export type BoxOverflow =
   | 'scroll'
   | 'scrollX'
   | 'scrollY'
-  | 'auto';
+  | 'auto'
 
-export type BoxPosition = 'static' | 'absolute' | 'relative' | 'fixed';
+export type BoxPosition = 'static' | 'absolute' | 'relative' | 'fixed'
 
-export type BoxFlex = 'grow' | 'shrink' | 'none';
+export type BoxFlex = 'grow' | 'shrink' | 'none'
 
 export type BoxCursor =
   | '-moz-grab'
@@ -140,90 +127,90 @@ export type BoxCursor =
   | 'w-resize'
   | 'wait'
   | 'zoom-in'
-  | 'zoom-out';
+  | 'zoom-out'
 
 export interface BoxProps {
-  children?: React.ReactNode;
-  dangerouslySetInlineStyle?: { __style: { [key: string]: any } };
-  cursor?: BoxCursor;
-  xs?: BoxResponsiveProps;
-  sm?: BoxResponsiveProps;
-  md?: BoxResponsiveProps;
-  lg?: BoxResponsiveProps;
+  children?: React.ReactNode
+  dangerouslySetInlineStyle?: {__style: {[key: string]: any}}
+  cursor?: BoxCursor
+  xs?: BoxResponsiveProps
+  sm?: BoxResponsiveProps
+  md?: BoxResponsiveProps
+  lg?: BoxResponsiveProps
 
-  display?: BoxDisplay;
-  column?: BoxColumnType;
-  direction?: BoxDirection;
-  smDisplay?: BoxDisplay;
-  smColumn?: BoxColumnType;
-  smDirection?: BoxDirection;
-  mdDisplay?: BoxDisplay;
-  mdColumn?: BoxColumnType;
-  mdDirection?: BoxDirection;
-  lgDisplay?: BoxDisplay;
-  lgColumn?: BoxColumnType;
-  lgDirection?: BoxDirection;
+  display?: BoxDisplay
+  column?: BoxColumnType
+  direction?: BoxDirection
+  smDisplay?: BoxDisplay
+  smColumn?: BoxColumnType
+  smDirection?: BoxDirection
+  mdDisplay?: BoxDisplay
+  mdColumn?: BoxColumnType
+  mdDirection?: BoxDirection
+  lgDisplay?: BoxDisplay
+  lgColumn?: BoxColumnType
+  lgDirection?: BoxDirection
 
-  alignContent?: BoxAlignContent;
-  alignItems?: BoxAlignItems;
-  alignSelf?: BoxAlignSelf;
-  bottom?: boolean;
-  color?: string;
-  fit?: boolean;
-  flex?: BoxFlex;
-  height?: number | string;
-  justifyContent?: BoxJustifyContent;
-  left?: boolean;
+  alignContent?: BoxAlignContent
+  alignItems?: BoxAlignItems
+  alignSelf?: BoxAlignSelf
+  bottom?: boolean
+  color?: string
+  fit?: boolean
+  flex?: BoxFlex
+  height?: number | string
+  justifyContent?: BoxJustifyContent
+  left?: boolean
 
-  margin?: BoxMargin;
-  marginTop?: BoxMargin;
-  marginRight?: BoxMargin;
-  marginBottom?: BoxMargin;
-  marginLeft?: BoxMargin;
+  margin?: BoxMargin
+  marginTop?: BoxMargin
+  marginRight?: BoxMargin
+  marginBottom?: BoxMargin
+  marginLeft?: BoxMargin
 
-  smMargin?: BoxMargin;
-  smMarginTop?: BoxMargin;
-  smMarginRight?: BoxMargin;
-  smMarginBottom?: BoxMargin;
-  smMarginLeft?: BoxMargin;
+  smMargin?: BoxMargin
+  smMarginTop?: BoxMargin
+  smMarginRight?: BoxMargin
+  smMarginBottom?: BoxMargin
+  smMarginLeft?: BoxMargin
 
-  mdMargin?: BoxMargin;
-  mdMarginTop?: BoxMargin;
-  mdMarginRight?: BoxMargin;
-  mdMarginBottom?: BoxMargin;
-  mdMarginLeft?: BoxMargin;
+  mdMargin?: BoxMargin
+  mdMarginTop?: BoxMargin
+  mdMarginRight?: BoxMargin
+  mdMarginBottom?: BoxMargin
+  mdMarginLeft?: BoxMargin
 
-  lgMargin?: BoxMargin;
-  lgMarginTop?: BoxMargin;
-  lgMarginRight?: BoxMargin;
-  lgMarginBottom?: BoxMargin;
-  lgMarginLeft?: BoxMargin;
+  lgMargin?: BoxMargin
+  lgMarginTop?: BoxMargin
+  lgMarginRight?: BoxMargin
+  lgMarginBottom?: BoxMargin
+  lgMarginLeft?: BoxMargin
 
-  maxHeight?: number | string;
-  maxWidth?: number | string;
-  minHeight?: number | string;
-  minWidth?: number | string;
+  maxHeight?: number | string
+  maxWidth?: number | string
+  minHeight?: number | string
+  minWidth?: number | string
 
-  overflow?: BoxOverflow;
+  overflow?: BoxOverflow
 
-  padding?: BoxPadding;
-  smPadding?: BoxPadding;
-  mdPadding?: BoxPadding;
-  lgPadding?: BoxPadding;
+  padding?: BoxPadding
+  smPadding?: BoxPadding
+  mdPadding?: BoxPadding
+  lgPadding?: BoxPadding
 
-  paddingX?: BoxPadding;
-  smPaddingX?: BoxPadding;
-  mdPaddingX?: BoxPadding;
-  lgPaddingX?: BoxPadding;
+  paddingX?: BoxPadding
+  smPaddingX?: BoxPadding
+  mdPaddingX?: BoxPadding
+  lgPaddingX?: BoxPadding
 
-  paddingY?: BoxPadding;
-  smPaddingY?: BoxPadding;
-  mdPaddingY?: BoxPadding;
-  lgPaddingY?: BoxPadding;
+  paddingY?: BoxPadding
+  smPaddingY?: BoxPadding
+  mdPaddingY?: BoxPadding
+  lgPaddingY?: BoxPadding
 
-  position?: BoxPosition;
-  right?: boolean;
-  size?: any;
+  position?: BoxPosition
+  right?: boolean
+  size?: any
   shape?:
     | 'square'
     | 'rounded'
@@ -232,14 +219,14 @@ export interface BoxProps {
     | 'roundedTop'
     | 'roundedBottom'
     | 'roundedLeft'
-    | 'roundedRight';
-  shrink?: boolean;
-  top?: boolean;
-  width?: number | string;
-  flexWrap?: boolean;
-  description?: string;
-  tracking?: string;
-  'data-id'?: string;
+    | 'roundedRight'
+  shrink?: boolean
+  top?: boolean
+  width?: number | string
+  flexWrap?: boolean
+  description?: string
+  tracking?: string
+  'data-id'?: string
 }
 
 export type StyleFn = (
@@ -251,6 +238,6 @@ export type StyleFn = (
       | number
       | Styles
       | StyledComponentClass<BoxProps, any, BoxProps>
-      | InterpolationFunction<BoxProps>)[];
+      | InterpolationFunction<BoxProps>)[]
 
-export type StyleFnProps = { [P in keyof BoxProps]: StyleFn };
+export type StyleFnProps = {[P in keyof BoxProps]: StyleFn}

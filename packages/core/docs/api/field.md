@@ -12,34 +12,34 @@ attribute to match up with Formik state. `<Field />` will default to an HTML
 
 There are 3 ways to render things with `<Field>`.
 
-* `<Field component>`
-* `<Field render>`
-* `<Field children>`
+- `<Field component>`
+- `<Field render>`
+- `<Field children>`
 
 Aside from string-only `component`, each render prop is passed the same props for your convenience.
 
 Field's render props are an object containing:
 
-* `field`: An object containing `onChange`, `onBlur`, `name`, and `value` of the field
-* `form`: The Formik bag.
-* Any other props passed to field
+- `field`: An object containing `onChange`, `onBlur`, `name`, and `value` of the field
+- `form`: The Formik bag.
+- Any other props passed to field
 
 ## Example
 
 ```jsx
-import React from 'react';
-import { Formik, Field } from 'formik';
+import React from 'react'
+import {Formik, Field} from 'formik'
 
 const Example = () => (
   <div>
     <h1>My Form</h1>
     <Formik
-      initialValues={{ email: '', color: 'red', firstName: '' }}
+      initialValues={{email: '', color: 'red', firstName: ''}}
       onSubmit={(values, actions) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        }, 1000);
+          alert(JSON.stringify(values, null, 2))
+          actions.setSubmitting(false)
+        }, 1000)
       }}
       render={(props: FormikProps<Values>) => (
         <form onSubmit={props.handleSubmit}>
@@ -52,7 +52,7 @@ const Example = () => (
           <Field name="firstName" component={CustomInputComponent} />
           <Field
             name="lastName"
-            render={({ field /* _form */ }) => (
+            render={({field /* _form */}) => (
               <input {...field} placeholder="lastName" />
             )}
           />
@@ -61,19 +61,20 @@ const Example = () => (
       )}
     />
   </div>
-);
+)
 
 const CustomInputComponent = ({
   field, // { name, value, onChange, onBlur }
-  form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  form: {touched, errors}, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
   ...props
 }) => (
   <div>
     <input type="text" {...field} {...props} />
-    {touched[field.name] &&
-      errors[field.name] && <div className="error">{errors[field.name]}</div>}
+    {touched[field.name] && errors[field.name] && (
+      <div className="error">{errors[field.name]}</div>
+    )}
   </div>
-);
+)
 ```
 
 #### Props
@@ -118,10 +119,10 @@ Either JSX elements or callback function. Same as `render`.
 
 Either a React component or the name of an HTML element to render. That is, one of the following:
 
-* `input`
-* `select`
-* `textarea`
-* A custom React Component
+- `input`
+- `select`
+- `textarea`
+- A custom React Component
 
 Custom React Components will be passed `FieldProps` which is same `render` prop parameters of `<Field render>` plus any other props passed to directly to `<Field>`.
 
@@ -212,44 +213,44 @@ You can run independent field-level validations by passing a function to the
 `validateOnChange` config/props specified in the `<Field>'s` parent `<Formik>`
 / `withFormik`. This function can be either be synchronous or asynchronous:
 
-* Sync: if invalid, return a `string` containing the error message or
+- Sync: if invalid, return a `string` containing the error message or
   return `undefined`.
 
-* Async: return a Promise that throws a `string` containing the error message.
+- Async: return a Promise that throws a `string` containing the error message.
   This works like Formik's `validate`, but instead of returning an `errors`
   object, it's just a `string`.
 
 ```jsx
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import React from 'react'
+import {Formik, Form, Field} from 'formik'
 
 // Synchronous validation function
 const validate = value => {
-  let errorMessage;
+  let errorMessage
   if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-    errorMessage = 'Invalid email address';
+    errorMessage = 'Invalid email address'
   }
-  return errorMessage;
-};
+  return errorMessage
+}
 
 // Async validation function
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const validateAsync = value => {
   return sleep(2000).then(() => {
     if (['admin', 'null', 'god'].includes(value)) {
-      throw 'Nice try';
+      throw 'Nice try'
     }
-  });
-};
+  })
+}
 
 // example usage
 const MyForm = () => (
   <Formik
-    initialValues={{ email: '', username: '' }}
+    initialValues={{email: '', username: ''}}
     onSubmit={values => alert(JSON.stringify(values, null, 2))}
   >
-    {({ errors, touched }) => (
+    {({errors, touched}) => (
       <Form>
         <Field validate={validate} name="email" type="email" />
         {errors.email && touched.email ? <div>{errors.email}</div> : null}
@@ -261,7 +262,7 @@ const MyForm = () => (
       </Form>
     )}
   </Formik>
-);
+)
 ```
 
 Note: To allow for i18n libraries, the TypeScript typings for `validate` are

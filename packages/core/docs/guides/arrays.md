@@ -11,8 +11,8 @@ Formik has support for nested objects and arrays out of the box. These 2 subject
 The `name` props in Formik can use lodash-like dot paths to reference nested Formik values. This means that you do not need to flatten out your form's values anymore.
 
 ```jsx
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import React from 'react'
+import {Formik, Form, Field} from 'formik'
 
 export const NestedExample = () => (
   <div>
@@ -26,7 +26,7 @@ export const NestedExample = () => (
       }}
       onSubmit={values => {
         // same shape as initial values
-        console.log(values);
+        console.log(values)
       }}
     >
       <Field name="social.facebook" />
@@ -34,7 +34,7 @@ export const NestedExample = () => (
       <button type="submit">Submit</button>
     </Formik>
   </div>
-);
+)
 ```
 
 ## Arrays
@@ -42,8 +42,8 @@ export const NestedExample = () => (
 Formik also has support for arrays and arrays of objects out of the box. Using lodash-like bracket syntax for `name` string you can quickly build fields for items in a list.
 
 ```jsx
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import React from 'react'
+import {Formik, Form, Field} from 'formik'
 
 export const BasicArrayExample = () => (
   <div>
@@ -54,7 +54,7 @@ export const BasicArrayExample = () => (
       }}
       onSubmit={values => {
         // same shape as initial values
-        console.log(values);
+        console.log(values)
       }}
     >
       <Field name="friends[0]" />
@@ -62,7 +62,7 @@ export const BasicArrayExample = () => (
       <button type="submit">Submit</button>
     </Formik>
   </div>
-);
+)
 ```
 
 For more information around manipulating (add/remove/etc) items in lists, see the API reference section on the `<FieldArray>` component.

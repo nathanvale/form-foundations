@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { FFConsumer } from './connect';
+import * as React from 'react'
+import {FFConsumer} from './connect'
 
 export const Debug = () => (
   <div
@@ -22,9 +22,9 @@ export const Debug = () => (
       Form Foundations Debugger
     </div>
     <FFConsumer>
-      {({ validationSchema, validate, ...other }) => {
-        return JSON.stringify(other, null, 2);
+      {({validationSchema, validate, ...other}) => {
+        return JSON.stringify(other, null, 2)
       }}
     </FFConsumer>
   </div>
-);
+)

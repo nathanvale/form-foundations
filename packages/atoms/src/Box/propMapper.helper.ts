@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import {css} from 'styled-components'
 import {
   absolute,
   alignContent,
@@ -38,66 +38,51 @@ import {
   roundedTop,
   top0,
   width,
-} from './boxStyle.helper';
-import { mapping, rangeWithoutZero, toggle, union } from './transform.helper';
+} from './boxStyle.helper'
+import {mapping, rangeWithoutZero, toggle, union} from './transform.helper'
 
 const backgroundColor: any = () => css`
-  ${({ color }: any) => `background-color: ${color};`};
-`;
-const marginTop = rangeWithoutZero('marginTop');
-const marginRight = rangeWithoutZero('marginRight');
-const marginBottom = rangeWithoutZero('marginBottom');
-const marginLeft = rangeWithoutZero('marginLeft');
-const margin = union(marginTop, marginBottom, marginLeft, marginRight);
+  ${({color}: any) => `background-color: ${color};`};
+`
+const marginTop = rangeWithoutZero('marginTop')
+const marginRight = rangeWithoutZero('marginRight')
+const marginBottom = rangeWithoutZero('marginBottom')
+const marginLeft = rangeWithoutZero('marginLeft')
+const margin = union(marginTop, marginBottom, marginLeft, marginRight)
 
-const smMarginTop = rangeWithoutZero('marginTop', 'SM');
-const smMarginRight = rangeWithoutZero('marginRight', 'SM');
-const smMarginBottom = rangeWithoutZero('marginBottom', 'SM');
-const smMarginLeft = rangeWithoutZero('marginLeft', 'SM');
-const smMargin = union(
-  smMarginTop,
-  smMarginBottom,
-  smMarginLeft,
-  smMarginRight,
-);
+const smMarginTop = rangeWithoutZero('marginTop', 'SM')
+const smMarginRight = rangeWithoutZero('marginRight', 'SM')
+const smMarginBottom = rangeWithoutZero('marginBottom', 'SM')
+const smMarginLeft = rangeWithoutZero('marginLeft', 'SM')
+const smMargin = union(smMarginTop, smMarginBottom, smMarginLeft, smMarginRight)
 
-const mdMarginTop = rangeWithoutZero('marginTop', 'MD');
-const mdMarginRight = rangeWithoutZero('marginRight', 'MD');
-const mdMarginBottom = rangeWithoutZero('marginBottom', 'MD');
-const mdMarginLeft = rangeWithoutZero('marginLeft', 'MD');
-const mdMargin = union(
-  mdMarginTop,
-  mdMarginBottom,
-  mdMarginLeft,
-  mdMarginRight,
-);
+const mdMarginTop = rangeWithoutZero('marginTop', 'MD')
+const mdMarginRight = rangeWithoutZero('marginRight', 'MD')
+const mdMarginBottom = rangeWithoutZero('marginBottom', 'MD')
+const mdMarginLeft = rangeWithoutZero('marginLeft', 'MD')
+const mdMargin = union(mdMarginTop, mdMarginBottom, mdMarginLeft, mdMarginRight)
 
-const lgMarginTop = rangeWithoutZero('marginTop', 'LG');
-const lgMarginRight = rangeWithoutZero('marginRight', 'LG');
-const lgMarginBottom = rangeWithoutZero('marginBottom', 'LG');
-const lgMarginLeft = rangeWithoutZero('marginLeft', 'LG');
-const lgMargin = union(
-  lgMarginTop,
-  lgMarginBottom,
-  lgMarginLeft,
-  lgMarginRight,
-);
+const lgMarginTop = rangeWithoutZero('marginTop', 'LG')
+const lgMarginRight = rangeWithoutZero('marginRight', 'LG')
+const lgMarginBottom = rangeWithoutZero('marginBottom', 'LG')
+const lgMarginLeft = rangeWithoutZero('marginLeft', 'LG')
+const lgMargin = union(lgMarginTop, lgMarginBottom, lgMarginLeft, lgMarginRight)
 
-const paddingX = rangeWithoutZero('paddingX');
-const paddingY = rangeWithoutZero('paddingY');
-const padding = union(paddingX, paddingY);
+const paddingX = rangeWithoutZero('paddingX')
+const paddingY = rangeWithoutZero('paddingY')
+const padding = union(paddingX, paddingY)
 
-const smPaddingX = rangeWithoutZero('paddingX', 'SM');
-const smPaddingY = rangeWithoutZero('paddingY', 'SM');
-const smPadding = union(smPaddingX, smPaddingY);
+const smPaddingX = rangeWithoutZero('paddingX', 'SM')
+const smPaddingY = rangeWithoutZero('paddingY', 'SM')
+const smPadding = union(smPaddingX, smPaddingY)
 
-const mdPaddingX = rangeWithoutZero('paddingX', 'MD');
-const mdPaddingY = rangeWithoutZero('paddingY', 'MD');
-const mdPadding = union(mdPaddingX, mdPaddingY);
+const mdPaddingX = rangeWithoutZero('paddingX', 'MD')
+const mdPaddingY = rangeWithoutZero('paddingY', 'MD')
+const mdPadding = union(mdPaddingX, mdPaddingY)
 
-const lgPaddingX = rangeWithoutZero('paddingX', 'LG');
-const lgPaddingY = rangeWithoutZero('paddingY', 'LG');
-const lgPadding = union(lgPaddingX, lgPaddingY);
+const lgPaddingX = rangeWithoutZero('paddingX', 'LG')
+const lgPaddingY = rangeWithoutZero('paddingY', 'LG')
+const lgPadding = union(lgPaddingX, lgPaddingY)
 
 // TODO: remove this any
 export const propToStyleFn: any = {
@@ -260,4 +245,4 @@ export const propToStyleFn: any = {
   width,
   minWidth,
   maxWidth,
-};
+}

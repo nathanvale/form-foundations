@@ -1,1 +1,1 @@
-export default 'widgets';
+export default 'widgets'

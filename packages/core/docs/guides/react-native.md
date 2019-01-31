@@ -16,15 +16,12 @@ React Native that demonstrates the key differences:
 
 ```jsx
 // Formik x React Native example
-import React from 'react';
-import { Button, TextInput, View } from 'react-native';
-import { Formik } from 'formik';
+import React from 'react'
+import {Button, TextInput, View} from 'react-native'
+import {Formik} from 'formik'
 
 export const MyReactNativeForm = props => (
-  <Formik
-    initialValues={{ email: '' }}
-    onSubmit={values => console.log(values)}
-  >
+  <Formik initialValues={{email: ''}} onSubmit={values => console.log(values)}>
     {props => (
       <View>
         <TextInput
@@ -36,7 +33,7 @@ export const MyReactNativeForm = props => (
       </View>
     )}
   </Formik>
-);
+)
 ```
 
 As you can see above, the notable differences between using Formik with React

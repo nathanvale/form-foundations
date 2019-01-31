@@ -1,2 +1,2 @@
-import Button from '@material-ui/core/Button';
-export { Button };
+import Button from '@material-ui/core/Button'
+export {Button}

@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { cleanup, fireEvent, wait } from 'react-testing-library';
-import * as Yup from 'yup';
-import { FFProps } from '../types';
-import { renderWithFF } from '../__integration-tests__/helpers';
+import * as React from 'react'
+import {cleanup, fireEvent, wait} from 'react-testing-library'
+import * as Yup from 'yup'
+import {FFProps} from '../types'
+import {renderWithFF} from '../__integration-tests__/helpers'
 
 interface Values {
-  firstName: string;
-  lastName: string;
+  firstName: string
+  lastName: string
 }
 
-afterEach(cleanup);
+afterEach(cleanup)
 
 const Form: React.SFC<FFProps<Values>> = ({
   values,
@@ -56,7 +56,7 @@ const Form: React.SFC<FFProps<Values>> = ({
       </button>
       <button
         id="statusButton"
-        onClick={() => setStatus({ myStatusMessage: 'True' })}
+        onClick={() => setStatus({myStatusMessage: 'True'})}
       >
         Call setStatus
       </button>
@@ -65,85 +65,85 @@ const Form: React.SFC<FFProps<Values>> = ({
       )}
       <button type="submit">Submit</button>
     </form>
-  );
-};
+  )
+}
 
-const initialValues: Values = { firstName: 'Nathan', lastName: 'Vale' };
+const initialValues: Values = {firstName: 'Nathan', lastName: 'Vale'}
 
 describe('withFF()', () => {
   it('should initialize Formik state and pass down props', () => {
-    const { getProps } = renderWithFF<Values>(Form, initialValues);
-    const props = getProps();
-    expect(props).toMatchSnapshot();
-  });
+    const {getProps} = renderWithFF<Values>(Form, initialValues)
+    const props = getProps()
+    expect(props).toMatchSnapshot()
+  })
 
   it('should call render child element', () => {
-    const { container } = renderWithFF<Values>(Form, initialValues);
-    expect(container.firstChild).toBeDefined();
-  });
+    const {container} = renderWithFF<Values>(Form, initialValues)
+    expect(container.firstChild).toBeDefined()
+  })
 
   it('should call validate with values and props', async () => {
-    const validate = jest.fn();
-    const myProps = { my: 'prop' };
-    const { getProps } = renderWithFF<Values>(
+    const validate = jest.fn()
+    const myProps = {my: 'prop'}
+    const {getProps} = renderWithFF<Values>(
       Form,
       initialValues,
-      { validate },
+      {validate},
       myProps,
-    );
+    )
 
-    getProps().submitForm();
+    getProps().submitForm()
     await wait(() =>
       expect(validate).toHaveBeenCalledWith(
-        { firstName: 'Nathan', lastName: 'Vale' },
+        {firstName: 'Nathan', lastName: 'Vale'},
         myProps,
       ),
-    );
-  });
+    )
+  })
 
   it('should call validationSchema', async () => {
-    const validate = jest.fn(() => Promise.resolve());
-    const { getProps } = renderWithFF<Values>(Form, initialValues, {
-      validationSchema: { validate },
-    });
+    const validate = jest.fn(() => Promise.resolve())
+    const {getProps} = renderWithFF<Values>(Form, initialValues, {
+      validationSchema: {validate},
+    })
 
-    getProps().submitForm();
-    await wait(() => expect(validate).toHaveBeenCalled());
-  });
+    getProps().submitForm()
+    await wait(() => expect(validate).toHaveBeenCalled())
+  })
 
   it('should call validationSchema function with props', async () => {
-    const validationSchema = jest.fn(() => Yup.object());
-    const myProps = { my: 'prop' };
-    const { getProps } = renderWithFF<Values>(
+    const validationSchema = jest.fn(() => Yup.object())
+    const myProps = {my: 'prop'}
+    const {getProps} = renderWithFF<Values>(
       Form,
       initialValues,
       {
         validationSchema,
       },
       myProps,
-    );
+    )
 
-    getProps().submitForm();
-    await wait(() => expect(validationSchema).toHaveBeenCalledWith(myProps));
-  });
+    getProps().submitForm()
+    await wait(() => expect(validationSchema).toHaveBeenCalledWith(myProps))
+  })
 
   it('should call handleSubmit with values, actions and custom props', async () => {
-    const handleSubmit = jest.fn();
-    const myProps = { my: 'prop' };
-    const { getProps } = renderWithFF<Values>(
+    const handleSubmit = jest.fn()
+    const myProps = {my: 'prop'}
+    const {getProps} = renderWithFF<Values>(
       Form,
       initialValues,
       {
         handleSubmit,
       },
       myProps,
-    );
+    )
 
-    getProps().submitForm();
+    getProps().submitForm()
 
     await wait(() =>
       expect(handleSubmit).toHaveBeenCalledWith(
-        { firstName: 'Nathan', lastName: 'Vale' },
+        {firstName: 'Nathan', lastName: 'Vale'},
         {
           props: myProps,
           resetForm: expect.any(Function),
@@ -162,55 +162,55 @@ describe('withFF()', () => {
           validateForm: expect.any(Function),
         },
       ),
-    );
-  });
+    )
+  })
 
   it('should passe down custom props', () => {
-    const { getProps } = renderWithFF<Values>(
+    const {getProps} = renderWithFF<Values>(
       Form,
       initialValues,
       {},
-      { my: 'prop' },
-    );
-    expect(getProps().my).toEqual('prop');
-  });
+      {my: 'prop'},
+    )
+    expect(getProps().my).toEqual('prop')
+  })
 
   it('should set the currently active field', () => {
-    const { getByLabelText, getProps } = renderWithFF<Values>(
+    const {getByLabelText, getProps} = renderWithFF<Values>(
       Form,
       initialValues,
       {},
-    );
-    let input = getByLabelText('first-name');
-    fireEvent.click(input);
-    let props = getProps();
+    )
+    let input = getByLabelText('first-name')
+    fireEvent.click(input)
+    let props = getProps()
     expect(props.active).toEqual({
       firstName: true,
-    });
-    input = getByLabelText('last-name');
-    fireEvent.click(input);
-    props = getProps();
+    })
+    input = getByLabelText('last-name')
+    fireEvent.click(input)
+    props = getProps()
     expect(props.active).toEqual({
       lastName: true,
-    });
-  });
+    })
+  })
 
   it('should reset the form', () => {
-    const { getByLabelText, getByText, getProps } = renderWithFF<Values>(
+    const {getByLabelText, getByText, getProps} = renderWithFF<Values>(
       Form,
       initialValues,
       {},
-    );
-    let input = getByLabelText('first-name');
-    fireEvent.click(input);
-    fireEvent.blur(input);
-    input = getByLabelText('last-name');
-    fireEvent.click(input);
-    fireEvent.blur(input);
-    let button = getByText('Reset');
-    fireEvent.click(button);
-    let props = getProps();
-    expect(props).toMatchSnapshot();
-    expect(props.active).toEqual({});
-  });
-});
+    )
+    let input = getByLabelText('first-name')
+    fireEvent.click(input)
+    fireEvent.blur(input)
+    input = getByLabelText('last-name')
+    fireEvent.click(input)
+    fireEvent.blur(input)
+    let button = getByText('Reset')
+    fireEvent.click(button)
+    let props = getProps()
+    expect(props).toMatchSnapshot()
+    expect(props.active).toEqual({})
+  })
+})

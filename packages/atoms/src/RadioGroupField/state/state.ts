@@ -1,5 +1,5 @@
-export const name = 'state';
-export const updaterName = 'setState';
+export const name = 'state'
+export const updaterName = 'setState'
 export function initialState() {
-  return { value: '' };
+  return {value: ''}
 }

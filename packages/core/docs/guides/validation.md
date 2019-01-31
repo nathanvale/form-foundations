@@ -17,8 +17,8 @@ Form-level validation is useful because you have complete access to all of your 
 
 There are 2 ways to do form-level validation with Formik:
 
-* `<Formik validate>` and `withFormik({ validate: ... })`
-* `<Formik validationSchema>` and `withFormik({ validationSchema: ... })`
+- `<Formik validate>` and `withFormik({ validate: ... })`
+- `<Formik validationSchema>` and `withFormik({ validationSchema: ... })`
 
 #### `validate`
 
@@ -27,34 +27,34 @@ There are 2 ways to do form-level validation with Formik:
 ```js
 // Synchronous validation
 const validate = (values, props /* only available when using withFormik */) => {
-  let errors = {};
+  let errors = {}
 
   if (!values.email) {
-    errors.email = 'Required';
+    errors.email = 'Required'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Invalid email address'
   }
 
   //...
 
-  return errors;
-};
+  return errors
+}
 
 // Async Validation
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const validate = (values, props /* only available when using withFormik */) => {
   return sleep(2000).then(() => {
-    let errors = {};
+    let errors = {}
     if (['admin', 'null', 'god'].includes(values.username)) {
-      errors.username = 'Nice try';
+      errors.username = 'Nice try'
     }
     // ...
     if (Object.keys(errors).length) {
-      throw errors;
+      throw errors
     }
-  });
-};
+  })
+}
 ```
 
 For more information about `<Formik validate>`, see the API reference.
@@ -77,9 +77,9 @@ npm install yup --save
 ```
 
 ```jsx
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import React from 'react'
+import {Formik, Form, Field} from 'formik'
+import * as Yup from 'yup'
 
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -93,7 +93,7 @@ const SignupSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email')
     .required('Required'),
-});
+})
 
 export const ValidationSchemaExample = () => (
   <div>
@@ -107,10 +107,10 @@ export const ValidationSchemaExample = () => (
       validationSchema={SignupSchema}
       onSubmit={values => {
         // same shape as initial values
-        console.log(values);
+        console.log(values)
       }}
     >
-      {({ errors, touched }) => (
+      {({errors, touched}) => (
         <Form>
           <Field name="firstName" />
           {errors.firstName && touched.firstName ? (
@@ -127,7 +127,7 @@ export const ValidationSchemaExample = () => (
       )}
     </Formik>
   </div>
-);
+)
 ```
 
 For more information about `<Formik validationSchema>`, see the API reference.
@@ -141,26 +141,26 @@ Formik supports field-level validation via the `<Field>`/`<FastField>` component
 > Note: The `<Field>/<FastField>` components' `validate` function will only be executed on mounted fields. That is to say, if any of your fields unmount during the flow of your form (e.g. Material-UI's `<Tabs>` unmounts the previous `<Tab>` your user was on), those fields will not be validated during form validation/submission.
 
 ```jsx
-import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
+import React from 'react'
+import {Formik, Form, Field} from 'formik'
+import * as Yup from 'yup'
 
 function validateEmail(value) {
-  let error;
+  let error
   if (!value) {
-    error = 'Required';
+    error = 'Required'
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-    error = 'Invalid email address';
+    error = 'Invalid email address'
   }
-  return error;
+  return error
 }
 
 function validateUsername(value) {
-  let error;
+  let error
   if (value === 'admin') {
-    error = 'Nice try!';
+    error = 'Nice try!'
   }
-  return error;
+  return error
 }
 
 export const FieldLevelValidationExample = () => (
@@ -173,10 +173,10 @@ export const FieldLevelValidationExample = () => (
       }}
       onSubmit={values => {
         // same shape as initial values
-        console.log(values);
+        console.log(values)
       }}
     >
-      {({ errors, touched, isValidating }) => (
+      {({errors, touched, isValidating}) => (
         <Form>
           <Field name="email" validate={validateEmail} />
           {errors.email && touched.email && <div>{errors.email}</div>}
@@ -189,7 +189,7 @@ export const FieldLevelValidationExample = () => (
       )}
     </Formik>
   </div>
-);
+)
 ```
 
 ### Manually Triggering Validation
@@ -263,25 +263,25 @@ You can control when Formik runs validation by changing the values of `<Formik v
 
 **After "change" events/methods** (things that update`values`)
 
-* `handleChange`
-* `setFieldValue`
-* `setValues`
+- `handleChange`
+- `setFieldValue`
+- `setValues`
 
 **After "blur" events/methods** (things that update `touched`)
 
-* `handleBlur`
-* `setTouched`
-* `setFieldTouched`
+- `handleBlur`
+- `setTouched`
+- `setFieldTouched`
 
 **Whenever submission is attempted**
 
-* `handleSubmit`
-* `submitForm`
+- `handleSubmit`
+- `submitForm`
 
 There are also imperative helper methods provided to you via Formik's render/injected props which you can use to imperatively call validation.
 
-* `validateForm`
-* `validateField`
+- `validateForm`
+- `validateField`
 
 ## Displaying Error Messages
 
