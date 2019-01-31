@@ -120,12 +120,12 @@
     }
   },
   "/home/circleci/repo/packages/atoms/dist/ff-atoms.cjs.production.js": {
-    "bundled": 45923,
+    "bundled": 45924,
     "minified": 32389,
     "gzipped": 6287
   },
   "/home/circleci/repo/packages/core/dist/ff-core.cjs.production.js": {
-    "bundled": 14932,
+    "bundled": 14934,
     "minified": 8453,
     "gzipped": 2600
   },
@@ -145,12 +145,12 @@
     "gzipped": 71
   },
   "/home/circleci/repo/packages/atoms/dist/ff-atoms.cjs.development.js": {
-    "bundled": 45923,
+    "bundled": 45924,
     "minified": 32389,
     "gzipped": 6287
   },
   "/home/circleci/repo/packages/core/dist/ff-core.cjs.development.js": {
-    "bundled": 15531,
+    "bundled": 15533,
     "minified": 9096,
     "gzipped": 2756
   },
@@ -170,7 +170,7 @@
     "gzipped": 71
   },
   "/home/circleci/repo/packages/atoms/dist/ff-atoms.esm.js": {
-    "bundled": 47809,
+    "bundled": 47810,
     "minified": 31180,
     "gzipped": 6137,
     "treeshaked": {
@@ -184,7 +184,7 @@
     }
   },
   "/home/circleci/repo/packages/core/dist/ff-core.esm.js": {
-    "bundled": 14648,
+    "bundled": 14650,
     "minified": 8224,
     "gzipped": 2644,
     "treeshaked": {
